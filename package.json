@@ -1,0 +1,21 @@
+{
+  "name": "dparksdev",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.8.1",
+    "@tailwindcss/typography": "^0.2.0",
+    "core-js": "^3.6.5",
+    "nuxt": "^2.14.5",
+    "nuxt-svg-loader": "^1.2.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^3.0.2"
+  }
+}
