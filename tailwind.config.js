@@ -4,6 +4,8 @@ module.exports = {
       colors: {
         tokyosky: '#00012D',
         darkteal: '#041628',
+        retropink: '#BA2D7E',
+        lightblue: '#C6D0EB',
       }
     }
   },
