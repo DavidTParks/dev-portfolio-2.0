@@ -1,5 +1,6 @@
 <template>
   <div class="min-h-screen bg-tokyosky">
+    <NavBar/>
     <Hero/>
     <PageBreak/>
     <Nuxt />

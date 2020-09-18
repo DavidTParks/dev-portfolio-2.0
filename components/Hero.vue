@@ -16,7 +16,7 @@
       <div class="text-center">
         <h1 class="text-retropink text-4xl tracking-tight leading-10 font-bold sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
         <p class="mt-3 max-w-md mx-auto text-base text-lightblue sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          Welcome to my website! Here you can find some projects I've worked on, and some blogs on things that interest me. Oh, and don't mind the fully functional city below you, they are happy to have you. Thanks for coming!
+          Welcome to my website! Here you can find some projects I've worked on, and some blogs on things that interest me. Oh, and don't mind the city below you, they are happy to have you. Thanks for coming!
         </p>
       </div>
       </main>
