@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900">
+  <div class="bg-black">
     <div
       class="max-w-6xl mx-auto px-6 md:px-12 xl:px-0 py-4 flex items-center justify-start"
     >

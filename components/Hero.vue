@@ -4,6 +4,8 @@
       <div class="train-wrapper">
         <Train class="train w-3/12 h-auto"/>
       </div>
+      <BuildingOne class="building1"/>
+      <BuildingTwo class="building2"/>
       <div class="cloud-wrap">
         <AbstractCloud class="cloud cloud1"/>
         <AbstractCloud class="cloud cloud2 "/>
@@ -20,10 +22,14 @@
 <script>
 import Train from '~/assets/svg/train-styled.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
+import BuildingOne from '~/assets/svg/building1.svg'
+import BuildingTwo from '~/assets/svg/building2.svg'
 export default {
   components: {
     Train,
-    AbstractCloud
+    AbstractCloud,
+    BuildingOne,
+    BuildingTwo
   }
 }
 </script>
@@ -42,7 +48,29 @@ export default {
   position: relative;
 }
 
+.building1 {
+  width: 5vw;
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  height: auto;
+}
 
+.building2 {
+  width: 7vw;
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  height: auto;
+}
+
+.building3 {
+  width: 5vw;
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  height: auto;
+}
 
 .train {
   margin-left: auto;
@@ -59,6 +87,7 @@ export default {
   animation-iteration-count: infinite;
   overflow: visible;
 }
+
 .train-wrapper:before {
     content: '';
     background: #57ffe9;
@@ -131,7 +160,7 @@ export default {
     transform: translateX(0);
   }
   50% {
-      transform: translateX(-40px);
+      transform: translateX(-200px);
   }
   100% {
       transform: translateX(0);
