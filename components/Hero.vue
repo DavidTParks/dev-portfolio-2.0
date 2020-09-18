@@ -46,6 +46,7 @@ export default {
 
 .train {
   margin-left: auto;
+  transform: translate3d(0, 0, 0);
 }
 .train-wrapper {
   position: absolute;
@@ -115,13 +116,13 @@ export default {
 
 @keyframes train {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-      transform: translateX(-90vw);
+    transform: translate3d(-90vw, 0, 0);
   }
   100% {
-      transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 

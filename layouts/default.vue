@@ -1,6 +1,7 @@
 <template>
-  <div class="min-h-screen bg-darkteal">
+  <div class="min-h-screen bg-tokyosky">
     <Hero/>
+    <PageBreak/>
     <Nuxt />
   </div>
 </template>
