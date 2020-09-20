@@ -6,6 +6,7 @@
       </div>
       <BuildingOne class="building1"/>
       <BuildingTwo class="building2"/>
+      <Boat class="boat"/>
       <div class="cloud-wrap">
         <AbstractCloud class="cloud cloud1"/>
         <AbstractCloud class="cloud cloud2 "/>
@@ -29,19 +30,21 @@ import Train from '~/assets/svg/train-styled.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
 import BuildingOne from '~/assets/svg/building1.svg'
 import BuildingTwo from '~/assets/svg/building2.svg'
+import Boat from '~/assets/svg/boat.svg'
 export default {
   components: {
     Train,
     AbstractCloud,
     BuildingOne,
-    BuildingTwo
+    BuildingTwo,
+    Boat
   }
 }
 </script>
 
 <style>
 .hero {
-  background-image: url('~assets/svg/nolight.svg?inline');
+  background-image: url('~assets/svg/city-2.svg?inline');
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, 50% -100px;
   background-size: 100%, 100%;
@@ -51,6 +54,20 @@ export default {
   min-height: 500px;
   margin-bottom: -1px;
   position: relative;
+}
+
+.boat {
+  width: 12vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 5%;
+  margin: auto;
+  height: auto;
+  transform: translate3d(0, 0, 0);
+  animation-name: cloud1;
+  animation-duration: 200s;
+  animation-iteration-count: infinite;
 }
 
 .building1 {
