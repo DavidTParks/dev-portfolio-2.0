@@ -15,9 +15,9 @@
         <AbstractCloud class="cloud cloud3 "/>
         <AbstractCloud class="cloud cloud4 "/>
       </div>
-      <Dock class="dock"/>
-      <Station class="station"/>
       <Crates class="crates"/>
+      <Station class="station"/>
+      <Dock class="dock"/>
       <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 z-20">
       <div class="text-center">
         <h1 class="text-retropink text-4xl tracking-tight leading-10 font-bold sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
@@ -65,7 +65,7 @@ export default {
 
 <style>
 .hero {
-  background-image: url('~assets/svg/no-dock.svg?inline');
+  background-image: url('~assets/svg/trimmed-bottom.svg?inline');
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, 50% -100px;
   background-size: 100%, 100%;
@@ -137,8 +137,8 @@ export default {
 
 .crates {
   position: absolute;
-  bottom: 1%;
   right: 30%;
+  bottom: 0;
   height: auto;
   width: 5vw;
 }
@@ -178,10 +178,10 @@ export default {
   bottom: 0;
   right: 0;
   margin-bottom: 1.3%;
+  overflow: visible;
   animation-name: train;
   animation-duration: 40s;
   animation-iteration-count: infinite;
-  overflow: visible;
 }
 
 
@@ -219,7 +219,7 @@ export default {
 
 .cloud {
   transform: translate3d(0, 0, 0);
-  animation-name: cloud1;
+  animation-name: cloud1 ease-in-out;
   animation-duration: 60s;
   animation-iteration-count: infinite;
   filter: brightness(0.3);
