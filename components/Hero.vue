@@ -102,21 +102,21 @@ export default {
 }
 
 .boat-wrapper:before {
-    content: '';
-    background: #57ffe9;
-    background: radial-gradient(circle, rgba(186, 45, 126, 0.8) 0%, rgba(122, 202, 196, 0) 30%);
-    width: 40%;
-    height: 40%;
-    border-radius: 50%;
-    mix-blend-mode: hard-light;
-    position: absolute;
-    overflow: visible;
-    top: 0;
-    right: 0%;
-    transform: scale(1);
-    animation: pulse 2600ms ease-in-out infinite alternate;
-    margin-top: -6%;
-    margin-right: -3.5%;
+  content: '';
+  background: #57ffe9;
+  background: radial-gradient(circle, rgba(186, 45, 126, 0.8) 0%, rgba(122, 202, 196, 0) 30%);
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  mix-blend-mode: hard-light;
+  position: absolute;
+  overflow: visible;
+  top: 0;
+  right: 0%;
+  transform: scale(1);
+  animation: pulse 2600ms ease-in-out infinite alternate;
+  margin-top: -6%;
+  margin-right: -3.5%;
 }
 
 .building1 {
@@ -177,7 +177,7 @@ export default {
   bottom: 0;
   bottom: 0;
   right: 0;
-  margin-bottom: 1.2%;
+  margin-bottom: 1.3%;
   animation-name: train;
   animation-duration: 40s;
   animation-iteration-count: infinite;
@@ -198,7 +198,7 @@ export default {
   overflow: visible;
   top: 0;
   transform: scale(1);
-  animation: pulse 2600ms ease-in-out infinite alternate;
+  animation: 5s appear ease-in-out;
 }
 
 .right-light:before {
@@ -214,7 +214,7 @@ export default {
   overflow: visible;
   top: 0;
   transform: scale(1);
-  animation: pulse 2600ms ease-in-out infinite alternate;
+  animation: 5s appear ease-in-out;
 }
 
 .cloud {
@@ -281,6 +281,15 @@ export default {
   }
   100% {
       transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
