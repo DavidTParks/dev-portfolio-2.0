@@ -38,7 +38,7 @@ import BuildingTwo from '~/assets/svg/building2.svg'
 import Boat from '~/assets/svg/boat.svg'
 import Dock from '~/assets/svg/dock.svg'
 import Crates from '~/assets/svg/crates.svg'
-import Station from '~/assets/svg/Station.svg'
+import Station from '~/assets/svg/station.svg'
 export default {
   data() {
     return {
