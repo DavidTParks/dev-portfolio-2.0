@@ -3,7 +3,7 @@
   <div class="max-w-3xl mx-auto px-2 sm:px-4 lg:px-8">
     <div class="relative flex items-center justify-center h-16">
       <div class="flex items-center px-2 lg:px-0">
-        <div class="hidden lg:block lg:ml-6">
+        <div class="lg:block lg:ml-6">
           <div class="flex">
             <a href="#" class="px-3 py-2 rounded-md text-sm leading-5 font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</a>
             <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</a>

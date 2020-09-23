@@ -1,18 +1,23 @@
 <template>
   <div class="relative bg-darkteal overflow-hidden">
     <div class="hero">
-      <div class="train-wrapper">
+      <div :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper">
         <Train class="train w-3/12 h-auto"/>
       </div>
       <BuildingOne class="building1"/>
       <BuildingTwo class="building2"/>
-      <Boat class="boat"/>
+      <div class="boat-wrapper">
+        <Boat class="boat"/>
+      </div>
       <div class="cloud-wrap">
         <AbstractCloud class="cloud cloud1"/>
         <AbstractCloud class="cloud cloud2 "/>
         <AbstractCloud class="cloud cloud3 "/>
         <AbstractCloud class="cloud cloud4 "/>
       </div>
+      <Dock class="dock"/>
+      <Station class="station"/>
+      <Crates class="crates"/>
       <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 z-20">
       <div class="text-center">
         <h1 class="text-retropink text-4xl tracking-tight leading-10 font-bold sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
@@ -26,37 +31,59 @@
 </template>
 
 <script>
-import Train from '~/assets/svg/train-styled.svg';
+import Train from '~/assets/svg/train-5.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
 import BuildingOne from '~/assets/svg/building1.svg'
 import BuildingTwo from '~/assets/svg/building2.svg'
 import Boat from '~/assets/svg/boat.svg'
+import Dock from '~/assets/svg/dock.svg'
+import Crates from '~/assets/svg/crates.svg'
+import Station from '~/assets/svg/Station.svg'
 export default {
+  data() {
+    return {
+      isRightTrain: false,
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.isRightTrain = !this.isRightTrain;
+    }, 20000)
+  },
   components: {
     Train,
     AbstractCloud,
     BuildingOne,
     BuildingTwo,
-    Boat
+    Boat,
+    Dock,
+    Crates,
+    Station
   }
 }
 </script>
 
 <style>
 .hero {
-  background-image: url('~assets/svg/city-2.svg?inline');
+  background-image: url('~assets/svg/no-dock.svg?inline');
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, 50% -100px;
   background-size: 100%, 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 500px;
+  min-height: 450px;
   margin-bottom: -1px;
   position: relative;
 }
 
-.boat {
+@media only screen and (max-width: 576px) {
+  .hero {
+    min-height: 300px;
+  }
+}
+
+.boat-wrapper {
   width: 12vw;
   position: absolute;
   bottom: 0;
@@ -70,12 +97,58 @@ export default {
   animation-iteration-count: infinite;
 }
 
+.boat {
+  position: relative;
+}
+
+.boat-wrapper:before {
+    content: '';
+    background: #57ffe9;
+    background: radial-gradient(circle, rgba(186, 45, 126, 0.8) 0%, rgba(122, 202, 196, 0) 30%);
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    mix-blend-mode: hard-light;
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    right: 0%;
+    transform: scale(1);
+    animation: pulse 2600ms ease-in-out infinite alternate;
+    margin-top: -6%;
+    margin-right: -3.5%;
+}
+
 .building1 {
   width: 5vw;
   position: absolute;
   bottom: 0;
   right: 15%;
   height: auto;
+}
+
+.dock {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: 40%;
+}
+
+.crates {
+  position: absolute;
+  bottom: 1%;
+  right: 30%;
+  height: auto;
+  width: 5vw;
+}
+
+.station {
+  position: absolute;
+  bottom: 1%;
+  right: 30%;
+  height: auto;
+  width: 8vw;
 }
 
 .building2 {
@@ -98,32 +171,50 @@ export default {
   margin-left: auto;
   transform: translate3d(0, 0, 0);
 }
+
 .train-wrapper {
   position: absolute;
   bottom: 0;
   bottom: 0;
   right: 0;
   margin-bottom: 1.2%;
-    animation-name: train;
+  animation-name: train;
   animation-duration: 40s;
   animation-iteration-count: infinite;
   overflow: visible;
 }
 
-.train-wrapper:before {
-    content: '';
-    background: #57ffe9;
-    background: radial-gradient(circle, rgba(87, 255, 233, 0.8) 0%, rgba(122, 202, 196, 0) 30%);
-    width: 40%;
-    height: 40%;
-    border-radius: 50%;
-    mix-blend-mode: hard-light;
-    position: absolute;
-    overflow: visible;
-    top: 0;
-    right: 10%;
-    transform: scale(1);
-    animation: pulse 2600ms ease-in-out infinite alternate;
+
+.left-light:before {
+  right: 11%;
+  content: '';
+  background: #57ffe9;
+  background: radial-gradient(circle, rgba(87, 255, 233, 0.4) 0%, rgba(122, 202, 196, 0) 30%);
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  mix-blend-mode: hard-light;
+  position: absolute;
+  overflow: visible;
+  top: 0;
+  transform: scale(1);
+  animation: pulse 2600ms ease-in-out infinite alternate;
+}
+
+.right-light:before {
+  right: -27%;
+  content: '';
+  background: #57ffe9;
+  background: radial-gradient(circle, rgba(87, 255, 233, 0.4) 0%, rgba(122, 202, 196, 0) 30%);
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  mix-blend-mode: hard-light;
+  position: absolute;
+  overflow: visible;
+  top: 0;
+  transform: scale(1);
+  animation: pulse 2600ms ease-in-out infinite alternate;
 }
 
 .cloud {
@@ -162,9 +253,12 @@ export default {
 
 @keyframes pulse {
   from {
-    transform: scale(1); }
+    transform: scale(1); 
+  }
   to {
-    transform: scale(1.5); } }
+    transform: scale(1.5); 
+  } 
+}
 
 @keyframes train {
   0% {

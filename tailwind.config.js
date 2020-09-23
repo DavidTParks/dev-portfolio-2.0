@@ -6,11 +6,14 @@ module.exports = {
         darkteal: '#041628',
         retropink: '#BA2D7E',
         lightblue: '#C6D0EB',
+        retroteal: '#6CE3D4',
       }
     }
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/ui'),
+  ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: process.env.NODE_ENV === 'production',
