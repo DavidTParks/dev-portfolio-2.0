@@ -39,10 +39,10 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
+/* 
 h1, h2, h3, h4 {
   font-family: "Uni Neue W05 Black";
-}
+} */
 
 @media screen and (prefers-reduced-motion: reduce){
   * {

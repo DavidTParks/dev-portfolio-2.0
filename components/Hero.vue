@@ -18,14 +18,14 @@
       <Crates class="crates"/>
       <Station class="station"/>
       <Dock class="dock"/>
-      <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 z-20">
-      <div class="text-center">
-        <h1 class="text-retropink text-4xl tracking-tight leading-10 font-bold sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
-        <p class="mt-3 max-w-md mx-auto text-base text-lightblue sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          Welcome to my website! Here you can find some projects I've worked on, and some blogs on things that interest me. Oh, and don't mind the city below you, they are happy to have you. Thanks for coming!
-        </p>
-      </div>
-      </main>
+      <header class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 z-20">
+        <div class="text-center">
+          <h1 class="text-retropink pink-glow text-4xl tracking-tight leading-10 font-h1 sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
+          <p class="mt-3 max-w-md mx-auto text-base text-lightblue sm:text-lg md:mt-5 md:text-xl md:max-w-2xl">
+            Welcome to my website! Here you can find some projects I've worked on, and some blogs on things that interest me. Oh, and don't mind the city below you, they are happy to have you. Thanks for coming!
+          </p>
+        </div>
+      </header>
     </div>
   </div>
 </template>
