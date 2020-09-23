@@ -6,7 +6,9 @@ module.exports = {
         darkteal: '#041628',
         retropink: '#BA2D7E',
         lightblue: '#C6D0EB',
+        darkblue: '#04142D',
         retroteal: '#6CE3D4',
+        neonhaze: '#0E4985',
       }
     }
   },

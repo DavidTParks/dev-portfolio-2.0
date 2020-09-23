@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black">
+  <div class="bg-darkblue water">
     <div
       class="max-w-6xl mx-auto px-6 md:px-12 xl:px-0 py-4 flex items-center justify-start"
     >
@@ -10,3 +10,16 @@
     </div>
   </div>
 </template>
+
+<style>
+/* .water {
+  background-image: url('~assets/svg/water.svg?inline');
+  background-repeat: repeat-x;
+  background-position: top center, 10% 0px;
+  background-size: 5%, 100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+} */
+</style>
