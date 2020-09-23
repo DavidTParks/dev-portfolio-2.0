@@ -50,4 +50,5 @@ export default {
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
   }
+  
 }
