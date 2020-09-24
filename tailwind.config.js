@@ -46,6 +46,16 @@ module.exports = {
               color: '#fed318',
             },
           },
+          code:  {
+            color: '#f7fafc',
+            fontWeight: '400',
+            fontSize: '.875em',
+            backgroundColor: '#2d3748',
+            padding: '.25rem',
+            borderWidth: '0',
+            borderColor: '#edf2f7',
+            borderRadius: '.25rem',
+          }
         },
       },
     },
@@ -64,6 +74,9 @@ module.exports = {
         '.yellow-glow': {
           textShadow: '0px 0px 8px rgba(254,211,24,0.6)',
         },
+        '.green-glow': {
+          textShadow :'0px 0px 8px rgba(128,211,77,0.6)',
+        }
       }
 
       addUtilities(newUtilities, ['responsive', 'hover'])
@@ -71,6 +84,7 @@ module.exports = {
   ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
+    mode: 'all',
     enabled: process.env.NODE_ENV === 'production',
     content: [
       'components/**/*.vue',

@@ -15,7 +15,8 @@
     "@tailwindcss/ui": "^0.6.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
-    "nuxt-svg-loader": "^1.2.0"
+    "nuxt-svg-loader": "^1.2.0",
+    "prism-themes": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.0.2"

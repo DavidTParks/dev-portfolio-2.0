@@ -67,6 +67,11 @@ export default {
 }
 
 .nuxt-content a {
+  transition: all 0.1s;
+  @apply green-glow;
+}
+
+.nuxt-content a:hover {
   @apply yellow-glow;
 }
 </style>

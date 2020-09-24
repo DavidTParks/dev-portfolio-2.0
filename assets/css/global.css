@@ -55,3 +55,11 @@ h1, h2, h3, h4 {
 .nuxt-content-editor {
   color: black !important;
 }
+
+.prose code::before {
+  content: none !important;
+}
+
+.prose code::after {
+  content: none !important;
+}
