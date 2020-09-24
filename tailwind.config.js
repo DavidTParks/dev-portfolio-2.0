@@ -20,7 +20,7 @@ module.exports = {
     fontFamily: {
       'h1' : ['"Uni Neue W05 Black"','serif'],
       'h2' : ['"Uni Neue W05 Bold"','serif'],
-      'body' : ['"Uni Neue W05 Regular', 'serif']
+      'body' : ['"Uni Neue W05 Regular"', 'serif']
     },
   },
   variants: {},
