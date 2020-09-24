@@ -4,9 +4,6 @@ description: 'You can use `<nuxt-content>` component directly in your template t
 position: 5
 category: Getting started
 ---
-
-<alert type="info">This section is only for Markdown files.</alert>
-
 ## Component
 
 You can use `<nuxt-content>` component directly in your template to display the page body:

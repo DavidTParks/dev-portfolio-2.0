@@ -4,6 +4,7 @@
     <Hero/>
     <PageBreak/>
     <Nuxt />
+    <Footer/>
   </div>
 </template>
 

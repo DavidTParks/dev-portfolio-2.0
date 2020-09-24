@@ -86,6 +86,7 @@ module.exports = {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     mode: 'all',
     enabled: process.env.NODE_ENV === 'production',
+    whitelist: ['h1', 'h2', 'h3', 'p', 'blockquote', 'code', 'a', 'strong'],
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',
