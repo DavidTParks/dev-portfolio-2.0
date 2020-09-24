@@ -12,14 +12,4 @@
 </template>
 
 <style>
-/* .water {
-  background-image: url('~assets/svg/water.svg?inline');
-  background-repeat: repeat-x;
-  background-position: top center, 10% 0px;
-  background-size: 5%, 100%;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  opacity: 0.2;
-} */
 </style>
