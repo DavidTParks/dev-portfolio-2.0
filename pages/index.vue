@@ -1,6 +1,8 @@
 <template>
   <div>
-    <BlogSection/>
+    <BlogSection>
+        <MainBlogSection/>
+    </BlogSection>
   </div>
 </template>
 

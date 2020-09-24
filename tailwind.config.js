@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   theme: {
     extend: {
@@ -22,9 +24,50 @@ module.exports = {
       'h2' : ['"Uni Neue W05 Bold"','serif'],
       'body' : ['"Uni Neue W05 Regular"', 'serif']
     },
+    typography: {
+      default: {
+        css: {
+          color: '#C6D0EB',
+          h1: {
+            color: '#BA2D7E',
+          },
+          h2: {
+            color: '#6CE3D4',
+          },
+          blockquote: {
+            color: '#fed318'
+          },
+          strong: {
+            color: '#BA2D7E',
+          },
+          a: {
+            color: '#80D34D',
+            '&:hover': {
+              color: '#fed318',
+            },
+          },
+        },
+      },
+    },
   },
   variants: {},
   plugins: [
+    require('@tailwindcss/typography'),
+    plugin(function({ addUtilities }) {
+      const newUtilities = {
+        '.teal-glow': {
+          textShadow: '0px 0px 8px rgba(108,227,212,0.6)',
+        },
+        '.pink-glow': {
+          textShadow: '0px 0px 8px rgba(186,45,126,0.4);',
+        },
+        '.yellow-glow': {
+          textShadow: '0px 0px 8px rgba(254,211,24,0.6)',
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    })
   ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
