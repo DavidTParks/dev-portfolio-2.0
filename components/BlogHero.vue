@@ -3,6 +3,7 @@
     <div class="left-light train-wrapper-hero">
       <Train class="train-hero w-3/12 h-auto"/>
     </div>
+
     <div class="moon-wrapper absolute top-0 right-0 mr-12">
       <Moon class="moon h-12 w-12  lg:w-24 lg:h-24 relative"/>
     </div>
@@ -20,7 +21,7 @@ export default {
   props: ['article'],
   components: {
     Train,
-    Moon
+    Moon,
   },
   methods: {
     formatDate(date) {

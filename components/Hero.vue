@@ -9,6 +9,7 @@
       <div class="boat-wrapper">
         <Boat class="boat"/>
       </div>
+      <Plane class="plane w-24 h-24 absolute"/>
       <div class="cloud-wrap">
         <AbstractCloud class="cloud cloud1"/>
         <AbstractCloud class="cloud cloud2 "/>
@@ -32,6 +33,8 @@
 
 <script>
 import Train from '~/assets/svg/train-5.svg';
+import Helicopter from '~/assets/svg/helicopter.svg';
+import Plane from '~/assets/svg/plane1.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
 import BuildingOne from '~/assets/svg/building1.svg'
 import BuildingTwo from '~/assets/svg/building2.svg'
@@ -58,7 +61,9 @@ export default {
     Boat,
     Dock,
     Crates,
-    Station
+    Station,
+    Helicopter,
+    Plane
   }
 }
 </script>
@@ -215,6 +220,25 @@ export default {
   top: 0;
   transform: scale(1);
   animation: 5s appear ease-in-out;
+}
+
+.plane {
+  height: auto;
+  width: 5vw;
+  bottom: 20%;
+  right: 0;
+  transform: translate3d(0, 0, 0);
+  animation: plane 20s 1 linear forwards;
+}
+
+@keyframes plane {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-150vw, -40vh, 0);
+    display: none;
+  }
 }
 
 .cloud {
