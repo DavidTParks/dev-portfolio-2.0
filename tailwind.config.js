@@ -34,6 +34,9 @@ module.exports = {
           h2: {
             color: '#6CE3D4',
           },
+          h3: {
+            color: '#fed318',
+          },
           blockquote: {
             color: '#fed318'
           },

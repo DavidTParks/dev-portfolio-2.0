@@ -3,3 +3,17 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer utilities {
+  .yellow-glow {
+    text-shadow: 0px 0px 8px rgba(254,211,24,0.6);
+  }
+
+  .pink-glow {
+    text-shadow: 0px 0px 8px rgba(186,45,126,0.4);
+  }
+
+  .teal-glow {
+    text-shadow: 0px 0px 8px rgba(108,227,212,0.6);
+  }
+}

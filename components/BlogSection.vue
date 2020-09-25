@@ -9,7 +9,7 @@
   <DinosaurOne class="dino1"/>
   <DinosaurTwo class="dino2"/>
   <main class="pt-16 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
-    <div class="relative max-w-lg mx-auto lg:max-w-5xl">
+    <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl">
       <slot/>
     </div>
   </main>

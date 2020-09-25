@@ -6,7 +6,7 @@
     <div class="moon-wrapper absolute top-0 right-0 mr-12">
       <Moon class="moon h-12 w-12  lg:w-24 lg:h-24 relative"/>
     </div>
-    <div class="relative max-w-lg mx-auto lg:max-w-5xl pb-4">
+    <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl pb-4">
       <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p>
       <h1 class="text-4xl leading-10 font-extrabold  sm:text-5xl sm:leading-none md:text-5xl font-h1 text-lightblue mt-2">{{article.title}}</h1>
     </div>
@@ -52,7 +52,6 @@ export default {
   bottom: 0;
   right: 0;
   margin-bottom: 1.3%;
-  overflow: visible;
   animation-name: train;
   animation-duration: 40s;
   animation-iteration-count: infinite;
@@ -85,6 +84,5 @@ export default {
   overflow: visible;
   z-index: 0;
   transform: scale(5);
-
 }
 </style>
