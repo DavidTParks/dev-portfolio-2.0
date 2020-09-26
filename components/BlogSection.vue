@@ -1,11 +1,7 @@
 <template>
 <div class="relative">
-  <div class="blog-section">
-  
-  </div>
-  <div class="blog-gradient">
-
-  </div>
+  <div class="blog-section"/>
+  <div class="blog-gradient"/>
   <DinosaurOne class="dino1"/>
   <DinosaurTwo class="dino2"/>
   <main class="pt-16 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">

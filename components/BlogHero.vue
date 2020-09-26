@@ -53,13 +53,13 @@ export default {
   bottom: 0;
   right: 0;
   margin-bottom: 1.3%;
-  animation-name: train;
+  animation-name: trainblog;
   animation-duration: 40s;
   animation-iteration-count: infinite;
   transform: translate3d(0, 0, 0);
 }
 
-@keyframes train {
+@keyframes trainblog {
   0% {
     transform: translate3d(30vw, 0, 0);
   }

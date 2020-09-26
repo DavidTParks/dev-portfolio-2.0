@@ -30,6 +30,12 @@ import getShareImage from '@jlengstorf/get-share-image';
 
 export default {
   layout: 'blog',
+  transition(to, from) {
+    if (!from) {
+      return 'slide-left'
+    }
+    return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+  },
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
