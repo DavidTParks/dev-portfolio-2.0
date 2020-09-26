@@ -37,6 +37,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-svg-loader',
+    '@nuxtjs/sitemap'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
@@ -45,6 +46,15 @@ export default {
       prism: {
         theme: 'prism-themes/themes/prism-synthwave84.css'
       }
+    }
+  },
+  sitemap: {
+    hostname: 'https://goofy-cray-1b1c02.netlify.app/',
+    routes: async () => {
+      const { $content } = require("@nuxt/content");
+      const files = await $content({ deep: true }).only(["path"]).fetch();
+
+      return files.map((file) => (file.path === "/index" ? "/" : file.path));
     }
   },
 
