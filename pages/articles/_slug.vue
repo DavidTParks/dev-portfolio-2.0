@@ -28,7 +28,9 @@
 
 <script>
 import getShareImage from '@jlengstorf/get-share-image';
+import getSiteMeta from "~/utils/getSiteMeta.js";
 
+const meta = getSiteMeta();
 
 export default {
   layout: 'blog',
@@ -48,18 +50,64 @@ export default {
       titleColor: 'fff',
       taglineColor: '6CE3D4',
       textLeftOffset: '100',
-      titleBottomOffset: '355',
-      taglineTopOffset: '375'
+      titleBottomOffset: '380',
+      taglineTopOffset: '350'
     });
 
-    console.log(socialImage)
-    return { article }
+
+    return { article, socialImage }
   },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
     }
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: this.article.title,
+        description: this.article.description,
+        url: `https://davidparks.dev/articles/${this.$route.params.slug}`,
+        mainImage: this.socialImage,
+      };
+      return getSiteMeta(metaData);
+    }
+  },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        ...this.meta,
+        {
+          property: "article:published_time",
+          content: this.article.createdAt,
+        },
+        {
+          property: "article:modified_time",
+          content: this.article.updatedAt,
+        },
+        {
+          property: "article:tag",
+          content: this.article.tags ? this.article.tags.toString() : "",
+        },
+        { name: "twitter:label1", content: "Written by" },
+        { name: "twitter:data1", content: "David Parks" },
+        { name: "twitter:label2", content: "Filed under" },
+        {
+          name: "twitter:data2",
+          content: this.article.tags ? this.article.tags.toString() : "",
+        },
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://davidparks.dev/articles/${this.$route.params.slug}`,
+        },
+      ],
+    };
   }
 }
 </script>
