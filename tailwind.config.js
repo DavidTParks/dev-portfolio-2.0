@@ -98,7 +98,8 @@ module.exports = {
       'layouts/**/*.vue',
       'pages/**/*.vue',
       'plugins/**/*.js',
-      'nuxt.config.js'
+      'nuxt.config.js',
+      'node_modules/prism-themes/themes/prism-synthwave84.css'
     ]
   }
 }
