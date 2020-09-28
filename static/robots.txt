@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: 
-Sitemap: https://goofy-cray-1b1c02.netlify.app/sitemap.xml
+Sitemap: https://davidparks.dev/sitemap.xml
