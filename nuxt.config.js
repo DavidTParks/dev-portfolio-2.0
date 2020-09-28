@@ -24,8 +24,8 @@ export default {
       },
       { charset: 'utf-8' },
       { hid: 'description', name: 'description', content: '' },
-      { property: "og:image:width", content: "740" },
-      { property: "og:image:height", content: "300" },
+      // { property: "og:image:width", content: "740" },
+      // { property: "og:image:height", content: "300" },
       { name: "twitter:site", content: "@dparksdev" },
       { name: "twitter:card", content: "summary_large_image" }
     ],

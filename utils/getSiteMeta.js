@@ -3,7 +3,7 @@ const url = "https://davidparks.dev";
 const title = "David Parks";
 const description =
   "Articles focused on Frontend development. Focused in Vue.js, Nuxt.js, CSS and Animation!";
-const mainImage = "/default-og.png";
+const mainImage = "https://davidparksdev.s3.us-east-2.amazonaws.com/default-og-large.png";
 
 export default (meta) => {
   return [
