@@ -182,7 +182,7 @@ export default {
   bottom: 0;
   bottom: 0;
   right: 0;
-  margin-bottom: 1.3%;
+  margin-bottom: 1.2%;
   overflow: visible;
   animation-name: train;
   animation-duration: 40s;

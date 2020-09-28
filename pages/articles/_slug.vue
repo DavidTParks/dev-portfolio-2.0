@@ -1,24 +1,26 @@
 <template>
-  <div>
+  <div class="pt-16">
     <BlogHero :article="article"/>
     <PageBreak/>
     <BlogSection>
-      <div class="grid gap-24 grid-cols-1 lg:grid-cols-3">
-        <section class="col-span-1 lg:col-span-3">
+      <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
+        <section class="col-span-1 lg:col-span-2">
           <article class="prose lg:prose-xl">
             <nuxt-content :document="article" />
           </article>
         </section>
-        <!-- <section class="hidden sm:col-span-1 sm:flex sm:flex-col">
-          <h2>Table of contents</h2>
-          <nav>
-            <ul>
-              <li v-for="link of article.toc" :key="link.id">
-                <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
-              </li>
-            </ul>
-          </nav>
-        </section> -->
+        <section class="hidden sm:col-span-1 sm:flex sm:flex-col pt-16">
+          <div class="sticky top-16 pt-12">
+            <h2 class="text-infoblue font-h2 text-3xl">Table of contents</h2>
+            <nav class="mt-4">
+              <ul>
+                <li v-for="link of article.toc" :key="link.id">
+                  <NuxtLink class="text-lightblue text-xl mb-2 block" :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </section>
       </div>
     </BlogSection>
   </div>
@@ -30,22 +32,24 @@ import getShareImage from '@jlengstorf/get-share-image';
 
 export default {
   layout: 'blog',
-  transition(to, from) {
-    if (!from) {
-      return 'slide-left'
-    }
-    return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
-  },
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
     const socialImage = getShareImage({
-      title: 'Deploy a Node.js App to DigitalOcean with SSL',
-      tagline: '#devops #nodejs #ssl',
+      title: article.title,
+      tagline:  article.subtitle,
       cloudName: 'dzxp4ujfz',
-      imagePublicID: 'template_k1c9zk.png',
-      font: 'futura',
-      textColor: '232129',
+      imagePublicID: 'template_oxlcmb.png',
+      titleFont: 'unienueueitalic.otf',
+      titleExtraConfig: '_line_spacing_-10',
+      taglineFont: 'unienueueitalic.otf',
+      titleFontSize: '72',
+      taglineFontSize: '40',
+      titleColor: 'fff',
+      taglineColor: '6CE3D4',
+      textLeftOffset: '100',
+      titleBottomOffset: '355',
+      taglineTopOffset: '375'
     });
 
     console.log(socialImage)
@@ -67,6 +71,7 @@ export default {
 
 .nuxt-content h2 {
   @apply teal-glow font-h2;
+  padding-top: 70px; margin-top: -70px;
 }
 
 .nuxt-content h3 {

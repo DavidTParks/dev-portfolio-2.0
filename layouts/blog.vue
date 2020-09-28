@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-tokyosky overflow-hidden">
+  <div class="min-h-screen bg-tokyosky">
     <NavBar/>
     <Nuxt />
     <Footer/>

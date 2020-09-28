@@ -1,7 +1,7 @@
 <template>
-<nav class="w-full fixed z-50 bg-darkteal">
+<nav class="w-full bg-darkteal">
   <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl">
-    <div class="relative flex items-center justify-start h-16">
+    <div class="relative flex items-center justify-center h-16">
       <div class="flex items-center px-2 lg:px-0">
         <div class="">
           <div class="flex">

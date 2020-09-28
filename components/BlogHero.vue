@@ -1,11 +1,11 @@
 <template>
-  <main class="pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8 bg-darkteal blog-hero">
+  <main class="pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8 bg-darkteal blog-hero overflow-hidden">
     <div class="left-light train-wrapper-hero">
       <Train class="train-hero w-3/12 h-auto"/>
     </div>
 
-    <div class="moon-wrapper absolute top-0 right-0 mr-12">
-      <Moon class="moon h-12 w-12  lg:w-24 lg:h-24 relative"/>
+    <div class="moon-wrapper absolute top-0 right-0 mr-12 mt-12">
+      <Moon class="moon h-12 w-12  lg:w-16 lg:h-16 relative"/>
     </div>
     <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl pb-4">
       <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p>
@@ -52,7 +52,7 @@ export default {
   bottom: 0;
   bottom: 0;
   right: 0;
-  margin-bottom: 1.3%;
+  margin-bottom: 1.1%;
   animation-name: trainblog;
   animation-duration: 40s;
   animation-iteration-count: infinite;

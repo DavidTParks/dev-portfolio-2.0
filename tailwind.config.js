@@ -17,7 +17,10 @@ module.exports = {
         retroyellow: '#fed318',
         retrored: '#fd3458',
         dangerred: '#F1114D',
-      }
+      },
+      inset: {
+        '16': '4rem',
+      },
     },
     fontFamily: {
       'h1' : ['"Uni Neue W05 Black"','serif'],

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-tokyosky overflow-hidden">
-    <NavBar/>
+    <NavBarHome/>
     <Hero/>
     <PageBreak/>
     <Nuxt />
