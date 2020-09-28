@@ -93,6 +93,8 @@ module.exports = {
     mode: 'all',
     enabled: process.env.NODE_ENV === 'production',
     whitelist: ['h1', 'h2', 'h3', 'p', 'blockquote', 'code', 'a', 'strong'],
+    whitelistPatterns: [/token.*/, /class.*/],
+    whitelistPatternsChildren: [/token.*/, /class.*/],
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',
