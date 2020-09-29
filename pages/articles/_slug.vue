@@ -5,18 +5,18 @@
     <BlogSection>
       <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
         <section class="col-span-1 lg:col-span-2">
-          <article class="prose dark-mode:prose-dark lg:prose-xl">
+          <article class="prose lg:prose-xl">
             <!-- <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p> -->
             <nuxt-content :document="article" />
           </article>
         </section>
         <section class="hidden sm:col-span-1 sm:flex sm:flex-col">
           <div class="sticky top-16">
-            <h2 class="text-white uppercase font-h2 text-lg mt-16">Table of contents</h2>
+            <h2 class="dark:text-white text-black uppercase font-h2 text-lg mt-16">Table of contents</h2>
             <nav class="mt-4">
               <ul>
                 <li :class="{ 'toc2': link.depth === 2, 'pl-4': link.depth === 3 }" class="toc-list" v-for="link of article.toc" :key="link.id">
-                  <a class="text-lightblue hover:text-retrored transition-colors duration-75 text-base mb-2 block" :href="`#${link.id}`">{{ link.text }}</a>
+                  <a class="dark:text-lightblue text-black dark:hover:text-retrored transition-colors duration-75 text-base mb-2 block" :href="`#${link.id}`">{{ link.text }}</a>
                 </li>
               </ul>
             </nav>
@@ -141,13 +141,27 @@ export default {
   @apply pink-glow font-h1;
 }
 
-.nuxt-content h2 {
-  @apply teal-glow font-h2;
+.dark .nuxt-content h2 {
+  @apply teal-glow text-retroteal font-h2;
   padding-top: 90px; margin-top: -90px;
 }
 
-.nuxt-content h3 {
+.dark .nuxt-content h3 {
   @apply yellow-glow font-h2;
+  padding-top: 90px; margin-top: -90px;
+}
+
+.light .nuxt-content {
+  @apply text-black;
+}
+
+.light .nuxt-content h2 {
+  @apply text-darkpurple font-h2;
+  padding-top: 90px; margin-top: -90px;
+}
+
+.light .nuxt-content h3 {
+  @apply font-h2 text-infoblue;
   padding-top: 90px; margin-top: -90px;
 }
 
@@ -160,8 +174,12 @@ export default {
   @apply yellow-glow;
 }
 
-.toc-list.active a {
+.dark .toc-list.active a {
   @apply text-retropink;
+}
+
+.light .toc-list.active a {
+  @apply text-infoblue;
 }
 
 </style>

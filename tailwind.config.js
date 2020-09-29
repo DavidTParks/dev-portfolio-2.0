@@ -68,15 +68,15 @@ module.exports = {
       },
       dark: {
         css: {
-          color: '#000',
+          color: '#C6D0EB',
           h1: {
-            color: '#000',
+            color: '#BA2D7E',
           },
           h2: {
-            color: '#000',
+            color: '#6CE3D4',
           },
           h3: {
-            color: '#000',
+            color: '#C6D0EB',
           },
           blockquote: {
             color: '#fed318'
@@ -85,7 +85,7 @@ module.exports = {
             color: '#BA2D7E',
           },
           a: {
-            color: '#000',
+            color: '#80D34D',
             '&:hover': {
               color: '#fed318',
             },
@@ -104,7 +104,6 @@ module.exports = {
       }
     },
   },
-  variants: {},
   plugins: [
     require('@tailwindcss/typography'),
     plugin(function({ addUtilities }) {
