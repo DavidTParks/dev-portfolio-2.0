@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "generate-quiet" : "nuxt generate --quiet"
+    "generate-quiet": "nuxt generate --quiet"
   },
   "dependencies": {
     "@jlengstorf/get-share-image": "^0.7.1",
@@ -21,6 +21,7 @@
     "prism-themes": "^1.4.0"
   },
   "devDependencies": {
+    "@nuxtjs/color-mode": "^1.1.1",
     "@nuxtjs/tailwindcss": "^3.0.2"
   }
 }

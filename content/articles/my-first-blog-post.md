@@ -6,6 +6,7 @@ position: 5
 category: Getting started
 ---
 ## Component
+### Welcome to the blog
 
 You can use `<nuxt-content>` component directly in your template to display the page body:
 
@@ -54,6 +55,9 @@ You can find an example in the [docs directory](https://github.com/nuxt/content/
 
 ## Live Editing
 
+### Putting it all together
+### Second point
+### Third point
 > Available in version **>= v1.4.0**
 
 **In development**, you can edit your content by **double-clicking** on the `<nuxt-content>` component. A textarea will allow you to edit the content of the current file and will save it on the file-system.

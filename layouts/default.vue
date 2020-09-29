@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-tokyosky overflow-hidden">
+  <div class="min-h-screen dark:bg-tokyosky bg-duststorm overflow-hidden">
     <NavBarHome/>
     <Hero/>
     <PageBreak/>

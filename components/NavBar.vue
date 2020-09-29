@@ -1,27 +1,36 @@
 <template>
-<nav class="w-full fixed z-50 bg-darkteal">
+<nav class="w-full fixed z-50 dark:bg-darkteal bg-duststorm">
   <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl">
     <div class="relative flex items-center justify-start h-16">
-      <div class="flex items-center px-2 lg:px-0">
-        <div class="">
-          <div class="flex">
-            <a href="#" class="px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</a>
-            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm leading-5 font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Contact</a>
-            <label for="search" class="sr-only">Search</label>
-            <div class="relative">
-              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-                </svg>
-              </div>
-              <input id="search" class="hidden block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-gray-700 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-white focus:text-gray-900 sm:text-sm transition duration-150 ease-in-out" placeholder="Search" type="search">
-            </div>
+      <div class="flex items-center px-4 lg:px-0 w-full">
+          <div class="flex w-full">
+            <nuxt-link to="/" class="py-2 rounded-md text-sm md:text-lg leading-5 font-medium text-retropink font-h2 hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out">David Parks</nuxt-link>
+            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm md:text-lg leading-5 font-medium dark:text-gray-300 text-neonhaze hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</a>
+            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm md:text-lg leading-5 font-medium dark:text-gray-300 text-neonhaze hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
+            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm md:text-lg leading-5 font-medium dark:text-gray-300 text-neonhaze hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Contact</a>
+            <button v-if="$colorMode.value === 'dark'" class="ml-auto focus:outline-none" @click="toggle"><Sun class="w-6 h-6 text-white fill-current"/></button>
+            <button v-if="$colorMode.value === 'light'" class="ml-auto focus:outline-none" @click="toggle"><Moon class="w-6 h-6 text-neonhaze fill-current"/></button>
           </div>
-        </div>
       </div>
     </div>
   </div>
 </nav>
 
 </template>
+
+<script>
+import Moon from '~/assets/svg/moon.svg';
+import Sun from '~/assets/svg/sun.svg';
+export default {
+  components: {
+    Moon,
+    Sun
+  },
+  methods: {
+    toggle() {
+      this.$colorMode.preference =
+        this.$colorMode.value == "light" ? "dark" : "light";
+    }
+  }
+}
+</script>

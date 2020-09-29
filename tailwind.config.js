@@ -17,6 +17,8 @@ module.exports = {
         retroyellow: '#fed318',
         retrored: '#fd3458',
         dangerred: '#F1114D',
+        darkpurple: '#200C53',
+        duststorm: '#F6EAD0',
       },
       inset: {
         '16': '4rem',
@@ -38,7 +40,7 @@ module.exports = {
             color: '#6CE3D4',
           },
           h3: {
-            color: '#fed318',
+            color: '#C6D0EB',
           },
           blockquote: {
             color: '#fed318'
@@ -82,6 +84,12 @@ module.exports = {
         },
         '.green-glow': {
           textShadow :'0px 0px 8px rgba(128,211,77,0.6)',
+        },
+        '.white-glow': {
+          textShadow :'0px 0px 8px rgba(255,255,255,0.6)',
+        },
+        '.light-blue-glow': {
+          textShadow : '0px 0px 8px rgba(198, 208, 235, 0.6)',
         }
       }
 
@@ -95,7 +103,7 @@ module.exports = {
     whitelistPatternsChildren: [/token$/],
     whitelist: ['h1', 'h2', 'h3', 'p', 'blockquote', 'code', 'a', 'strong',  'pre', 'code', 'prism', 'line-numbers', 'tag', 'toolbar-item', 'toolbar',
     'code-toolbar', 'span', 'button', 'line-numbers-rows', 'url-link', 'attr-name', 'attr-value', 'punctuation',
-    'keyword', 'keyword-let', 'operator', 'string'],
+    'keyword', 'keyword-let', 'operator', 'string', 'dark-mode'],
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',
@@ -103,5 +111,9 @@ module.exports = {
       'plugins/**/*.js',
       'nuxt.config.js',
     ]
-  }
+  },
+  experimental: {
+    darkModeVariant: true
+  },
+  dark: 'class'
 }
