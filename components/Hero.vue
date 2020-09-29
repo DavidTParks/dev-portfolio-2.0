@@ -11,18 +11,26 @@
       </div>
       <Plane class="plane w-24 h-24 absolute"/>
       <div class="cloud-wrap">
-        <AbstractCloud class="cloud cloud1"/>
-        <AbstractCloud class="cloud cloud2 "/>
-        <AbstractCloud class="cloud cloud3 "/>
-        <AbstractCloud class="cloud cloud4 "/>
+        <template v-if="$colorMode.value === 'dark'">
+          <AbstractCloud class="cloud cloud1"/>
+          <AbstractCloud class="cloud cloud2 "/>
+          <AbstractCloud class="cloud cloud3 "/>
+          <AbstractCloud class="cloud cloud4 "/>
+        </template>
+        <template v-else>
+          <LightCloud class="cloud cloud1"/>
+          <LightCloud class="cloud cloud2 "/>
+          <LightCloud class="cloud cloud3 "/>
+          <LightCloud class="cloud cloud4 "/>
+        </template>
       </div>
       <Crates class="crates"/>
       <Station class="station"/>
       <Dock class="dock"/>
       <header class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 z-20">
         <div class="text-center">
-          <h1 class="text-retropink pink-glow text-4xl tracking-tight leading-10 font-h1 sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
-          <p class="mt-3 max-w-md mx-auto text-base dark:text-lightblue text-darkpurple sm:text-lg md:mt-5 md:text-xl md:max-w-2xl">
+          <h1 class="dark:text-retropink dark:light-blue-glow text-gray-900 dark:pink-glow text-4xl tracking-tight leading-10 font-h1 sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
+          <p class="mt-3 max-w-md mx-auto text-base dark:text-lightblue text-black sm:text-lg md:mt-5 md:text-xl md:max-w-2xl">
             Welcome to my website! Here you can find some projects I've worked on, and some blogs on things that interest me. Oh, and don't mind the city below you, they are happy to have you. Thanks for coming!
           </p>
         </div>
@@ -36,6 +44,7 @@ import Train from '~/assets/svg/train-5.svg';
 import Helicopter from '~/assets/svg/helicopter.svg';
 import Plane from '~/assets/svg/plane1.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
+import LightCloud from '~/assets/svg/light-cloud.svg'
 import BuildingOne from '~/assets/svg/building1.svg'
 import BuildingTwo from '~/assets/svg/building2.svg'
 import Boat from '~/assets/svg/boat.svg'
@@ -56,6 +65,7 @@ export default {
   components: {
     Train,
     AbstractCloud,
+    LightCloud,
     BuildingOne,
     BuildingTwo,
     Boat,
@@ -106,7 +116,7 @@ export default {
   position: relative;
 }
 
-.boat-wrapper:before {
+.dark .boat-wrapper:before {
   content: '';
   background: #57ffe9;
   background: radial-gradient(circle, rgba(186, 45, 126, 0.8) 0%, rgba(122, 202, 196, 0) 30%);
@@ -190,7 +200,7 @@ export default {
 }
 
 
-.left-light:before {
+.dark .left-light:before {
   right: 11%;
   content: '';
   background: #57ffe9;
@@ -203,10 +213,10 @@ export default {
   overflow: visible;
   top: 0;
   transform: scale(1);
-  animation: 5s appear ease-in-out;
+  animation: 1s appear ease-in-out;
 }
 
-.right-light:before {
+.dark .right-light:before {
   right: -27%;
   content: '';
   background: #57ffe9;
@@ -219,7 +229,7 @@ export default {
   overflow: visible;
   top: 0;
   transform: scale(1);
-  animation: 5s appear ease-in-out;
+  animation: 1s appear ease-in-out;
 }
 
 .plane {
@@ -241,12 +251,19 @@ export default {
   }
 }
 
-.cloud {
+.dark .cloud {
   transform: translate3d(0, 0, 0);
-  animation-name: cloud1 ease-in-out;
+  animation-name: cloud-animation;
   animation-duration: 60s;
   animation-iteration-count: infinite;
   filter: brightness(0.3);
+}
+
+.light .cloud {
+  transform: translate3d(0, 0, 0);
+  animation-name: cloud-animation;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
 }
 
 .cloud2 {
@@ -296,7 +313,7 @@ export default {
   }
 }
 
-@keyframes cloud1 {
+@keyframes cloud-animation {
   0% {
     transform: translate3d(0, 0, 0);
   }

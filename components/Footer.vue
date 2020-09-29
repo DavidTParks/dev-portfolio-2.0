@@ -35,7 +35,7 @@ export default {
 }
 
 .light .lava-backdrop {
-  background-image: url('~assets/svg/sand-lava.svg?inline');
+  /* background-image: url('~assets/svg/sand-lava.svg?inline'); */
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, 50% -100px;
   background-size: 100%, 100%;
