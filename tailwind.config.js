@@ -66,6 +66,42 @@ module.exports = {
           }
         },
       },
+      dark: {
+        css: {
+          color: '#000',
+          h1: {
+            color: '#000',
+          },
+          h2: {
+            color: '#000',
+          },
+          h3: {
+            color: '#000',
+          },
+          blockquote: {
+            color: '#fed318'
+          },
+          strong: {
+            color: '#BA2D7E',
+          },
+          a: {
+            color: '#000',
+            '&:hover': {
+              color: '#fed318',
+            },
+          },
+          code:  {
+            color: '#f7fafc',
+            fontWeight: '400',
+            fontSize: '.875em',
+            backgroundColor: '#2d3748',
+            padding: '.25rem',
+            borderWidth: '0',
+            borderColor: '#edf2f7',
+            borderRadius: '.25rem',
+          }
+        },
+      }
     },
   },
   variants: {},

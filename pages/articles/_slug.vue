@@ -5,7 +5,7 @@
     <BlogSection>
       <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
         <section class="col-span-1 lg:col-span-2">
-          <article class="prose lg:prose-xl">
+          <article class="prose dark-mode:prose-dark lg:prose-xl">
             <!-- <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p> -->
             <nuxt-content :document="article" />
           </article>

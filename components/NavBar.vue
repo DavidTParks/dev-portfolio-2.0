@@ -1,5 +1,5 @@
 <template>
-<nav class="w-full fixed z-50 dark:bg-darkteal bg-duststorm">
+<nav class="w-full fixed z-50 dark:bg-darkteal bg-lightblue">
   <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl">
     <div class="relative flex items-center justify-start h-16">
       <div class="flex items-center px-4 lg:px-0 w-full">

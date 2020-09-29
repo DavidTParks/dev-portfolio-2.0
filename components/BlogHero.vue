@@ -1,5 +1,5 @@
 <template>
-  <header class="pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8 dark:bg-darkteal bg-duststorm blog-hero overflow-hidden">
+  <header class="pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8 dark:bg-darkteal bg-lightblue blog-hero overflow-hidden">
     <div class="left-light train-wrapper-hero">
       <Train class="train-hero w-3/12 h-auto"/>
     </div>
@@ -10,14 +10,14 @@
     </div>
     <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl pb-4">
       <div class="flex items-center">
-          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium text-gray-500 hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out">Home</nuxt-link>
-          <Chevron class="text-gray-500 h-4 w-4 md:h-6 md:w-6 mx-2"/>
-          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium text-gray-500 hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out ml-2">Blog</nuxt-link>
-          <Chevron class="text-gray-500 h-4 w-4 md:h-6 md:w-6 mx-2"/>
-          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium text-gray-500 hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out ml-2">Nuxt</nuxt-link>
+          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out">Home</nuxt-link>
+          <Chevron class="dark:text-gray-500 text-gray-600  h-4 w-4 md:h-6 md:w-6 mx-2"/>
+          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out ml-2">Blog</nuxt-link>
+          <Chevron class="dark:text-gray-500 text-gray-600 h-4 w-4 md:h-6 md:w-6 mx-2"/>
+          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out ml-2">Nuxt</nuxt-link>
       </div>
       <h1 class="text-4xl leading-10 font-extrabold  sm:text-5xl sm:leading-none md:text-5xl font-h1 dark:text-lightblue text-darkpurple mt-12">{{article.title}}</h1>
-      <h2 class="text-sm font-extrabold  sm:leading-none md:text-xl font-h2 text-gray-600 mt-4 ">{{article.subtitle}}</h2>
+      <h2 class="text-sm font-extrabold  sm:leading-none md:text-xl font-h2 dark:text-gray-600 text-gray-700 mt-4 ">{{article.subtitle}}</h2>
     </div>
   </header>
 </template>

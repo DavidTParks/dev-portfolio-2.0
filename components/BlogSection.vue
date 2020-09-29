@@ -39,7 +39,7 @@ export default {
   margin-top: -1.5rem;
 }
 
-.blog-gradient {
+.dark .blog-gradient {
   background: rgb(0,1,45);
   background: linear-gradient(0deg, rgba(0,1,45,1) 0%, rgba(0,0,0,0) 100%);
   position: absolute;
@@ -47,7 +47,15 @@ export default {
   width: 100%;
 }
 
-.dino1 {
+.light .blog-gradient {
+  background: rgb(246, 234, 208);
+  background: linear-gradient(0deg, rgba(246, 234, 208,1) 0%, rgba(0,0,0,0) 100%);
+  position: absolute;
+  height: 285px;
+  width: 100%;
+}
+
+.dark .dino1 {
   position: absolute;
   height: 15vh;
   width: 15vw;
@@ -57,13 +65,34 @@ export default {
   transform: translateX(5%);
 }
 
-.dino2 {
+.dark .dino2 {
   position: absolute;
   height: 12vh;
   width: 12vw;
   right:5%;
   filter: brightness(1);
   opacity: 0.1;
+  transform: rotate(240deg);
+  top: 3rem;
+}
+
+.light .dino1 {
+  position: absolute;
+  height: 15vh;
+  width: 15vw;
+  transform: rotate(90deg);
+  filter: brightness(0);
+  opacity: 0.2;
+  transform: translateX(5%);
+}
+
+.light .dino2 {
+  position: absolute;
+  height: 12vh;
+  width: 12vw;
+  right:5%;
+  filter: brightness(0);
+  opacity: 0.2;
   transform: rotate(240deg);
   top: 3rem;
 }

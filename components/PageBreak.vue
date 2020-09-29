@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-darkblue water">
+  <div class="dark:bg-darkblue bg-duststorm water">
     <div
       class="max-w-6xl mx-auto px-6 md:px-12 xl:px-0 py-4 flex items-center justify-start"
     >
