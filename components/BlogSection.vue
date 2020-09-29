@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style>
-.blog-section {
+.dark .blog-section {
   background-image: url('~assets/svg/ground3.svg?inline');
   background-repeat: no-repeat no-repeat;
   background-position: top center, 10% 0px;
@@ -35,7 +35,7 @@ export default {
   height: 300px;
   width: 100%;
   filter: hue-rotate(200deg);
-  opacity: 0.15;
+  opacity: 0.25;
   margin-top: -1.5rem;
 }
 
@@ -45,6 +45,19 @@ export default {
   position: absolute;
   height: 285px;
   width: 100%;
+}
+
+.light .blog-section { 
+  background-image: url('~assets/svg/ground3-tan.svg?inline');
+  background-repeat: no-repeat no-repeat;
+  background-position: top center, 10% 0px;
+  background-size: 100%, 100%;
+  position: absolute;
+  height: 305px;
+  width: 100%;
+  filter: hue-rotate(0deg);
+  opacity: 0.35;
+  margin-top: -1.5rem;
 }
 
 .light .blog-gradient {

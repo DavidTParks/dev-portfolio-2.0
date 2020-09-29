@@ -4,7 +4,7 @@
     <PageBreak/>
     <BlogSection>
       <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
-        <section class="col-span-1 lg:col-span-2">
+        <section class="col-span-1 lg:col-span-2 mt-16">
           <article class="prose lg:prose-xl">
             <!-- <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p> -->
             <nuxt-content :document="article" />
@@ -75,9 +75,6 @@ export default {
       titleBottomOffset: '350',
       taglineTopOffset: '360'
     });
-
-    console.log(socialImage)
-
 
     return { article, socialImage }
   },
@@ -156,12 +153,12 @@ export default {
 }
 
 .light .nuxt-content h2 {
-  @apply text-darkpurple font-h2;
+  @apply text-infoblue font-h2;
   padding-top: 90px; margin-top: -90px;
 }
 
 .light .nuxt-content h3 {
-  @apply font-h2 text-infoblue;
+  @apply font-h2 text-darkpurple;
   padding-top: 90px; margin-top: -90px;
 }
 
@@ -194,4 +191,7 @@ export default {
   @apply text-darkblue;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 </style>
