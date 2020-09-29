@@ -5,8 +5,8 @@ description: Have you ever wondered how people on Twitter or Facebook get those 
 position: 5
 category: Getting started
 ---
-## Welcome to the blog
-### Why social media cards matter
+## Why social media cards matter
+
 
 You can use `<nuxt-content>` component directly in your template to display the page body:
 

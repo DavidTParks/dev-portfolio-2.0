@@ -67,13 +67,13 @@ export default {
       titleFont: 'unienueueitalic.otf',
       titleExtraConfig: '_line_spacing_-10',
       taglineFont: 'unienueueitalic.otf',
-      titleFontSize: '80',
+      titleFontSize: '88',
       taglineFontSize: '48',
       titleColor: 'fff',
       taglineColor: '6CE3D4',
       textLeftOffset: '100',
-      titleBottomOffset: '380',
-      taglineTopOffset: '350'
+      titleBottomOffset: '350',
+      taglineTopOffset: '360'
     });
 
     console.log(socialImage)
