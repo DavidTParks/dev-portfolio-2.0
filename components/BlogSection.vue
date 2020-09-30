@@ -1,12 +1,12 @@
 <template>
 <div class="relative">
-  <div class="blog-section">
+  <div class="blog-section z-0">
       <div class="blog-gradient"/>
   </div>
   <DinosaurOne class="dino1"/>
   <DinosaurTwo class="dino2"/>
-  <main class="pt-16 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
-    <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl">
+  <main class="pt-16 pb-20 lg:pt-12 lg:pb-28 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <slot/>
     </div>
   </main>

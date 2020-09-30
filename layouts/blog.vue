@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen dark:bg-tokyosky bg-duststorm">
-    <NavBar/>
+    <NavBarHome/>
     <Nuxt />
     <Footer/>
   </div>

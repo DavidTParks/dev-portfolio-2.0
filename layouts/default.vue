@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen dark:bg-tokyosky bg-duststorm overflow-hidden">
-    <NavBar/>
+  <div class="min-h-screen dark:bg-tokyosky bg-duststorm">
+    <NavBarHome/>
     <Hero/>
     <PageBreak/>
     <Nuxt />

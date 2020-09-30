@@ -1,5 +1,5 @@
 <template>
-  <header class="pt-16 pb-20 px-4 sm:px-6 lg:pt-16 lg:pb-28 lg:px-8 dark:bg-darkteal bg-lightblue blog-hero overflow-hidden">
+  <header class="pt-16 pb-20 lg:pt-16 lg:pb-28 dark:bg-darkteal bg-lightblue blog-hero overflow-hidden">
     <div class="left-light train-wrapper-hero">
       <Train class="train-hero w-3/12 h-auto"/>
     </div>
@@ -8,7 +8,7 @@
       <Moon v-if="$colorMode.value === 'dark'" class="moon h-12 w-12  lg:w-16 lg:h-16 relative"/>
       <Sun v-if="$colorMode.value === 'light'" class="moon h-12 w-12  lg:w-16 lg:h-16 relative"/>
     </div>
-    <div class="relative max-w-lg sm:max-w-xl md:max-w-3xl mx-auto lg:max-w-5xl md:pb-4">
+    <div class="relative md:pb-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center">
           <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition duration-150 ease-in-out">Home</nuxt-link>
           <Chevron class="dark:text-gray-500 text-gray-600  h-4 w-4 md:h-6 md:w-6 mx-2"/>
@@ -52,6 +52,8 @@ export default {
   background-size: 100%, 100%;
   height: 100%;
   position: relative;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .train-hero {

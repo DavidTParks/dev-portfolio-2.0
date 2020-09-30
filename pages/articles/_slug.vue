@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-4 md:pt-16">
+  <div>
     <BlogHero :article="article"/>
     <PageBreak/>
     <BlogSection>
