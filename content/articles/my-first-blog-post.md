@@ -5,8 +5,8 @@ description: Have you ever wondered how people on Twitter or Facebook get those 
 position: 5
 category: Getting started
 ---
-## Why social media cards matter
 
+## Why social media cards matter
 
 You can use `<nuxt-content>` component directly in your template to display the page body:
 
@@ -60,10 +60,14 @@ You can find an example in the [docs directory](https://github.com/nuxt/content/
 ### Third point
 > Available in version **>= v1.4.0**
 
-**In development**, you can edit your content by **double-clicking** on the `<nuxt-content>` component. A textarea will allow you to edit the content of the current file and will save it on the file-system.
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
-<video poster="https://res.cloudinary.com/nuxt/video/upload/v1588091670/nuxt-content-ui_otfj5y.jpg" loop playsinline controls>
-  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/nuxt-content-ui_otfj5y.webm" type="video/webm" />
-  <source src="https://res.cloudinary.com/nuxt/video/upload/v1592314331/nuxt-content-ui_otfj5y.mp4" type="video/mp4" />
-  <source src="https://res.cloudinary.com/nuxt/video/upload/v1588091670/nuxt-content-ui_otfj5y.ogv" type="video/ogg" />
-</video>
+[^1]: This is the first footnote.
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.

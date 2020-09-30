@@ -15,7 +15,7 @@
             <h2 class="dark:text-white uppercase text-black font-h2 text-lg mt-16 tracking-wider">Table of contents</h2>
             <nav class="mt-4">
               <ul>
-                <li :class="{ 'toc2': link.depth === 2, 'pl-4': link.depth === 3 }" class="toc-list" v-for="link of article.toc" :key="link.id">
+                <li @click="currentlyActiveToc = link.id" :class="{ 'toc2': link.depth === 2, 'pl-4': link.depth === 3, 'active': link.id === currentlyActiveToc }" class="toc-list" v-for="link of article.toc" :key="link.id">
                   <a class="dark:text-lightblue text-black hover:text-gray-800 dark:hover:text-white transition-colors duration-75 text-base mb-2 block" :href="`#${link.id}`">{{ link.text }}</a>
                 </li>
               </ul>
@@ -35,15 +35,18 @@ const meta = getSiteMeta();
 
 export default {
   layout: 'blog',
+  data() {
+    return {
+      currentlyActiveToc: '',
+    }
+  },
   mounted() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             const id = entry.target.getAttribute('id');
 
             if (entry.isIntersecting) {
-                document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-            } else {
-              document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+                this.currentlyActiveToc = id;
             }
         });
     });
@@ -140,12 +143,12 @@ export default {
 
 .dark .nuxt-content h2 {
   @apply teal-glow text-retroteal font-h2;
-  padding-top: 90px; margin-top: -90px;
+  padding-top: 60px; margin-top: -60px;
 }
 
 .dark .nuxt-content h3 {
   @apply yellow-glow font-h2;
-  padding-top: 90px; margin-top: -90px;
+  padding-top: 60px; margin-top: -60px;
 }
 
 .light .nuxt-content {
@@ -154,12 +157,12 @@ export default {
 
 .light .nuxt-content h2 {
   @apply text-infoblue font-h2;
-  padding-top: 90px; margin-top: -90px;
+  padding-top: 60px; margin-top: -60px;
 }
 
 .light .nuxt-content h3 {
   @apply font-h2 text-darkpurple;
-  padding-top: 90px; margin-top: -90px;
+  padding-top: 60px; margin-top: -60px;
 }
 
 .nuxt-content a {

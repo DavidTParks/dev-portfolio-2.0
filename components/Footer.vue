@@ -1,12 +1,12 @@
 <template>
-<div class="relative">
+<footer class="relative footer">
   <div class="lava-backdrop">
 
   </div>
   <div class="lava-gradient">
 
   </div>
-</div>
+</footer>
 </template>
 
 <script>
