@@ -2,6 +2,9 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   theme: {
+    variants: {
+      textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    },
     extend: {
       colors: {
         tokyosky: '#00012D',

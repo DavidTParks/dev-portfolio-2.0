@@ -7,9 +7,8 @@
             <nuxt-link to="/" class="py-2 rounded-md text-sm md:text-lg leading-5 font-medium text-retropink font-h2 dark:hover:text-white hover:text-darkpurple focus:outline-none dark:focus:text-white transition duration-150 ease-in-out dark:font-h2">David Parks</nuxt-link>
             <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm md:text-lg leading-5 font-medium dark:text-gray-300 text-black hover:text-white hover:bg-black focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</a>
             <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm md:text-lg leading-5 font-medium dark:text-gray-300 text-black hover:text-white hover:bg-black focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm md:text-lg leading-5 font-medium dark:text-gray-300 text-black hover:text-white hover:bg-black focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Contact</a>
             <button v-if="$colorMode.value === 'dark'" class="ml-auto focus:outline-none" @click="toggle"><Sun class="w-6 h-6 text-white hover:text-retroyellow fill-current"/></button>
-            <button v-if="$colorMode.value === 'light'" class="ml-auto focus:outline-none" @click="toggle"><Moon class="w-6 h-6 text-black hover:text-gray-700 fill-current"/></button>
+            <button v-if="$colorMode.value === 'light'" class="ml-auto focus:outline-none" @click="toggle"><Moon class="w-6 h-6 text-black hover:text-gray-800 fill-current"/></button>
           </div>
       </div>
     </div>

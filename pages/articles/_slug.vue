@@ -1,10 +1,10 @@
 <template>
-  <div class="pt-16">
+  <div class="pt-4 md:pt-16">
     <BlogHero :article="article"/>
     <PageBreak/>
     <BlogSection>
       <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
-        <section class="col-span-1 lg:col-span-2 mt-16">
+        <section class="col-span-1 lg:col-span-2 mt-0 md:mt-16">
           <article class="prose lg:prose-xl">
             <!-- <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p> -->
             <nuxt-content :document="article" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden">
+  <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden mt-16">
     <div class="hero">
       <div :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper">
         <Train class="train w-3/12 h-auto"/>

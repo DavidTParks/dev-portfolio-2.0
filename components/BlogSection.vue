@@ -1,7 +1,8 @@
 <template>
 <div class="relative">
-  <div class="blog-section"/>
-  <div class="blog-gradient"/>
+  <div class="blog-section">
+      <div class="blog-gradient"/>
+  </div>
   <DinosaurOne class="dino1"/>
   <DinosaurTwo class="dino2"/>
   <main class="pt-16 pb-20 px-4 sm:px-6 lg:pt-12 lg:pb-28 lg:px-8">
@@ -35,7 +36,7 @@ export default {
   height: 300px;
   width: 100%;
   filter: hue-rotate(200deg);
-  opacity: 0.25;
+  opacity: 0.15;
   margin-top: -1.5rem;
 }
 
@@ -43,7 +44,7 @@ export default {
   background: rgb(0,1,45);
   background: linear-gradient(0deg, rgba(0,1,45,1) 0%, rgba(0,0,0,0) 100%);
   position: absolute;
-  height: 285px;
+  height: 100%;
   width: 100%;
 }
 
@@ -64,7 +65,7 @@ export default {
   background: rgb(246, 234, 208);
   background: linear-gradient(0deg, rgba(246, 234, 208,1) 0%, rgba(0,0,0,0) 100%);
   position: absolute;
-  height: 285px;
+  height: 100%;
   width: 100%;
 }
 
