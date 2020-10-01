@@ -136,18 +136,21 @@ module.exports = {
   ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    mode: 'all',
+    // mode: 'all',
     enabled: process.env.NODE_ENV === 'production',
-    whitelistPatternsChildren: [/token$/],
-    whitelist: ['h1', 'h2', 'h3', 'p', 'blockquote', 'code', 'a', 'strong',  'pre', 'code', 'prism', 'line-numbers', 'tag', 'toolbar-item', 'toolbar',
-    'code-toolbar', 'span', 'button', 'line-numbers-rows', 'url-link', 'attr-name', 'attr-value', 'punctuation',
-    'keyword', 'keyword-let', 'operator', 'string', 'dark-mode'],
+    // options: {
+    //   whitelistPatternsChildren: [/token$/],
+    //   whitelist: ['h1', 'h2', 'h3', 'p', 'blockquote', 'code', 'a', 'strong',  'pre', 'code', 'prism', 'token', 'line-numbers', 'tag', 'toolbar-item', 'toolbar',
+    //   'code-toolbar', 'span', 'button', 'line-numbers-rows', 'url-link', 'attr-name', 'attr-value', 'punctuation',
+    //   'keyword', 'keyword-let', 'operator', 'string', 'dark-mode'],
+    // },
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',
       'pages/**/*.vue',
       'plugins/**/*.js',
       'nuxt.config.js',
+      'content/**/*.md'
     ]
   },
   experimental: {
