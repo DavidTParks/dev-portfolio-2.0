@@ -1,5 +1,5 @@
 <template>
-  <Dino class="w-24 h-24 absolute left-0 dino-article cvis"/>
+  <Dino class="hidden md:inline-block w-24 h-24 -ml-48 absolute left-0 dino-article cvis"/>
 </template>
 
 <script>
