@@ -72,24 +72,25 @@ export default {
     console.log("Fetching")
     const article = await $content('articles', params.slug).fetch()
 
-    const socialImage = getShareImage({
-      title: article.title,
-      tagline:  article.subtitle,
-      cloudName: 'dzxp4ujfz',
-      imagePublicID: 'template_oxlcmb.png',
-      titleFont: 'unienueueitalic.otf',
-      titleExtraConfig: '_line_spacing_-10',
-      taglineFont: 'unienueueitalic.otf',
-      titleFontSize: '72',
-      taglineFontSize: '48',
-      titleColor: 'fff',
-      taglineColor: '6CE3D4',
-      textLeftOffset: '100',
-      // titleBottomOffset: '300',
-      // taglineTopOffset: '380'
-    });
-
-    console.log(socialImage)
+    let socialImage = {};
+    if(process.env.NODE_ENV === 'production') {
+      socialImage = getShareImage({
+        title: article.title,
+        tagline:  article.subtitle,
+        cloudName: 'dzxp4ujfz',
+        imagePublicID: 'template_oxlcmb.png',
+        titleFont: 'unienueueitalic.otf',
+        titleExtraConfig: '_line_spacing_-10',
+        taglineFont: 'unienueueitalic.otf',
+        titleFontSize: '72',
+        taglineFontSize: '48',
+        titleColor: 'fff',
+        taglineColor: '6CE3D4',
+        textLeftOffset: '100',
+        titleBottomOffset: '350',
+        taglineTopOffset: '380'
+      });
+    }
 
     return { article, socialImage }
   },
