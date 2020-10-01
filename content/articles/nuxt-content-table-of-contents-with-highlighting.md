@@ -1,7 +1,7 @@
 ---
-title: Social Share Images in Nuxt Content
-subtitle: Supercharge your social media presence with beautiful sharing cards
-description: Have you ever wondered how people on Twitter or Facebook get those beautiful image previews of their posts? This post will teach you how, with Nuxt Content!
+title: Nuxt Content Table of Contents With Active States
+subtitle: Table of contents with active states based on scroll position
+description: Learn how to create a table of contents section for your Nuxt Content articles with active states based on scroll position
 position: 5
 category: Getting started
 ---
@@ -38,9 +38,6 @@ export default {
   - `required`
 
 Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
-
-
-<DinoArticle></DinoArticle>
 
 ## Style
 
@@ -101,14 +98,11 @@ export default {
 </script>
 ```
 
+
 **Props:**
 - document:
   - Type: `Object`
   - `required`
-
-
-<DinoArticleTwo></DinoArticleTwo>
-
 
 Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
 ### Second point

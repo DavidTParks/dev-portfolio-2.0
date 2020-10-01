@@ -65,7 +65,8 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-svg-loader',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/axios',
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)

@@ -43,10 +43,7 @@ body {
   box-sizing: border-box;
   margin: 0;
 }
-/* 
-h1, h2, h3, h4 {
-  font-family: "Uni Neue W05 Black";
-} */
+
 
 @media screen and (prefers-reduced-motion: reduce){
   * {
@@ -55,21 +52,6 @@ h1, h2, h3, h4 {
   }
 }
 
-.nuxt-content-editor {
-  color: black !important;
-}
-
-.prose code::before {
-  content: none !important;
-}
-
-.prose code::after {
-  content: none !important;
-}
-
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s;
-}
-.page-enter, .page-leave-to {
-  opacity: 0;
+.cvis {
+  content-visibility: auto;
 }

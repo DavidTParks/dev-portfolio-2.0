@@ -4,7 +4,7 @@
     <PageBreak/>
     <BlogSection>
       <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
-        <section class="col-span-1 lg:col-span-2 mt-0 md:mt-16">
+        <section ref="blogContent" class="col-span-1 lg:col-span-2 mt-0 md:mt-16">
           <article class="prose lg:prose-xl">
             <!-- <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p> -->
             <nuxt-content :document="article" />
@@ -38,28 +38,38 @@ export default {
   data() {
     return {
       currentlyActiveToc: '',
+      observer: null
     }
   },
   mounted() {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
+    let options = {
+      root: null,
+      rootMargin: '-100px',
+      threshold: 0
+    }
 
-            if (entry.isIntersecting) {
-                this.currentlyActiveToc = id;
-            }
-        });
-    });
+    this.observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          const id = entry.target.getAttribute('id');
+          if (entry.isIntersecting) {
+            this.currentlyActiveToc = id;
+          }
+      });
+    }, options);
 
     // Track all sections that have an `id` applied
     document.querySelectorAll('h2[id]').forEach((section) => {
-        observer.observe(section);
+        this.observer.observe(section);
     });
     document.querySelectorAll('h3[id]').forEach((section) => {
-        observer.observe(section);
+        this.observer.observe(section);
     });
   },
+  destroyed() {
+    this.observer.disconnect();
+  },
   async asyncData({ $content, params }) {
+    console.log("Fetching")
     const article = await $content('articles', params.slug).fetch()
 
     const socialImage = getShareImage({
@@ -196,5 +206,17 @@ export default {
 
 html {
   scroll-behavior: smooth;
+}
+
+.nuxt-content-editor {
+  color: black !important;
+}
+
+.prose code::before {
+  content: none !important;
+}
+
+.prose code::after {
+  content: none !important;
 }
 </style>
