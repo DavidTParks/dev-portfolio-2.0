@@ -3,7 +3,7 @@ title: Nuxt Content Active Position Table of Contents
 subtitle: Table of contents with active states based on scroll position
 description: Learn how to create a table of contents section for your Nuxt Content articles with active states based on scroll position
 position: 5
-category: Getting started
+category: Nuxt
 ---
 
 ## Why social media cards matter

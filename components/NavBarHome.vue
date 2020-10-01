@@ -3,18 +3,21 @@
   Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
   Read the documentation to get started: https://tailwindui.com/documentation
 -->
-<nav class="dark:bg-black bg-white">
+<nav class="dark:bg-darkteal bg-lightblue">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg" alt="Workflow logo">
-          <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-on-dark.svg" alt="Workflow logo">
+          <nuxt-link to="/" class="flex items-center dark:text-retroyellow text-darkpurple ">
+            <Logo class="block lg:hidden h-6 w-auto"/>
+            <Logo class="hidden lg:block h-6 w-aut"/>
+            <span class="font-h1 text-xl ml-3">David Parks</span>
+          </nuxt-link>
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex">
-            <a href="#" class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</a>
-            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
+            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</a>
+            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
           </div>
         </div>
       </div>
@@ -87,10 +90,12 @@
 <script>
 import Moon from '~/assets/svg/moon.svg';
 import Sun from '~/assets/svg/sun.svg';
+import Logo from '~/assets/svg/retro-sun-4.svg';
 export default {
   components: {
     Moon,
-    Sun
+    Sun,
+    Logo
   },
   methods: {
     toggle() {

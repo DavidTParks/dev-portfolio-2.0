@@ -3,7 +3,7 @@ title: Social Share Images in Nuxt Content
 subtitle: Supercharge your social media presence with beautiful sharing cards
 description: Have you ever wondered how people on Twitter or Facebook get those beautiful image previews of their posts? This post will teach you how, with Nuxt Content!
 position: 5
-category: Getting started
+category: Nuxt
 ---
 
 ## Why social media cards matter
