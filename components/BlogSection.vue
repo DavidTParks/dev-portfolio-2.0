@@ -1,6 +1,6 @@
 <template>
-<div class="relative overflow-hidden">
-  <div class="blog-section z-0">
+<div class="relative">
+  <div class="blog-section">
       <div class="blog-gradient"/>
   </div>
   <DinosaurOne class="dino1"/>
@@ -83,7 +83,7 @@ export default {
   position: absolute;
   height: 12vh;
   width: 12vw;
-  right:5%;
+  right: 10%;
   filter: brightness(1);
   opacity: 0.1;
   transform: rotate(240deg);
@@ -104,7 +104,7 @@ export default {
   position: absolute;
   height: 12vh;
   width: 12vw;
-  right:5%;
+  right:10%;
   filter: brightness(0);
   opacity: 0.2;
   transform: rotate(240deg);

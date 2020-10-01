@@ -3,8 +3,8 @@
     <BlogHero :article="article"/>
     <PageBreak/>
     <BlogSection>
-      <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 overflow-visible">
-        <section ref="blogContent" class="col-span-1 lg:col-span-2 mt-0 md:mt-16">
+      <div class="grid gap-24 grid-cols-1 lg:grid-cols-3">
+        <section ref="blogContent" class="block col-span-1 lg:col-span-2 mt-0 md:mt-16">
           <article class="prose lg:prose-xl">
             <!-- <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p> -->
             <nuxt-content :document="article" />

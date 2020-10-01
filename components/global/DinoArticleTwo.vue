@@ -1,5 +1,5 @@
 <template>
-  <Dino class="w-24 h-24 absolute right-0 -mr-64 dino-article cvis"/>
+  <Dino class="w-24 h-24 absolute right-0 dino-article cvis"/>
 </template>
 
 <script>
