@@ -80,14 +80,16 @@ export default {
       titleFont: 'unienueueitalic.otf',
       titleExtraConfig: '_line_spacing_-10',
       taglineFont: 'unienueueitalic.otf',
-      titleFontSize: '88',
+      titleFontSize: '72',
       taglineFontSize: '48',
       titleColor: 'fff',
       taglineColor: '6CE3D4',
       textLeftOffset: '100',
-      titleBottomOffset: '350',
-      taglineTopOffset: '360'
+      // titleBottomOffset: '300',
+      // taglineTopOffset: '380'
     });
+
+    console.log(socialImage)
 
     return { article, socialImage }
   },

@@ -40,7 +40,7 @@ export default {
 Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
 
 
-<DinoArticle></DinoArticle>
+<dino-article></dino-article>
 
 ## Style
 
@@ -107,7 +107,7 @@ export default {
   - `required`
 
 
-<DinoArticleTwo></DinoArticleTwo>
+<dino-article-two></dino-article-two>
 
 
 Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
