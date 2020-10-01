@@ -1,5 +1,5 @@
 <template>
-<div class="relative">
+<div class="relative overflow-hidden">
   <div class="blog-section z-0">
       <div class="blog-gradient"/>
   </div>

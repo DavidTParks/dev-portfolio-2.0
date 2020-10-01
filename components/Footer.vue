@@ -60,6 +60,7 @@ export default {
   height: 10rem;
   margin-bottom: -1px;
   position: relative;
+  content-visibility: auto;
 }
 @media (min-width: 640px) {
   .lava-backdrop {
@@ -78,6 +79,7 @@ export default {
   height: 10rem;
   margin-bottom: -1px;
   position: relative;
+  content-visibility: auto;
 }
 
 .footer-link {
