@@ -109,7 +109,7 @@ export default {
         // eslint-disable-next-line global-require
         const { $content } = require('@nuxt/content');
 
-        const posts = await $content('articles').fetch();
+        const posts = await $content('articles').only(['slug', 'title', 'description', 'bodyPlainText']).fetch();
 
         posts.forEach((post) => {
           const url = `https://www.davidparks.dev/articles/${post.slug}`;
