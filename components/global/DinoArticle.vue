@@ -1,5 +1,7 @@
 <template>
-  <Dino class="hidden md:inline-block w-24 h-24 -ml-48 absolute left-0 dino-article cvis"/>
+  <button @click.prevent="playSound('http://lotl.popapostle.com/sounds/LOTL09/roar.wav')" class="hidden md:inline-block -ml-48 absolute left-0 focus:outline-none">
+      <Dino class="w-24 h-24 dino-article cvis"/>
+  </button>
 </template>
 
 <script>
@@ -8,6 +10,14 @@ export default {
   props: ['variant'],
   components: {
     Dino,
+  },
+  methods: {
+    playSound(sound) {
+      if(sound) {
+        var audio = new Audio(sound);
+        audio.play();
+      }
+    }
   }
 }
 </script>

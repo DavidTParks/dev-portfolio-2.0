@@ -18,6 +18,8 @@ export default {
   },
   async asyncData({ $content, params }) {
       const articles = await $content('articles')
+        .limit(5)
+        .only(['title', 'slug', 'subtitle', 'description', 'category'])
         .sortBy('createdAt', 'desc')
         .fetch()
 

@@ -1,7 +1,7 @@
 ---
-title: Nuxt Content Active Position Table of Contents
-subtitle: Table of contents with active states based on scroll position
-description: Learn how to create a table of contents section for your Nuxt Content articles with active states based on scroll position
+title: Copy
+subtitle: This is a copy subtitle
+description: Have you ever wondered how people on Twitter or Facebook get those beautiful image previews of their posts? This post will teach you how, with Nuxt Content!
 position: 5
 category: Nuxt
 ---
@@ -38,6 +38,9 @@ export default {
   - `required`
 
 Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
+
+
+<dino-article></dino-article>
 
 ## Style
 
@@ -98,11 +101,14 @@ export default {
 </script>
 ```
 
-
 **Props:**
 - document:
   - Type: `Object`
   - `required`
+
+
+<dino-article-two></dino-article-two>
+
 
 Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
 ### Second point
@@ -165,3 +171,18 @@ export default {
 - document:
   - Type: `Object`
   - `required`
+
+Learn more about what you can write in your markdown file in the [writing content](/writing#markdown) section.
+> Available in version **>= v1.4.0**
+
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+[^1]: This is the first footnote.
+
+[^bignote]: Here's one with multiple paragraphs and code.
+
+    Indent paragraphs to include them in the footnote.
+
+    `{ my code }`
+
+    Add as many paragraphs as you like.

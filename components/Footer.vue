@@ -5,7 +5,7 @@
   Read the documentation to get started: https://tailwindui.com/documentation
 -->
 <div class="bg-transparent">
-  <div class="max-w-5xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+  <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
     <div class="flex justify-center md:order-2">
       <a href="#" class="ml-6 dark:text-gray-400 hover:text-gray-500 text-black">
         <span class="sr-only">Twitter</span>

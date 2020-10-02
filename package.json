@@ -13,12 +13,14 @@
     "@jlengstorf/get-share-image": "^0.7.1",
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/feed": "^2.0.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "@tailwindcss/ui": "^0.6.2",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
     "nuxt-svg-loader": "^1.2.0",
-    "prism-themes": "^1.4.0"
+    "prism-themes": "^1.4.0",
+    "reading-time": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^1.1.1",

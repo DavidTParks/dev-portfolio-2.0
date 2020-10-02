@@ -67,6 +67,7 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/sitemap',
     '@nuxtjs/axios',
+    '@nuxtjs/feed'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
@@ -81,14 +82,68 @@ export default {
     hostname: process.env.BASE_URL || 'https://davidparks.dev/',
     routes: async () => {
       const { $content } = require("@nuxt/content");
-      const files = await $content({ deep: true }).only(["path"]).fetch();
+      const articles = await $content({ deep: true }).only(["path"]).fetch();
 
-      return files.map((file) => (file.path === "/index" ? "/" : file.path));
+      let routes = [];
+
+      articles.forEach((article) => {
+        routes.push({
+          url: article.path,
+          lastmod: article.updatedAt
+        })
+      });
+      
+      return routes;
     }
+  },
+  feed: [
+    {
+      path: '/feed.xml',
+      async create(feed) {
+        feed.options = {
+          title: 'David Parks Blog',
+          description: 'A Frontend Development blog from David Parks',
+          link: 'https://www.davidparks.dev/feed.xml',
+        };
+
+        // eslint-disable-next-line global-require
+        const { $content } = require('@nuxt/content');
+
+        const posts = await $content('articles').fetch();
+
+        posts.forEach((post) => {
+          const url = `https://www.davidparks.dev/articles/${post.slug}`;
+
+          feed.addItem({
+            title: post.title,
+            id: url,
+            link: url,
+            description: post.description,
+            content: post.bodyPlainText,
+          });
+        });
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+    },
+  ],
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        // eslint-disable-next-line global-require
+        const { text } = require('reading-time')(document.text);
+
+        document.readingTime = text;
+        document.bodyPlainText = document.text;
+      }
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
 
-  }
+  },
+  generate: {
+    fallback: true,
+  },
 }
