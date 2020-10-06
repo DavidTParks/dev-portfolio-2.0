@@ -1,23 +1,23 @@
 <template>
   <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden">
     <div class="hero">
-      <div :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper">
+      <button @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
         <Train class="train w-3/12 h-auto"/>
-      </div>
+      </button>
       <BuildingOne class="building1"/>
       <BuildingTwo class="building2"/>
       <div class="boat-wrapper">
         <Boat class="boat"/>
       </div>
-      <Plane class="plane w-24 h-24 absolute"/>
+      <Plane class="plane w-24 h-24 absolute hidden"/>
       <div class="cloud-wrap">
-        <template v-if="$colorMode.value === 'dark'">
+        <template v-if="$colorMode.preference === 'dark'">
           <AbstractCloud class="cloud cloud1"/>
           <AbstractCloud class="cloud cloud2 "/>
           <AbstractCloud class="cloud cloud3 "/>
           <AbstractCloud class="cloud cloud4 "/>
         </template>
-        <template v-else>
+        <template v-if="$colorMode.preference === 'light'">
           <LightCloud class="cloud cloud1"/>
           <LightCloud class="cloud cloud2 "/>
           <LightCloud class="cloud cloud3 "/>
@@ -74,6 +74,12 @@ export default {
     Station,
     Helicopter,
     Plane
+  },
+  methods: {
+    playTrainSound() {
+      var audio = new Audio(require('@/assets/sounds/train.wav'));
+      audio.play();
+    }
   }
 }
 </script>
@@ -111,7 +117,7 @@ export default {
   margin: auto;
   height: auto;
   transform: translate3d(0, 0, 0);
-  animation-name: cloud1;
+  animation-name: cloud-animation;
   animation-duration: 200s;
   animation-iteration-count: infinite;
 }

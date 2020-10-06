@@ -11,7 +11,7 @@
             <PrevNext :prev="prev" :next="next" />
           </article>
         </section>
-        <section class="hidden sm:col-span-1 sm:flex sm:flex-col">
+        <aside class="hidden sm:col-span-1 sm:flex sm:flex-col">
           <div class="sticky top-16">
             <h2 class="dark:text-white uppercase text-black font-h2 text-lg mt-16 tracking-wider">Table of contents</h2>
             <nav class="mt-4">
@@ -22,7 +22,7 @@
               </ul>
             </nav>
           </div>
-        </section>
+        </aside>
       </div>
     </BlogSection>
   </div>
@@ -205,7 +205,7 @@ export default {
 }
 
 .dark .toc-list.active a {
-  @apply text-retroteal teal-glow;
+  @apply text-retroteal teal-glow !important;
 }
 
 .light .toc-list.active a {

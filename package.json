@@ -20,7 +20,8 @@
     "nuxt": "^2.14.6",
     "nuxt-svg-loader": "^1.2.0",
     "prism-themes": "^1.4.0",
-    "reading-time": "^1.2.0"
+    "reading-time": "^1.2.0",
+    "vue-lottie": "^0.2.1"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^1.1.1",

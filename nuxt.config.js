@@ -74,7 +74,7 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: 'prism-themes/themes/prism-synthwave84.css'
+        theme: 'prism-themes/themes/prism-shades-of-purple.css'
       }
     }
   },
@@ -141,7 +141,15 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    }
   },
   generate: {
     fallback: true,

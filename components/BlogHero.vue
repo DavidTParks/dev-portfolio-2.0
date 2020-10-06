@@ -1,8 +1,8 @@
 <template>
   <header class="pt-16 pb-20 lg:pt-16 lg:pb-28 dark:bg-darkteal bg-lightblue blog-hero overflow-hidden">
-    <div class="left-light train-wrapper-hero">
+    <button @click="playTrainSound" class="left-light train-wrapper-hero focus:outline-none">
       <Train class="train-hero w-3/12 h-auto"/>
-    </div>
+    </button>
 
     <div class="moon-wrapper absolute top-0 right-0 mr-12 mt-12">
       <Moon v-if="$colorMode.value === 'dark'" class="moon h-12 w-12  lg:w-16 lg:h-16 relative"/>
@@ -35,10 +35,24 @@ export default {
     Chevron,
     Sun
   },
+  data() {
+    return {
+      audio: null
+    }
+  },
   methods: {
     formatDate(date) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' }
       return new Date(date).toLocaleDateString('en', options)
+    },
+    playTrainSound() {
+      this.audio = new Audio(require('@/assets/sounds/train.wav'));
+      this.audio.play();
+    }
+  },
+  destroyed() {
+    if(this.audio) {
+      this.audio.pause();
     }
   }
 }

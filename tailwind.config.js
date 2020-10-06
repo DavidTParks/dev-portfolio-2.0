@@ -149,5 +149,6 @@ module.exports = {
   experimental: {
     darkModeVariant: true
   },
-  dark: 'class'
+  dark: 'class',
+  important: true,
 }
