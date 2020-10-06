@@ -144,7 +144,10 @@ module.exports = {
       'plugins/**/*.js',
       'nuxt.config.js',
       'content/**/*.md'
-    ]
+    ],
+    options: {
+      whitelist: ['text-retroyellow', 'text-retrored', 'text-retrogreen', 'text-retroteal', 'text-infoblue', 'text-retropink'],
+    }
   },
   experimental: {
     darkModeVariant: true

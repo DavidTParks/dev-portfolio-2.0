@@ -51,7 +51,5 @@ export default {
 </script>
 
 <style>
-.infobox a {
-  @apply 
-}
+
 </style>

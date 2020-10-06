@@ -1,6 +1,5 @@
 <template>
   <div class="block">
-    <LottieAnimation/>
     <article class="block mt-16 recent-blog" v-for="article in articles" :key="article.title">
       <nuxt-link class="blog-link" :to="`/articles/${article.slug}`">
         <small class="dark:text-retroyellow text-darkblue uppercase tracking-widest text-sm font-h2">{{article.category}}</small>
