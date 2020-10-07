@@ -5,7 +5,7 @@
   </div>
   <DinosaurOne class="dino1"/>
   <DinosaurTwo class="dino2"/>
-  <main class="pt-16 pb-20 lg:pt-12 lg:pb-28 relative">
+  <main class="pt-8 pb-20 lg:pt-12 lg:pb-28 relative">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <slot/>
     </div>

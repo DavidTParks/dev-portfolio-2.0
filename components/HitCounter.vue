@@ -4,13 +4,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      hits: 0
+    }
+  },
   async fetch() {
     if (process.env.NODE_ENV === 'production') {
       const {  data } = await this.$axios.get(`/.netlify/functions/register-hit?slug=${this.$route.params.slug}`);
-      console.log(data);
+      this.hits = data.hits;
     }
-    console.log(this.$config.faunaSecretKey);
   },
-  fetchOnServer: false
+  fetchOnServer: true
 }
 </script>

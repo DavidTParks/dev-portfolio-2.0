@@ -146,7 +146,19 @@ module.exports = {
       'content/**/*.md'
     ],
     options: {
-      whitelist: ['border-retroyellow', 'border-retroteal', 'border-retrogreen', 'border-infoblue', 'text-retroyellow', 'text-retrored', 'text-retrogreen', 'text-retroteal', 'text-infoblue', 'text-retropink'],
+      whitelist: [
+        'border-retroyellow', 
+        'border-retroteal', 
+        'border-retrogreen', 
+        'border-infoblue', 
+        'border-retrored', 
+        'text-retroyellow', 
+        'text-retrored', 
+        'text-retrogreen', 
+        'text-retroteal', 
+        'text-infoblue', 
+        'text-retropink'
+      ],
     }
   },
   experimental: {
