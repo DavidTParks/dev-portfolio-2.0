@@ -15,6 +15,6 @@ export default {
       this.hits = data.hits;
     }
   },
-  fetchOnServer: true
+  fetchOnServer: false
 }
 </script>
