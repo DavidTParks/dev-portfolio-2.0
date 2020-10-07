@@ -154,6 +154,9 @@ export default {
   generate: {
     fallback: true,
   },
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:4000',
+  },
   publicRuntimeConfig: {
     faunaSecretKey: process.env.FAUNA_SECRET_KEY,
     axios: {
