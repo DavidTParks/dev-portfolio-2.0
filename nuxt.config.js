@@ -155,9 +155,15 @@ export default {
     fallback: true,
   },
   publicRuntimeConfig: {
-    faunaSecretKey: process.env.FAUNA_SECRET_KEY
+    faunaSecretKey: process.env.FAUNA_SECRET_KEY,
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
   },
   privateRuntimeConfig: {
-    faunaSecretKey: process.env.FAUNA_SECRET_KEY
+    faunaSecretKey: process.env.FAUNA_SECRET_KEY,
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
   }
 }
