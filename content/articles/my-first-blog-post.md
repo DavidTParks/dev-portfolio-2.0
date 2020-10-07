@@ -6,7 +6,7 @@ position: 5
 category: Nuxt
 ---
 
-## Why social media cards matter
+## Why social media cards are important
 
 You can use `<nuxt-content>` component directly in your template to display the page body:
 
