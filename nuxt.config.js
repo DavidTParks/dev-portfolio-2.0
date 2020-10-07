@@ -1,6 +1,6 @@
 import getSiteMeta from "./utils/getSiteMeta";
 const meta = getSiteMeta();
-
+require("dotenv").config();
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -154,4 +154,10 @@ export default {
   generate: {
     fallback: true,
   },
+  publicRuntimeConfig: {
+    faunaSecretKey: process.env.FAUNA_SECRET_KEY
+  },
+  privateRuntimeConfig: {
+    faunaSecretKey: process.env.FAUNA_SECRET_KEY
+  }
 }

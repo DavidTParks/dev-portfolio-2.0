@@ -1,5 +1,6 @@
 <template>
   <div>
+    <HitCounter/>
     <BlogHero :article="article"/>
     <PageBreak/>
     <BlogSection>
@@ -70,7 +71,7 @@ export default {
   destroyed() {
     this.observer.disconnect();
   },
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params , $config: { faunaSecretKey }}) {
     const article = await $content('articles', params.slug).fetch()
 
     const [prev, next] = await $content('articles')

@@ -16,6 +16,7 @@ export default {
       url: ''
     }
   },
+  scrollToTop: false,
   async asyncData({ $content, params }) {
       const articles = await $content('articles')
         .limit(5)
