@@ -2,7 +2,7 @@
   <div class="flex justify-between">
     <nuxt-link
       v-if="prev"
-      :to="`/articles/${prev.slug}`"
+      :to="`/blog/${prev.slug}`"
       class="text-primary font-bold hover:underline inline-flex items-center"
     >
       <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
@@ -11,7 +11,7 @@
     <span v-else>&nbsp;</span>
     <nuxt-link
       v-if="next"
-      :to="`/articles/${next.slug}`"
+      :to="`/blog/${next.slug}`"
       class="font-bold hover:underline inline-flex items-center"
     >
       {{ next.title }}

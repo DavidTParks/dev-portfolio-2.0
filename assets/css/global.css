@@ -14,6 +14,9 @@
   font-display: swap;
 }
 
+:root {
+  --scroll-behavior: initial;
+}
 
 html {
   font-family: "Uni Neue W05 Regular",-apple-system,
@@ -31,7 +34,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: var(--scroll-behavior);
 }
 
 body {

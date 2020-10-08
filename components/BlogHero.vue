@@ -70,9 +70,9 @@ export default {
   overflow: hidden;
 }
 
-/* .dark .blog-hero h1 {
+.dark .blog-hero h1 {
   @apply light-blue-glow;
-} */
+}
 
 .train-hero {
   margin-left: auto;

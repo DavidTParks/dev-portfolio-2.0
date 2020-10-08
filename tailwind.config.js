@@ -130,6 +130,9 @@ module.exports = {
         '.light-blue-glow': {
           textShadow : '0px 0px 8px rgba(198, 208, 235, 0.6)',
         },
+        '.red-glow': {
+          textShadow : '0px 0px 8px rgba(253, 52, 88, 0.6)',
+        },
       }
 
       addUtilities(newUtilities, ['responsive', 'hover'])

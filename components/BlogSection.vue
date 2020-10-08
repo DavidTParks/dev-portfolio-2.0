@@ -1,5 +1,5 @@
 <template>
-<div class="relative">
+<div class="relative blog-wrap">
   <div class="blog-section">
       <div class="blog-gradient"/>
   </div>

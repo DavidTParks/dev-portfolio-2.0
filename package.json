@@ -20,12 +20,11 @@
     "faunadb": "^3.0.1",
     "nuxt": "^2.14.6",
     "nuxt-svg-loader": "^1.2.0",
-    "prism-themes": "^1.4.0",
-    "reading-time": "^1.2.0",
-    "vue-lottie": "^0.2.1"
+    "prism-themes": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^1.1.1",
+    "@nuxtjs/storybook": "^3.0.0",
     "@nuxtjs/tailwindcss": "^3.0.2"
   }
 }

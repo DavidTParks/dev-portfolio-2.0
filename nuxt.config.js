@@ -82,14 +82,14 @@ export default {
     hostname: process.env.BASE_URL || 'https://davidparks.dev/',
     routes: async () => {
       const { $content } = require("@nuxt/content");
-      const articles = await $content({ deep: true }).only(["path"]).fetch();
+      const blogs = await $content({ deep: true }).only(["path"]).fetch();
 
       let routes = [];
 
-      articles.forEach((article) => {
+      blogs.forEach((blog) => {
         routes.push({
-          url: article.path,
-          lastmod: article.updatedAt
+          url: blog.path,
+          lastmod: blog.updatedAt
         })
       });
       
@@ -109,10 +109,10 @@ export default {
         // eslint-disable-next-line global-require
         const { $content } = require('@nuxt/content');
 
-        const posts = await $content('articles').only(['slug', 'title', 'description', 'bodyPlainText']).fetch();
+        const posts = await $content('blogs').only(['slug', 'title', 'description', 'bodyPlainText']).fetch();
 
         posts.forEach((post) => {
-          const url = `https://www.davidparks.dev/articles/${post.slug}`;
+          const url = `https://www.davidparks.dev/blog/${post.slug}`;
 
           feed.addItem({
             title: post.title,
@@ -168,5 +168,8 @@ export default {
     axios: {
       baseURL: process.env.BASE_URL
     }
+  },
+  storybook: {
+    // Options
   }
 }

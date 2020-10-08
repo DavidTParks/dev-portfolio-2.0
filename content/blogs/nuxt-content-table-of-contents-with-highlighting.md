@@ -74,6 +74,7 @@ export default {
 </script>
 ```
 
+<twitter-cta></twitter-cta>
 
 **Props:**
 - document:

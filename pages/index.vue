@@ -1,9 +1,8 @@
 <template>
   <div>
-    {{url}}
     <BlogSection>
         <MainBlogSection>
-          <RecentBlogs :articles="articles"/>
+          <RecentBlogs :blogs="blogs"/>
         </MainBlogSection>
     </BlogSection>
   </div>
@@ -11,21 +10,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      url: ''
-    }
-  },
-  scrollToTop: true,
   async asyncData({ $content, params }) {
-      const articles = await $content('articles')
+      const blogs = await $content('blogs')
         .limit(5)
         .only(['title', 'slug', 'subtitle', 'description', 'category'])
         .sortBy('createdAt', 'desc')
         .fetch()
 
       return {
-        articles
+        blogs
       }
   }
 }

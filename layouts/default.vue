@@ -3,7 +3,7 @@
     <NavBar :page="'home'"/>
     <Hero/>
     <PageBreak/>
-    <Nuxt />
+    <Nuxt keep-alive />
     <Footer/>
   </div>
 </template>
