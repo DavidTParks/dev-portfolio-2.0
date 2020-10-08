@@ -127,18 +127,6 @@ export default {
       type: 'rss2',
     },
   ],
-  hooks: {
-    'content:file:beforeInsert': (document) => {
-      if (document.extension === '.md') {
-        // eslint-disable-next-line global-require
-        const { text } = require('reading-time')(document.text);
-
-        document.readingTime = text;
-        document.bodyPlainText = document.text;
-      }
-    },
-  },
-
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend(config, ctx) {
