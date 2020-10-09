@@ -34,11 +34,14 @@ export default {
         this.audio.play();
         this.volts++;
         this.initialVolts++;
-        const { data } = await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
+        this.sendVoltageToMainframe();
       } else {
         this.audio = new Audio(require('@/assets/sounds/capacity.mp3'));
         this.audio.play();
       }
+    },
+    async sendVoltageToMainframe() {
+      const { data } = await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
     }
   },
   watch: {
