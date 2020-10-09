@@ -15,9 +15,3 @@
     </div>
   </main>
 </template>
-
-<script>
-export default {
-  props: ['latest-articles']
-}
-</script>

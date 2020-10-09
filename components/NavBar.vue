@@ -3,7 +3,7 @@
   Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
   Read the documentation to get started: https://tailwindui.com/documentation
 -->
-<nav class="dark:bg-darkteal bg-lightblue nav" :class="{'fixed top-0 w-full z-10' : page === 'blog'}">
+<nav class="dark:bg-darkteal bg-lightblue nav transition-colors duration-300 ease-in-out" :class="{'fixed top-0 w-full z-10' : page === 'blog'}">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
@@ -17,11 +17,11 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex">
             <div class="relative flex ml-4">
-              <a @mouseover="showBlogSquiggle = true" @mouseout="showBlogSquiggle = false"  href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</a>
+              <nuxt-link to="/blogs" @mouseover="showBlogSquiggle = true" @mouseout="showBlogSquiggle = false"  href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
               <ZigZag :class="{'opacity-100' : showBlogSquiggle}" class="w-12 transition-opacity opacity-0 duration-200 absolute text-darkpurple dark:text-retroteal left-0 right-0 top-0 mt-8 mx-auto"/>
             </div>
             <div class="relative flex ml-4">
-              <a @mouseover="showProjectSquiggle = true" @mouseout="showProjectSquiggle = false" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out link-style">Projects</a>
+              <nuxt-link to="/about" @mouseover="showProjectSquiggle = true" @mouseout="showProjectSquiggle = false" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out link-style">About</nuxt-link>
               <ZigZag2 :class="{'opacity-100' : showProjectSquiggle}" class="w-12 transition-opacity opacity-0 duration-200 absolute text-darkpurple dark:text-retroyellow left-0 right-0 top-0 mt-8 mx-auto"/>
             </div>
           </div>
@@ -36,24 +36,9 @@
       </div>
       <div class="-mr-2 flex sm:hidden">
         <!-- Mobile menu button -->
-        <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
-          <!-- Icon when menu is closed. -->
-          <!--
-            Heroicon name: menu
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
-          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" v-if="!showMobileMenu">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- Icon when menu is open. -->
-          <!--
-            Heroicon name: x
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
-          <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -65,28 +50,32 @@
 
     Menu open: "block", Menu closed: "hidden"
   -->
-  <div class="hidden sm:hidden">
+  
+  <!-- <div :class="[showMobileMenu ? 'flex' : 'hidden']" class="sm:hidden">
     <div class="px-2 pt-2 pb-3">
-      <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
-      <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
-      <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-      <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
+      <nuxt-link to="/blog" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</nuxt-link>
+      <nuxt-link to="/about" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">About</nuxt-link>
     </div>
-    <div class="pt-4 pb-3 border-t border-gray-700">
-      <div class="flex items-center px-5">
-        <div class="flex-shrink-0">
-          <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+  </div> -->
+  <div class="mobile-menu fixed overflow-hidden inset-0 z-50" v-show="showMobileMenu">
+    <button @click="toggleMobileMenu" class="z-50 absolute top-0 right-0 m-3 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="h-screen w-screen bg-darkteal absolute inset-0 opacity-75">
+
+    </div>
+    <div class="block">
+      <nav class="">
+        <div class="ml-12">
+          <nuxt-link to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
+          <nuxt-link to="/blogs" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
+          <nuxt-link to="/about" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">About</nuxt-link>
         </div>
-        <div class="ml-3">
-          <div class="text-base font-medium leading-6 text-white">Tom Cook</div>
-          <div class="text-sm font-medium leading-5 text-gray-400">tom@example.com</div>
+        <div>
         </div>
-      </div>
-      <div class="mt-3 px-2">
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Your Profile</a>
-        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Settings</a>
-        <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Sign out</a>
-      </div>
+      </nav>
     </div>
   </div>
 </nav>
@@ -111,15 +100,19 @@ export default {
   data() {
     return {
       showBlogSquiggle: false,
-      showProjectSquiggle: false
+      showProjectSquiggle: false,
+      showMobileMenu: false,
     }
   },
   methods: {
     toggle() {
       this.$colorMode.preference =
         this.$colorMode.value == "light" ? "dark" : "light";
+    },
+    toggleMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu;
     }
-  }
+  },
 }
 </script>
 
@@ -135,5 +128,22 @@ export default {
 
 .dark .link-style {
   @apply light-blue-glow;
+}
+
+.mobile-menu {
+  backdrop-filter: blur(3px);
+}
+
+.mobile-menu nav {
+  position: absolute;
+  left: 0px;
+  bottom: 100px;
+  width: 75%;
+  height: 75%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
 }
 </style>
