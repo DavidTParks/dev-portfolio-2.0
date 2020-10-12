@@ -12,8 +12,6 @@
 import getShareImage from '@jlengstorf/get-share-image';
 import getSiteMeta from "~/utils/getSiteMeta.js";
 
-const meta = getSiteMeta();
-
 export default {
   layout: 'blog',
   mounted() {
@@ -35,7 +33,7 @@ export default {
     
     let socialImage = {};
 
-    if(process.env.NODE_ENV === 'production') {
+    if(process.env.NODE_ENV !== 'production') {
       socialImage = getShareImage({
         title: article.title,
         tagline:  article.subtitle,
