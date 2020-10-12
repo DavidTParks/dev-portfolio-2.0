@@ -69,7 +69,7 @@ export default {
         titleBottomOffset: '350',
         taglineTopOffset: '380'
       });
-    }
+
 
     return { article, socialImage }
   },

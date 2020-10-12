@@ -112,12 +112,9 @@ export default {
         // eslint-disable-next-line global-require
         const { $content } = require('@nuxt/content');
 
-        const posts = await $content('blogs')
-        .only(['slug', 'title', 'description', 'bodyPlainText'])
-        .where({ published: { $eq: true } })
-        .fetch();
+        const blogs = await $content('blogs').where({ published: { $eq: true } }).fetch();
 
-        posts.forEach((post) => {
+        blogs.forEach((post) => {
           const url = `https://www.davidparks.dev/blog/${post.slug}`;
           feed.addItem({
             title: post.title,
