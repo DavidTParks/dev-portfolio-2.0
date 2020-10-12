@@ -122,9 +122,7 @@ export default {
 </script>
 ```
 
-Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. Feel free to check out my Figma template below in which I used Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig)
-
-<iframe class="cvis" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="600" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FBnJYNbBlBfQAn9YcHm1ZDh%2FDesign-System%3Fnode-id%3D83%253A5&chrome=DOCUMENTATION" allowfullscreen></iframe>
+Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. Feel free to check out Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig) and customize it your liking.
 
 You may also notice that I am importing `getSiteMeta` from `getSiteMeta.js`. This function will use a computed property to override some default metadata values I've setup in this file if they are explicitly provided. That file looks like this:
 
@@ -192,7 +190,7 @@ export default (meta) => {
 };
 ```
 
-<twitter-cta></twitter-cta>
+<twitter-cta :share-link="'https://twitter.com/intent/tweet?text=Social Share Images in Nuxt Content&url=https://davidparks.dev/blog/social-share-images-in-nuxt-content/&via=dparksdev'"></twitter-cta>
 
 Unless there are overrides explicitly provided, it will use the fallback values I've defined at the top of this file. This is great if you want to avoid those cases where you forget to set meta tags!
 
