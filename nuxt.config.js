@@ -82,7 +82,10 @@ export default {
     hostname: process.env.BASE_URL || 'https://davidparks.dev/',
     routes: async () => {
       const { $content } = require("@nuxt/content");
-      const blogs = await $content({ deep: true }).only(["path"]).fetch();
+      const blogs = await $content({ deep: true })
+      .only(["path"])
+      .where({ published: { $eq: true } })
+      .fetch();
 
       let routes = [];
 
@@ -109,7 +112,10 @@ export default {
         // eslint-disable-next-line global-require
         const { $content } = require('@nuxt/content');
 
-        const posts = await $content('blogs').only(['slug', 'title', 'description', 'bodyPlainText']).fetch();
+        const posts = await $content('blogs')
+        .only(['slug', 'title', 'description', 'bodyPlainText'])
+        .where({ published: { $eq: true } })
+        .fetch();
 
         posts.forEach((post) => {
           const url = `https://www.davidparks.dev/blog/${post.slug}`;
