@@ -20,10 +20,10 @@
               <nuxt-link to="/blogs" @mouseover="showBlogSquiggle = true" @mouseout="showBlogSquiggle = false"  href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
               <ZigZag :class="{'opacity-100' : showBlogSquiggle}" class="w-12 transition-opacity opacity-0 duration-200 absolute text-darkpurple dark:text-retroteal left-0 right-0 top-0 mt-8 mx-auto"/>
             </div>
-            <div class="relative flex ml-4">
+            <!-- <div class="relative flex ml-4">
               <nuxt-link to="/about" @mouseover="showProjectSquiggle = true" @mouseout="showProjectSquiggle = false" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out link-style">About</nuxt-link>
               <ZigZag2 :class="{'opacity-100' : showProjectSquiggle}" class="w-12 transition-opacity opacity-0 duration-200 absolute text-darkpurple dark:text-retroyellow left-0 right-0 top-0 mt-8 mx-auto"/>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -69,9 +69,8 @@
     <div class="block">
       <nav class="">
         <div class="ml-12">
-          <nuxt-link to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
-          <nuxt-link to="/blogs" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
-          <nuxt-link to="/about" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">About</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/blogs" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
         </div>
         <div>
         </div>

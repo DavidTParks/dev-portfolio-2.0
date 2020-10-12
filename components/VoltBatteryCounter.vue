@@ -25,23 +25,24 @@ export default {
     const { data } = await this.$axios.get(`.netlify/functions/fetch_volts_for_blog?slug=${this.$route.params.slug}`);
     this.initialVolts = data.volts;
   },
+  mounted() {
+    this.audio = new Audio(require('@/assets/sounds/charge.wav'));
+  },
   fetchOnServer: false,
   methods: {
-    async addVolt() {
+    addVolt() {
       if(this.volts < 12) {
-        this.audio = new Audio(require('@/assets/sounds/charge.wav'));
-        this.audio.playbackRate = 1 + this.volts / 2;
-        this.audio.play();
         this.volts++;
         this.initialVolts++;
         this.sendVoltageToMainframe();
       } else {
-        this.audio = new Audio(require('@/assets/sounds/capacity.mp3'));
-        this.audio.play();
+        this.capacityAudio = new Audio(require('@/assets/sounds/capacity.mp3'));
+        this.capacityAudio.play();
       }
     },
     async sendVoltageToMainframe() {
       const { data } = await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
+      console.log(data);
     }
   },
   watch: {

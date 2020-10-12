@@ -53,9 +53,9 @@ module.exports = {
             color: '#BA2D7E',
           },
           a: {
-            color: '#80D34D',
+            color: '#2F40EB',
             '&:hover': {
-              color: '#fed318',
+              color: '#2F40EB',
             },
           },
           code:  {
@@ -133,6 +133,9 @@ module.exports = {
         '.red-glow': {
           textShadow : '0px 0px 8px rgba(253, 52, 88, 0.6)',
         },
+        '.orange-glow': {
+          textShadow: '0px 0px 8px rgba(253, 120, 23,0.6)',
+        }
       }
 
       addUtilities(newUtilities, ['responsive', 'hover'])

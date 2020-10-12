@@ -3,11 +3,17 @@
     <section ref="blogContent" class="block col-span-1 lg:col-span-2 mt-0 md:mt-16">
       <article class="prose lg:prose-xl">
         <nuxt-content :document="article" />
-        <p class="text-lg text-gray-500 mb-3">Article last updated: {{ formatDate(article.updatedAt) }}</p>
+        <div class="flex justify-between">
+          <div class="flex flex-col dark:text-gray-300 text-gray-900">
+            <p class="text-lg mb-0 uppercase">Last updated</p>
+            <span class="text-gray-600">{{ formatDate(article.updatedAt) }}</span>
+          </div>
+          <HitCounter/>
+        </div>
         <PrevNext :prev="prev" :next="next" />
       </article>
     </section>
-    <aside class="hidden sm:col-span-1 sm:flex sm:flex-col">
+    <aside class="hidden lg:col-span-1 lg:flex lg:flex-col">
       <div class="sticky top-16">
         <h2 class="dark:text-white uppercase text-black font-h2 text-lg mt-16 tracking-wider">Table of contents</h2>
         <nav class="mt-4">

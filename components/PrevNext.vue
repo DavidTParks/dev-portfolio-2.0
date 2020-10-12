@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between">
+  <div class="flex justify-between mt-6">
     <nuxt-link
       v-if="prev"
       :to="`/blog/${prev.slug}`"

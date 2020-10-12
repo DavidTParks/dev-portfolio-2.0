@@ -1,5 +1,7 @@
 <template>
 <div>
+  <BlogHero :article="article"/>
+  <PageBreak/>
   <BlogSection>
     <RecentBlogs :blogs="blogs"></RecentBlogs>
   </BlogSection>
@@ -9,6 +11,14 @@
 <script>
 export default {
   layout: 'blog',
+  data() {
+    return {
+      article: {
+        title: 'Blog',
+        subtite: ''
+      }
+    }
+  },
   async asyncData({ $content, params }) {
     const blogs = await $content('blogs')
       .only(['title', 'slug', 'subtitle', 'description', 'category', 'createdAt'])

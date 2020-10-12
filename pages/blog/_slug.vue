@@ -1,6 +1,5 @@
 <template>
   <div>
-    <HitCounter/>
     <BlogHero :article="article"/>
     <PageBreak/>
     <BlogSection>
@@ -63,7 +62,7 @@ export default {
         type: "article",
         title: this.article.title,
         description: this.article.description,
-        url: `https://davidparks.dev/articles/${this.$route.params.slug}`,
+        url: `https://davidparks.dev/blog/${this.$route.params.slug}`,
         mainImage: this.socialImage,
       };
       return getSiteMeta(metaData);
@@ -107,72 +106,4 @@ export default {
 </script>
 
 <style>
-.nuxt-content h1 {
-  @apply pink-glow font-h1;
-}
-
-.dark .nuxt-content h2 {
-  @apply teal-glow text-retroteal font-h2;
-  padding-top: 60px; margin-top: -60px;
-}
-
-.dark .nuxt-content h3 {
-  @apply yellow-glow font-h2;
-  padding-top: 60px; margin-top: -60px;
-}
-
-.light .nuxt-content {
-  @apply text-black;
-}
-
-.light .nuxt-content h2 {
-  @apply text-infoblue font-h2;
-  padding-top: 60px; margin-top: -60px;
-}
-
-.light .nuxt-content h3 {
-  @apply font-h2 text-darkpurple;
-  padding-top: 60px; margin-top: -60px;
-}
-
-.nuxt-content a {
-  transition: all 0.1s;
-  @apply green-glow;
-}
-
-.nuxt-content a:hover {
-  @apply yellow-glow;
-}
-
-.dark .toc-list.active a {
-  @apply text-retroteal teal-glow !important;
-}
-
-.light .toc-list.active a {
-  @apply text-infoblue;
-}
-
-.light .prose ul > li::before {
-  background-color: black;
-}
-
-.light .prose blockquote {
-  border-left-color: black;
-}
-
-.light .prose blockquote {
-  @apply text-darkblue;
-}
-
-.nuxt-content-editor {
-  color: black !important;
-}
-
-.prose code::before {
-  content: none !important;
-}
-
-.prose code::after {
-  content: none !important;
-}
 </style>
