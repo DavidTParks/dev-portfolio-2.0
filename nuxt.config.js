@@ -23,11 +23,6 @@ export default {
           "Articles focused on Frontend development. Focused in Vue.js, Nuxt.js, CSS and Animation!",
       },
       { charset: 'utf-8' },
-      { hid: 'description', name: 'description', content: '' },
-      // { property: "og:image:width", content: "740" },
-      // { property: "og:image:height", content: "300" },
-      { name: "twitter:site", content: "@dparksdev" },
-      { name: "twitter:card", content: "summary_large_image" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
