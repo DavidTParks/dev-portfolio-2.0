@@ -22,6 +22,7 @@ export default {
   async asyncData({ $content, params }) {
     const blogs = await $content('blogs')
       .only(['title', 'slug', 'subtitle', 'description', 'category', 'createdAt'])
+      .where({ published: { $eq: true } })
       .sortBy('createdAt', 'desc')
       .fetch()
 

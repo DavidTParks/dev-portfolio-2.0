@@ -28,6 +28,7 @@ export default {
     const [prev, next] = await $content('blogs')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
+      .where({ published: { $eq: true } })
       .surround(params.slug)
       .fetch()
 

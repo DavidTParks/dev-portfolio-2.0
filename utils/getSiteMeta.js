@@ -2,7 +2,7 @@ const type = "website";
 const url = "https://davidparks.dev";
 const title = "David Parks";
 const description =
-  "Articles focused on Frontend development. Focused in Vue.js, Nuxt.js, CSS and Animation!";
+  "David Parks is a Front-end Developer from Milwaukee, Wisconsin. This blog will focus on Nuxt.js, Vue.js, CSS, Animation and more!";
 const mainImage = "https://davidparksdev.s3.us-east-2.amazonaws.com/template.png";
 
 export default (meta) => {

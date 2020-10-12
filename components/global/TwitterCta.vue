@@ -1,6 +1,6 @@
 <template>
 <div :class="[`border-infoblue`]" class="bg-infoblue dark:bg-tokyosky border-2 text-white p-4 my-8 infobox overflow-hidden shadow-sm rounded-lg twitter-cta">
-  <h4 class="m-0 text-white text-sm md:text-2xl text-center text-base">Enjoying the article? Consider <a target="_blank" :href="shareLink" class="dark:green-glow">sharing</a> on <span class="text-retroteal dark:teal-glow">Twitter</span>!</h4>
+  <h4 class="m-0 text-white text-sm md:text-2xl text-center text-base">Enjoying the article? Consider <a target="_blank" :href="shareLink" class="text-retroyellow dark:text-retrogreen dark:green-glow">sharing</a> on <span class="text-retroteal dark:teal-glow">Twitter</span>!</h4>
 </div>
 </template>
 

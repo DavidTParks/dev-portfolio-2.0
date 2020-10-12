@@ -4,6 +4,7 @@ subtitle: This is a copy subtitle
 description: Have you ever wondered how people on Twitter or Facebook get those beautiful image previews of their posts? This post will teach you how, with Nuxt Content!
 position: 5
 category: Nuxt
+published: false
 ---
 
 ## Why social media cards matter

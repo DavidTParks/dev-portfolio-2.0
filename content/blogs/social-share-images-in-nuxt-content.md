@@ -3,6 +3,7 @@ title: Social Share Images in Nuxt Content
 subtitle: Beautiful social sharing cards for your Nuxt Content blogs
 description: Learn how to create beautiful social share images at build time for your Nuxt Content blog
 category: Nuxt
+published: true
 ---
 
 ## Intro
@@ -35,7 +36,7 @@ yarn add @jlengstorf/get-share-image
 
 Once you've gotten everything installed and your template uploaded to Cloudinary, it's time to begin generating your images! 
 
-## Fetching Blog Content 
+## Fetch Blog & Generate Image
 
 
 From within a dynamic page component (my blog pages are in /blog/_slug.vue) we'll need to use the `asyncData` Nuxt hook due to the fact that this is called before the `head` method where we'll need to set our Open Graph and Twitter metadata for the post. 
@@ -122,7 +123,14 @@ export default {
 </script>
 ```
 
+The `getShareImage` function will generate an image URL via Cloudinary using the specified text, transformations, colors and fonts. For example, my URL for this post is 
+```
+https://res.cloudinary.com/dzxp4ujfz/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_760,c_fit,co_rgb:fff,g_south_west,x_100,y_350,l_text:unienueueitalic.otf_72_line_spacing_-10:Social%20Share%20Images%20in%20Nuxt%20Content/w_760,c_fit,co_rgb:6CE3D4,g_north_west,x_100,y_380,l_text:unienueueitalic.otf_48:Beautiful%20social%20sharing%20cards%20for%20your%20Nuxt%20Content%20blogs/template_oxlcmb.png
+```
+
 Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. Feel free to check out Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig) and customize it your liking.
+
+### Setting meta tags
 
 You may also notice that I am importing `getSiteMeta` from `getSiteMeta.js`. This function will use a computed property to override some default metadata values I've setup in this file if they are explicitly provided. That file looks like this:
 
@@ -131,7 +139,7 @@ const type = "website";
 const url = "https://davidparks.dev";
 const title = "David Parks";
 const description =
-  "Articles focused on Frontend development. Focused in Vue.js, Nuxt.js, CSS and Animation!";
+  "David Parks is a Front-end Developer from Milwaukee, Wisconsin. This blog will focus on Nuxt.js, Vue.js, CSS, Animation and more!";
 const mainImage = "https://davidparksdev.s3.us-east-2.amazonaws.com/template.png";
 
 export default (meta) => {
@@ -196,7 +204,24 @@ Unless there are overrides explicitly provided, it will use the fallback values 
 
 The computed property `meta` is then being merged into the `head` method via a spread operator `...this.meta,`. This will ensure that any default values are overridden and your article title, description and images are properly put inside of your documents head. 
 
+## Testing with Facebook & Twitter Tools
+
+If all goes well, you should now see these meta tags in your DOM! 
+
+The next time your site deploys, you should now see an awesome looking share image when sharing your blog to Twitter, Facebook, Linkedin or anywhere else! Using tools like Twitter's [Card Debugger](https://cards-dev.twitter.com/validator) and [Facebook's Open Graph Debugger](https://developers.facebook.com/tools/debug/) will be essential to tweaking them to your liking and debugging any potentially missing tags.
+
+<div class="grid grid-cols-1 gap-4">
+<figure>
+  <img src="/social-image-sharing-01.png">
+  <caption>Twitter card preview</caption>
+</figure>
+<figure>
+  <img src="/social-image-sharing-02.png">
+  <caption>Facebook card preview</caption>
+</figure>
+</div>
+
 ## Wrapping Up
 
-If all goes well, you should now see these meta tags in your developer tools! The next time your site deploys, you should now see an awesome looking share image when sharing your blog to Twitter, Facebook, Linkedin or anywhere else! If you've made it this far, good job. I look forward to seeing some awesome Nuxt Content blogs with beautiful sharing cards on my feeds in the near future. 
+If you've made it this far, good job. I look forward to seeing some awesome Nuxt Content blogs with beautiful sharing cards on my feeds in the near future. Thanks for reading!
 

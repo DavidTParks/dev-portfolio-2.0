@@ -14,6 +14,7 @@ export default {
       const blogs = await $content('blogs')
         .limit(5)
         .only(['title', 'slug', 'subtitle', 'description', 'category', 'createdAt'])
+        .where({ published: { $eq: true } })
         .sortBy('createdAt', 'desc')
         .fetch()
 
