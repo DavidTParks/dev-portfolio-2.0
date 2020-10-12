@@ -8,7 +8,7 @@ published: true
 
 ## Intro
 
-When sharing blog content or articles on social media **it's important to stand out**. In a sea of Twitter posts users might simply scroll by something you've worked hard on if it isn't eye catching enough!
+When sharing blog content or articles on social media ***it's important to stand out.*** In a sea of Twitter posts users might simply scroll by an article you've worked hard on if the blog preview isn't eye catching enough!
 
 In this post, we'll teach you how to generate beautiful sharing cards for your Nuxt Content blog posts! This post will use concepts laid out in [Jason Lengstorfs amazing article](https://www.learnwithjason.dev/blog/auto-generate-social-image/) where he details how to generate images for posts using Cloundinary's API and a custom template, however we'll be more focused on getting this going with Nuxt Content! 
 
@@ -43,6 +43,50 @@ From within a dynamic page component (my blog pages are in /blog/_slug.vue) we'l
 
 We're going to start by importing `getShareImage` from `'@jlengstorf/get-share-image'` and then calling this function from within `asyncData` after fetching the article for our specific page. 
 
+
+```vue
+<script>
+import getShareImage from '@jlengstorf/get-share-image';
+
+export default {
+  async asyncData({ $content, params }) {
+    const article = await $content('blogs', params.slug).fetch()
+
+    const socialImage = getShareImage({
+        title: article.title,
+        tagline:  article.subtitle,
+        cloudName: 'YOUR_CLOUDINARY_NAME',
+        imagePublicID: 'YOUR_TEMPLATE_NAME.png',
+        titleFont: 'unienueueitalic.otf',
+        titleExtraConfig: '_line_spacing_-10',
+        taglineFont: 'unienueueitalic.otf',
+        titleFontSize: '72',
+        taglineFontSize: '48',
+        titleColor: 'fff',
+        taglineColor: '6CE3D4',
+        textLeftOffset: '100',
+        titleBottomOffset: '350',
+        taglineTopOffset: '380'
+      });
+
+    return { article, socialImage }
+  }
+}
+</script>
+```
+
+The `getShareImage` function will generate an image URL via Cloudinary using the specified text, transformations, colors and fonts. For example, my URL for this post is 
+```
+https://res.cloudinary.com/dzxp4ujfz/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_760,c_fit,co_rgb:fff,g_south_west,x_100,y_350,l_text:unienueueitalic.otf_72_line_spacing_-10:Social%20Share%20Images%20in%20Nuxt%20Content/w_760,c_fit,co_rgb:6CE3D4,g_north_west,x_100,y_380,l_text:unienueueitalic.otf_48:Beautiful%20social%20sharing%20cards%20for%20your%20Nuxt%20Content%20blogs/template_oxlcmb.png
+```
+
+Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. Feel free to check out Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig) and customize it your liking.
+
+### Setting meta tags
+
+Great, we are generating our image via dynamic Nuxt Content article attributes! **Now how do we inject these variables into our blog pages `head` so that social media users will see our image and metadata?**
+
+To do this, we'll leverage Nuxt.js' built in [head](https://nuxtjs.org/api/pages-head/) method that allows us to set Open Graph and Twitter meta tags. We'll also include some useful information like the time the article was published, and the last time it was modified using the `createdAt` and `updatedAt` properties that Nuxt Content automatically injects for us.
 
 ```vue
 <script>
@@ -122,16 +166,7 @@ export default {
 </script>
 ```
 
-The `getShareImage` function will generate an image URL via Cloudinary using the specified text, transformations, colors and fonts. For example, my URL for this post is 
-```
-https://res.cloudinary.com/dzxp4ujfz/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_760,c_fit,co_rgb:fff,g_south_west,x_100,y_350,l_text:unienueueitalic.otf_72_line_spacing_-10:Social%20Share%20Images%20in%20Nuxt%20Content/w_760,c_fit,co_rgb:6CE3D4,g_north_west,x_100,y_380,l_text:unienueueitalic.otf_48:Beautiful%20social%20sharing%20cards%20for%20your%20Nuxt%20Content%20blogs/template_oxlcmb.png
-```
-
-Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. Feel free to check out Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig) and customize it your liking.
-
-### Setting meta tags
-
-You may also notice that I am importing `getSiteMeta` from `getSiteMeta.js`. This function will use a computed property to override some default metadata values I've setup in this file if they are explicitly provided. That file looks like this:
+You have noticed above that I am importing `getSiteMeta` from `"~/utils/getSiteMeta.js"`. This is a utility function that I use to overwrite default meta tags. We will use a computed property to override some default metadata values I've setup in this file if they are explicitly provided. This ensures we are injecting the proper variables from our Nuxt Content Markdown file into our head. That file looks like this:
 
 ```javascript
 const type = "website";
@@ -207,19 +242,20 @@ export default (meta) => {
 };
 ```
 
-<twitter-cta :share-link="'https://twitter.com/intent/tweet?text=Social Share Images in Nuxt Content&url=https://davidparks.dev/blog/social-share-images-in-nuxt-content/&via=dparksdev'"></twitter-cta>
-
 Unless there are overrides explicitly provided, it will use the fallback values I've defined at the top of this file. This is great if you want to avoid those cases where you forget to set meta tags!
 
-The computed property `meta` is then being merged into the `head` method via a spread operator `...this.meta,`. This will ensure that any default values are overridden and your article title, description and images are properly put inside of your documents head. 
+The computed property `meta` is then being merged into the `head` method via a spread operator `...this.meta,`. This will ensure that any default values are overridden and your article title, description and images are properly injected inside of your documents head. 
+
 
 ## Testing with Facebook & Twitter Tools
 
 If all goes well, you should now see these meta tags in your DOM! 
 
-The next time your site deploys, you should now see an awesome looking share image when sharing your blog to Twitter, Facebook, Linkedin or anywhere else! Using tools like Twitter's [Card Debugger](https://cards-dev.twitter.com/validator) and [Facebook's Open Graph Debugger](https://developers.facebook.com/tools/debug/) will be essential to tweaking them to your liking and debugging any potentially missing tags.
+The next time your site deploys, you should now see an awesome looking share image when sharing your blog to Twitter, Facebook, Linkedin or anywhere else! Using tools like Twitter's [Card Debugger](https://cards-dev.twitter.com/validator) and [Facebook's Open Graph Debugger](https://developers.facebook.com/tools/debug/) will be ***essential*** to tweaking them to your liking and debugging any potentially missing tags.
 
 ## Wrapping Up
 
 If you've made it this far, good job. I look forward to seeing some awesome Nuxt Content blogs with beautiful sharing cards on my feeds in the near future. Thanks for reading!
 
+
+<twitter-cta :share-link="'https://twitter.com/intent/tweet?text=Social Share Images in Nuxt Content&url=https://davidparks.dev/blog/social-share-images-in-nuxt-content/&via=dparksdev'"></twitter-cta>
