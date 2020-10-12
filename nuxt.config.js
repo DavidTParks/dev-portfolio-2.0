@@ -119,7 +119,6 @@ export default {
 
         posts.forEach((post) => {
           const url = `https://www.davidparks.dev/blog/${post.slug}`;
-
           feed.addItem({
             title: post.title,
             id: url,
@@ -163,7 +162,11 @@ export default {
       baseURL: process.env.BASE_URL
     }
   },
-  storybook: {
-    // Options
-  }
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        document.bodyPlainText = document.text;
+      }
+    },
+  },
 }
