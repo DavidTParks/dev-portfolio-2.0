@@ -30,11 +30,8 @@ export default {
       .sortBy('createdAt', 'asc')
       .surround(params.slug)
       .fetch()
-    
-    let socialImage = {};
 
-    if(process.env.NODE_ENV === 'production') {
-      socialImage = getShareImage({
+    const socialImage = getShareImage({
         title: article.title,
         tagline:  article.subtitle,
         cloudName: 'dzxp4ujfz',
@@ -50,7 +47,7 @@ export default {
         titleBottomOffset: '350',
         taglineTopOffset: '380'
       });
-    }
+
 
     return { article, socialImage, prev, next }
   },
