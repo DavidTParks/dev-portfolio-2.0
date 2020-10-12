@@ -1,5 +1,5 @@
 <template>
-  <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden">
+  <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden transition-colors duration-500">
     <div class="hero">
       <button @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
         <Train class="train w-3/12 h-auto"/>
@@ -11,13 +11,13 @@
       </div>
       <Plane class="plane w-24 h-24 absolute hidden"/>
       <div class="cloud-wrap">
-        <template v-if="$colorMode.preference === 'dark'">
+        <template v-if="$colorMode.value === 'dark'">
           <AbstractCloud class="cloud cloud1"/>
           <AbstractCloud class="cloud cloud2 "/>
           <AbstractCloud class="cloud cloud3 "/>
           <AbstractCloud class="cloud cloud4 "/>
         </template>
-        <template v-if="$colorMode.preference === 'light'">
+        <template v-if="$colorMode.value === 'light'">
           <LightCloud class="cloud cloud1"/>
           <LightCloud class="cloud cloud2 "/>
           <LightCloud class="cloud cloud3 "/>

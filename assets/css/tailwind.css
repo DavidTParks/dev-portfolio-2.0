@@ -45,7 +45,7 @@
 }
 
 .light .toc-list.active a {
-  @apply text-infoblue;
+  @apply text-infoblue !important;
 }
 
 .light .prose ul > li::before {

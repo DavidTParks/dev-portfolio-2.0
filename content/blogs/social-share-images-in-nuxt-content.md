@@ -1,7 +1,7 @@
 ---
 title: Social Share Images in Nuxt Content
 subtitle: Beautiful social sharing cards for your Nuxt Content blogs
-description: Learn how to create beautiful social share images at build time for your Nuxt Content blog
+description: Have you ever wondered how tech bloggers on social media make those beautiful social media cards for their blog posts? This post will teach you how, with Nuxt Content!
 category: Nuxt
 published: true
 ---
@@ -69,7 +69,6 @@ export default {
         titleBottomOffset: '350',
         taglineTopOffset: '380'
       });
-
 
     return { article, socialImage }
   },
@@ -209,17 +208,6 @@ The computed property `meta` is then being merged into the `head` method via a s
 If all goes well, you should now see these meta tags in your DOM! 
 
 The next time your site deploys, you should now see an awesome looking share image when sharing your blog to Twitter, Facebook, Linkedin or anywhere else! Using tools like Twitter's [Card Debugger](https://cards-dev.twitter.com/validator) and [Facebook's Open Graph Debugger](https://developers.facebook.com/tools/debug/) will be essential to tweaking them to your liking and debugging any potentially missing tags.
-
-<div class="grid grid-cols-1 gap-4">
-<figure>
-  <img src="/social-image-sharing-01.png">
-  <caption>Twitter card preview</caption>
-</figure>
-<figure>
-  <img src="/social-image-sharing-02.png">
-  <caption>Facebook card preview</caption>
-</figure>
-</div>
 
 ## Wrapping Up
 
