@@ -41,7 +41,6 @@
 
 <script>
 import Train from '~/assets/svg/train-5.svg';
-import Helicopter from '~/assets/svg/helicopter.svg';
 import Plane from '~/assets/svg/plane1.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
 import LightCloud from '~/assets/svg/light-cloud.svg'
@@ -72,7 +71,6 @@ export default {
     Dock,
     Crates,
     Station,
-    Helicopter,
     Plane
   },
   methods: {

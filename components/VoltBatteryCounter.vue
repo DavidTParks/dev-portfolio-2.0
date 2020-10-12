@@ -26,7 +26,7 @@ export default {
     this.initialVolts = data.volts;
   },
   mounted() {
-    this.audio = new Audio(require('@/assets/sounds/charge.wav'));
+    this.audio = new Audio(require('@/assets/sounds/zap.mp3'));
   },
   fetchOnServer: false,
   methods: {
@@ -34,6 +34,7 @@ export default {
       if(this.volts < 12) {
         this.volts++;
         this.initialVolts++;
+        this.audio.play();
         this.sendVoltageToMainframe();
       } else {
         this.capacityAudio = new Audio(require('@/assets/sounds/capacity.mp3'));
@@ -42,7 +43,6 @@ export default {
     },
     async sendVoltageToMainframe() {
       const { data } = await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
-      console.log(data);
     }
   },
   watch: {

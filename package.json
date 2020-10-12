@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^1.1.1",
-    "@nuxtjs/storybook": "^3.0.0",
     "@nuxtjs/tailwindcss": "^3.0.2"
   }
 }

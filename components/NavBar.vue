@@ -1,8 +1,4 @@
 <template>
-<!--
-  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
-  Read the documentation to get started: https://tailwindui.com/documentation
--->
 <nav class="dark:bg-darkteal bg-lightblue nav transition-colors duration-500" :class="{'fixed top-0 w-full z-10' : page === 'blog'}">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
@@ -17,13 +13,8 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex">
             <div class="relative flex ml-4">
-              <nuxt-link to="/blogs" @mouseover="showBlogSquiggle = true" @mouseout="showBlogSquiggle = false"  href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
-              <ZigZag :class="{'opacity-100' : showBlogSquiggle}" class="w-12 transition-opacity opacity-0 duration-200 absolute text-darkpurple dark:text-retroteal left-0 right-0 top-0 mt-8 mx-auto"/>
+              <nuxt-link to="/blogs" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
             </div>
-            <!-- <div class="relative flex ml-4">
-              <nuxt-link to="/about" @mouseover="showProjectSquiggle = true" @mouseout="showProjectSquiggle = false" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out link-style">About</nuxt-link>
-              <ZigZag2 :class="{'opacity-100' : showProjectSquiggle}" class="w-12 transition-opacity opacity-0 duration-200 absolute text-darkpurple dark:text-retroyellow left-0 right-0 top-0 mt-8 mx-auto"/>
-            </div> -->
           </div>
         </div>
       </div>
@@ -44,19 +35,6 @@
       </div>
     </div>
   </div>
-
-  <!--
-    Mobile menu, toggle classes based on menu state.
-
-    Menu open: "block", Menu closed: "hidden"
-  -->
-  
-  <!-- <div :class="[showMobileMenu ? 'flex' : 'hidden']" class="sm:hidden">
-    <div class="px-2 pt-2 pb-3">
-      <nuxt-link to="/blog" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Blog</nuxt-link>
-      <nuxt-link to="/about" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">About</nuxt-link>
-    </div>
-  </div> -->
   <div class="mobile-menu fixed overflow-hidden inset-0 z-50" v-show="showMobileMenu">
     <button @click="toggleMobileMenu" class="z-50 absolute top-0 right-0 m-3 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -85,21 +63,15 @@
 import Moon from '~/assets/svg/moon.svg';
 import Sun from '~/assets/svg/sun.svg';
 import Logo from '~/assets/svg/retro-sun-4.svg';
-import ZigZag from '~/assets/svg/ziggy-1.svg';
-import ZigZag2 from '~/assets/svg/ziggy-2.svg';
 export default {
   props: ['page'],
   components: {
     Moon,
     Sun,
     Logo,
-    ZigZag,
-    ZigZag2
   },
   data() {
     return {
-      showBlogSquiggle: false,
-      showProjectSquiggle: false,
       showMobileMenu: false,
     }
   },

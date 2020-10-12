@@ -13,8 +13,8 @@
           <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out">Home</nuxt-link>
           <Chevron class="dark:text-gray-500 text-gray-600  h-4 w-4 md:h-6 md:w-6 mx-2"/>
           <nuxt-link to="/blogs" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out ml-2">Blog</nuxt-link>
-          <Chevron class="dark:text-gray-500 text-gray-600 h-4 w-4 md:h-6 md:w-6 mx-2"/>
-          <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out ml-2">Nuxt</nuxt-link>
+          <Chevron class="dark:text-gray-500 text-gray-600  h-4 w-4 md:h-6 md:w-6 mx-2"/>
+          <span class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out ml-2">{{article.title}}</span>
       </div>
       <h1 class="text-4xl leading-10 font-extrabold  sm:text-5xl sm:leading-none md:text-5xl font-h1 dark:text-lightblue text-darkpurple mt-4 lg:mt-12">{{article.title}}</h1>
       <h2 class="text-lg font-extrabold  sm:leading-none md:text-xl font-h2 dark:text-gray-600 text-gray-700 mt-4 ">{{article.subtitle}}</h2>
