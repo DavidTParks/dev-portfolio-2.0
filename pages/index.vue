@@ -2,6 +2,7 @@
   <div>
     <BlogSection>
         <MainBlogSection>
+          <!-- <BlogNewsletter :blogs="blogs"/> -->
           <RecentBlogs :blogs="blogs"/>
         </MainBlogSection>
     </BlogSection>
