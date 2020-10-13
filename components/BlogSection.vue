@@ -1,6 +1,6 @@
 <template>
 <div class="relative blog-wrap">
-  <div class="blog-section transition-all duration-500 ease-in-out">
+  <div class="blog-section">
       <div class="blog-gradient"/>
   </div>
   <DinosaurOne class="dino1"/>
@@ -27,10 +27,9 @@ export default {
 </script>
 
 <style>
-.blog-section {
-  background-image: url('~assets/svg/ground3.svg?inline');
-}
+
 .dark .blog-section {
+  background-image: url('~assets/svg/ground3.svg?inline');
   background-repeat: no-repeat no-repeat;
   background-position: top center, 10% 0px;
   background-size: 100%, 100%;
@@ -51,6 +50,7 @@ export default {
 }
 
 .light .blog-section { 
+  background-image: url('~assets/svg/ground3-tan.svg?inline');
   background-repeat: no-repeat no-repeat;
   background-position: top center, 10% 0px;
   background-size: 100%, 100%;

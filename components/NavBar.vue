@@ -27,7 +27,7 @@
       </div>
       <div class="-mr-2 flex sm:hidden">
         <!-- Mobile menu button -->
-        <button @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
+        <button @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 rounded-md text-darkpurple dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-none dark:focus:bg-gray-700 dark:focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" v-if="!showMobileMenu">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -50,7 +50,9 @@
           <nuxt-link @click.native="showMobileMenu = false" to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
           <nuxt-link @click.native="showMobileMenu = false" to="/blogs" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
         </div>
-        <div>
+        <div class="ml-12">
+          <button v-if="$colorMode.value === 'dark'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Sun class="w-10 h-10 text-white hover:text-retroyellow fill-current" aria-label="Activate light mode"/></button>
+          <button v-if="$colorMode.value === 'light'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Moon class="w-10 h-10 text-yellow-600 hover:text-yellow-400 fill-current" aria-label="Activate dark mode"/></button>
         </div>
       </nav>
     </div>
