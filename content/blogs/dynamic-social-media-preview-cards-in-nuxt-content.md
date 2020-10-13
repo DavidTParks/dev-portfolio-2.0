@@ -81,7 +81,7 @@ export default {
 
 The `getShareImage` function will generate an image URL via Cloudinary using the specified text, transformations, colors and fonts. For example, my URL for this post is 
 ```
-https://res.cloudinary.com/dzxp4ujfz/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_760,c_fit,co_rgb:fff,g_south_west,x_100,y_350,l_text:unienueueitalic.otf_72_line_spacing_-10:Social%20Share%20Images%20in%20Nuxt%20Content/w_760,c_fit,co_rgb:6CE3D4,g_north_west,x_100,y_380,l_text:unienueueitalic.otf_48:Beautiful%20social%20sharing%20cards%20for%20your%20Nuxt%20Content%20blogs/template_oxlcmb.png
+https://res.cloudinary.com/dzxp4ujfz/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_760,c_fit,co_rgb:fff,g_south_west,x_100,y_350,l_text:unienueueitalic.otf_72_line_spacing_-10:Dynamic%20Social%20Media%20Preview%20Cards%20in%20Nuxt%20Content/w_760,c_fit,co_rgb:6CE3D4,g_north_west,x_100,y_380,l_text:unienueueitalic.otf_48:Beautiful%20social%20sharing%20cards%20for%20your%20Nuxt%20Content%20blogs/template_oxlcmb.png
 ```
 
 Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. A full list of properties you can set are available on the [Github page for the package](https://github.com/jlengstorf/get-share-image#readme). 
@@ -269,6 +269,8 @@ The next time your site deploys, you should now see an awesome looking share ima
 <div class="mt-16 flex"></div>
 
 ## Wrapping Up
+
+What's great about this approach is that if you decide at some point in the future to update or change your template for your blogs, it will update the preview image for all of them. It also saves you the time and headaches of creating unique preview images for each individual blog in Figma or a design tool of your choosing. Just set it, and forget it!
 
 If you've made it this far, good job. I look forward to seeing some awesome Nuxt Content blogs with beautiful sharing cards on my feeds in the near future. Thanks for reading!
 
