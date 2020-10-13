@@ -1,6 +1,6 @@
 <template>
   <button @click.prevent="playSound('http://lotl.popapostle.com/sounds/LOTL09/roar.wav')" class="hidden md:inline-block -ml-48 absolute left-0 focus:outline-none">
-      <Dino class="w-24 h-24 dino-article cvis"/>
+      <Dino class="w-32 h-32 dino-article cvis"/>
   </button>
 </template>
 

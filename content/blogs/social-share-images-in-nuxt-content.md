@@ -14,6 +14,8 @@ In this post, we'll teach you how to generate beautiful sharing cards for your N
 
 I would recommend going and reading his post before continuing, as you will need to setup your own template from within Cloundinary, as well as upload any custom fonts you want to use for your template. 
 
+<div class="mt-16 flex"></div>
+
 ## Setup
 
 This post won't go into too much detail about setting up a Nuxt Content blog from scratch, but it goes without saying make sure you have the `@nuxt/content` package installed and added to your `nuxt.config.js` modules like so:
@@ -35,6 +37,8 @@ yarn add @jlengstorf/get-share-image
 ```
 
 Once you've gotten everything installed and your template uploaded to Cloudinary, it's time to begin generating your images! 
+
+<div class="mt-16 flex"></div>
 
 ## Fetch Blog & Generate Image
 
@@ -83,6 +87,10 @@ https://res.cloudinary.com/dzxp4ujfz/image/upload/w_1280,h_669,c_fill,q_auto,f_a
 Since I've created my own template, and included my own font, my settings may be different than yours when setting the `textLeftOffset` or any other offsets for example. A full list of properties you can set are available on the [Github page for the package](https://github.com/jlengstorf/get-share-image#readme). 
 
 Feel free to check out Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig) and customize it your liking. 
+
+<dino-article></dino-article>
+
+<div class="mt-8 flex"></div>
 
 ### Setting meta tags
 
@@ -168,6 +176,8 @@ export default {
 </script>
 ```
 
+<dino-article-two></dino-article-two>
+
 You have noticed above that I am importing `getSiteMeta` from `"~/utils/getSiteMeta.js"`. This is a utility function that I use to overwrite default meta tags. We will use a computed property to override some default metadata values I've setup in this file if they are explicitly provided. This ensures we are injecting the proper variables from our Nuxt Content Markdown file into our head. That file looks like this:
 
 ```javascript
@@ -248,12 +258,15 @@ Unless there are overrides explicitly provided, it will use the fallback values 
 
 The computed property `meta` is then being merged into the `head` method via a spread operator `...this.meta,`. This will ensure that any default values are overridden and your article title, description and images are properly injected inside of your documents head. 
 
+<div class="mt-16 flex"></div>
 
 ## Testing with Facebook & Twitter Tools
 
 If all goes well, you should now see these meta tags in your DOM! 
 
 The next time your site deploys, you should now see an awesome looking share image when sharing your blog to Twitter, Facebook, Linkedin or anywhere else! Using tools like Twitter's [Card Debugger](https://cards-dev.twitter.com/validator) and [Facebook's Open Graph Debugger](https://developers.facebook.com/tools/debug/) will be ***essential*** to tweaking them to your liking and debugging any potentially missing tags.
+
+<div class="mt-16 flex"></div>
 
 ## Wrapping Up
 

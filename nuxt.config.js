@@ -107,7 +107,9 @@ export default {
         // eslint-disable-next-line global-require
         const { $content } = require('@nuxt/content');
 
-        const blogs = await $content('blogs').where({ published: { $eq: true } }).fetch();
+        const blogs = await $content('blogs')
+        .where({ published: { $eq: true } })
+        .fetch();
 
         blogs.forEach((post) => {
           const url = `https://www.davidparks.dev/blog/${post.slug}`;
