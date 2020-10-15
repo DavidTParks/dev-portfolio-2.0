@@ -1,7 +1,7 @@
 <template>
   <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden transition-colors duration-500">
     <div class="hero">
-      <button @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
+      <button aria-label="Play train sound" @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
         <Train class="train w-3/12 h-auto"/>
       </button>
       <BuildingOne class="building1"/>

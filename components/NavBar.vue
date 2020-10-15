@@ -22,7 +22,7 @@
         <div class="flex items-center">
           <button v-if="$colorMode.value === 'dark'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Sun class="w-6 h-6 text-white hover:text-retroyellow fill-current" aria-label="Activate light mode"/></button>
           <button v-if="$colorMode.value === 'light'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Moon class="w-6 h-6 text-black hover:text-gray-800 fill-current" aria-label="Activate dark mode"/></button>
-          <a target="_blank" href="/feed.xml" class="p-1 border-2 border-transparent rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" aria-labelledby="rss-title"><svg class="w-6 h-6 text-black dark:text-white dark:hover:text-gray-100  hover:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg></a>
+          <a rel="noopener noreferrer" target="_blank" href="/feed.xml" class="p-1 border-2 border-transparent rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" aria-label="Rss feed link"><svg class="w-6 h-6 text-black dark:text-white dark:hover:text-gray-100  hover:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg></a>
         </div>
       </div>
       <div class="-mr-2 flex sm:hidden">
@@ -50,10 +50,10 @@
           <nuxt-link @click.native="showMobileMenu = false" to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
           <nuxt-link @click.native="showMobileMenu = false" to="/blogs" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
         </div>
-        <!-- <div class="ml-12">
+        <div class="ml-12">
           <button v-if="$colorMode.value === 'dark'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Sun class="w-10 h-10 text-white hover:text-retroyellow fill-current" aria-label="Activate light mode"/></button>
           <button v-if="$colorMode.value === 'light'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Moon class="w-10 h-10 text-yellow-600 hover:text-yellow-400 fill-current" aria-label="Activate dark mode"/></button>
-        </div> -->
+        </div>
       </nav>
     </div>
   </div>
