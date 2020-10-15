@@ -1,6 +1,5 @@
 <template>
 <div>
-  <BlogHero :article="article"/>
   <PageBreak/>
   <BlogSection>
     <RecentBlogs :blogs="blogs"></RecentBlogs>

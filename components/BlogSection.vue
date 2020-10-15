@@ -80,6 +80,24 @@ export default {
   transform: translateX(5%);
 }
 
+.dark .dino1:before {
+  content: '';
+  background: #57ffe9;
+  background: radial-gradient(circle, rgba(186, 45, 126, 0.8) 0%, rgba(122, 202, 196, 0) 30%);
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  mix-blend-mode: hard-light;
+  position: absolute;
+  overflow: visible;
+  top: 0;
+  right: 0%;
+  transform: scale(1);
+  animation: pulse 2600ms ease-in-out infinite alternate;
+  margin-top: -6%;
+  margin-right: -3.5%;
+}
+
 .dark .dino2 {
   position: absolute;
   height: 12vh;

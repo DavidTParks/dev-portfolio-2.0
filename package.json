@@ -23,7 +23,7 @@
     "prism-themes": "^1.4.0"
   },
   "devDependencies": {
-    "@nuxtjs/color-mode": "^1.1.1",
+    "@nuxtjs/color-mode": "^2.0.0",
     "@nuxtjs/tailwindcss": "^3.0.2"
   }
 }

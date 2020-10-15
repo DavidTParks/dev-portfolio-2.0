@@ -84,7 +84,7 @@ export default {
 
 <style>
 .hero {
-  background-image: url('~assets/svg/trimmed-bottom.svg?inline');
+  background-image: url('~assets/svg/trimmed-optim.svg?inline');
   background-repeat: no-repeat, no-repeat;
   background-position: bottom center, 50% -100px;
   background-size: 100%, 100%;

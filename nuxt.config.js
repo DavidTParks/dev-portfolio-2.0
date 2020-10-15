@@ -38,7 +38,8 @@ export default {
     "@/assets/css/global.css",
   ],
   colorMode: {
-    classSuffix: ''
+    classSuffix: '',
+    fallback: 'dark'
   },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
