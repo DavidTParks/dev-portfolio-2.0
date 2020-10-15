@@ -9,7 +9,6 @@
       <div class="boat-wrapper">
         <Boat class="boat"/>
       </div>
-      <Plane class="plane w-24 h-24 absolute hidden"/>
       <div class="cloud-wrap">
         <template v-if="$colorMode.value === 'dark'">
           <AbstractCloud class="cloud cloud1"/>
@@ -41,7 +40,6 @@
 
 <script>
 import Train from '~/assets/svg/train-5.svg';
-import Plane from '~/assets/svg/plane1.svg';
 import AbstractCloud from '~/assets/svg/abstract-cloud.svg'
 import LightCloud from '~/assets/svg/light-cloud.svg'
 import BuildingOne from '~/assets/svg/building1.svg'
@@ -71,7 +69,6 @@ export default {
     Dock,
     Crates,
     Station,
-    Plane
   },
   methods: {
     playTrainSound() {
