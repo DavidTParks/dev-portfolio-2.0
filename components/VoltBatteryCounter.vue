@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-32 dark:text-retroteal text-infoblue teal-glow flex justify-center flex-col battery cvis" :class="{'dark:text-retrored text-retrored red-glow dark:red-glow' : voltsMaxed}">
+  <div class="mt-32 dark:text-retroteal text-infoblue teal-glow flex justify-center flex-col battery" :class="{'dark:text-retrored text-retrored red-glow dark:red-glow' : voltsMaxed}">
     <div class="flex items-center mt-4 justify-center">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       <p class="uppercase ml-1" v-if="$fetchState.pending">Retrieving power levels...</p>
