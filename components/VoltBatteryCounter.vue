@@ -34,11 +34,15 @@ export default {
       if(this.volts < 12) {
         this.volts++;
         this.initialVolts++;
-        this.audio.play();
+        if(this.isSoundEnabled) { 
+          this.audio.play();
+        }
         this.sendVoltageToMainframe();
       } else {
-        this.capacityAudio = new Audio(require('@/assets/sounds/capacity.mp3'));
-        this.capacityAudio.play();
+        if(this.isSoundEnabled) { 
+          this.capacityAudio = new Audio(require('@/assets/sounds/capacity.mp3'));
+          this.capacityAudio.play();
+        }
       }
     },
     async sendVoltageToMainframe() {
@@ -48,14 +52,19 @@ export default {
   watch: {
     volts(val) {
       if(val === 12) {
-        this.audio = new Audio(require('@/assets/sounds/capacity.mp3'));
-        this.audio.play();
+        if(this.isSoundEnabled) { 
+          this.audio = new Audio(require('@/assets/sounds/capacity.mp3'));
+          this.audio.play();
+        }
       }
     }
   },
   computed: {
     voltsMaxed() {
       return this.volts === 12;
+    },
+    isSoundEnabled() {
+      return this.$store.state.isSoundEnabled;
     }
   }
 }

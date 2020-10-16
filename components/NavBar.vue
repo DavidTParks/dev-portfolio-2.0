@@ -1,5 +1,5 @@
 <template>
-<nav class="dark:bg-darkteal bg-lightblue nav transition-colors duration-500" :class="{'fixed top-0 w-full z-10' : page === 'blog'}">
+<nav class="dark:bg-darkteal bg-lightblue nav transition-colors duration-500 z-10" :class="[page === 'blog' ? 'fixed top-0 w-full'  : 'relative z-10']">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
@@ -19,9 +19,13 @@
         </div>
       </div>
       <div class="hidden sm:ml-6 sm:block">
-        <div class="flex items-center">
+        <div class="flex items-center space-x-2" :class="[!showNavControls ? 'hidden' : null]">
           <button v-if="$colorMode.value === 'dark'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Sun class="w-6 h-6 text-white hover:text-retroyellow fill-current" aria-label="Activate light mode"/></button>
           <button v-if="$colorMode.value === 'light'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Moon class="w-6 h-6 text-black hover:text-gray-800 fill-current" aria-label="Activate dark mode"/></button>
+          <button @click="toggleSound" aria-label="Toggle sound" class="p-1 border-2 border-transparent text-black hover:text-gray-90 dark:text-gray-400 rounded-full dark:hover:text-white focus:outline-none transition duration-150 ease-in-out">
+            <svg v-if="isSoundEnabled" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+            <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
+          </button>
           <a rel="noopener noreferrer" target="_blank" href="/feed.xml" class="p-1 border-2 border-transparent rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" aria-label="Rss feed link"><svg class="w-6 h-6 text-black dark:text-white dark:hover:text-gray-100  hover:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg></a>
         </div>
       </div>
@@ -72,9 +76,13 @@ export default {
     Sun,
     Logo,
   },
+  mounted() {
+    this.showNavControls = true;
+  },
   data() {
     return {
       showMobileMenu: false,
+      showNavControls: false
     }
   },
   methods: {
@@ -84,8 +92,16 @@ export default {
     },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu;
+    },
+    toggleSound() {
+      this.$store.commit('toggleSound');
     }
   },
+  computed: {
+    isSoundEnabled() {
+      return this.$store.state.isSoundEnabled;
+    }
+  }
 }
 </script>
 

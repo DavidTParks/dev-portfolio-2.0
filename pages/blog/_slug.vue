@@ -17,6 +17,7 @@ export default {
   mounted() {
     let root = document.documentElement;
     root.style.setProperty('--scroll-behavior', 'smooth');
+    this.$store.commit('initializeSound');
   },
   destroyed() {
     let root = document.documentElement;

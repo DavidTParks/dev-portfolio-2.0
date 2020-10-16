@@ -1,5 +1,8 @@
 <template>
   <header class="pt-16 pb-20 lg:pt-16 lg:pb-28 dark:bg-darkteal bg-lightblue blog-hero overflow-hidden transition-colors duration-500">
+    <div class="stars-wrapper">
+      
+    </div>
     <button aria-label="Play train sound" @click="playTrainSound" class="left-light train-wrapper-hero focus:outline-none">
       <Train class="train-hero w-3/12 h-auto"/>
     </button>
@@ -46,13 +49,20 @@ export default {
       return new Date(date).toLocaleDateString('en', options)
     },
     playTrainSound() {
-      this.audio = new Audio(require('@/assets/sounds/train.wav'));
-      this.audio.play();
+      if(this.isSoundEnabled) {
+        this.audio = new Audio(require('@/assets/sounds/train.wav'));
+        this.audio.play();
+      }
     }
   },
   destroyed() {
     if(this.audio) {
       this.audio.pause();
+    }
+  },
+  computed: {
+    isSoundEnabled() {
+      return this.$store.state.isSoundEnabled;
     }
   }
 }

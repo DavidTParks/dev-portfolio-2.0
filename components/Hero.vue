@@ -1,5 +1,8 @@
 <template>
-  <div class="relative dark:bg-darkteal bg-lightblue overflow-hidden transition-colors duration-500">
+  <div class="dark:bg-darkteal bg-lightblue overflow-hidden transition-colors duration-500">
+    <div class="stars-wrapper">
+      
+    </div>
     <div class="hero">
       <button aria-label="Play train sound" @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
         <Train class="train w-3/12 h-auto"/>
@@ -72,14 +75,32 @@ export default {
   },
   methods: {
     playTrainSound() {
-      var audio = new Audio(require('@/assets/sounds/train.wav'));
-      audio.play();
+      if(this.isSoundEnabled) {
+        const audio = new Audio(require('@/assets/sounds/train.wav'));
+        audio.play();
+      }
+    }
+  },
+  computed: {
+    isSoundEnabled() {
+      return this.$store.state.isSoundEnabled;
     }
   }
 }
 </script>
 
 <style>
+.dark .stars-wrapper {
+  position: absolute;
+  width: 100%;
+  background-position: center top;
+  background-repeat: repeat;
+  background-image: url('~assets/svg/stars.svg?inline');
+  height: 224px;
+  top: 0;
+  z-index: 0;
+}
+
 .hero {
   background-image: url('~assets/svg/trimmed-optim.svg?inline');
   background-repeat: no-repeat, no-repeat;
