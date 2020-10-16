@@ -10,9 +10,11 @@ published: true
 
 When sharing blog content or articles on social media ***it's important to stand out.*** In a sea of Twitter posts users might simply scroll by an article you've worked hard on if the blog preview isn't eye catching enough!
 
-In this post, we'll teach you how to generate beautiful sharing cards for your Nuxt Content blog posts! This post will use concepts laid out in [Jason Lengstorfs amazing article](https://www.learnwithjason.dev/blog/auto-generate-social-image/) where he details how to generate images for posts using Cloundinary's API and a custom template, however we'll be more focused on getting this going with Nuxt Content! 
+In this post, we'll teach you how to generate beautiful sharing cards for your Nuxt Content blog posts! This post will use concepts laid out in <a target="_blank" rel="noopener" href="https://www.learnwithjason.dev/blog/auto-generate-social-image">Jason Lengstorfs amazing article</a> where he details how to generate images for posts using Cloundinary's API and a custom template, however we'll be more focused on getting this going with Nuxt Content! 
 
+<info-box :variant="'help'">
 I would recommend going and reading his post before continuing, as you will need to setup your own template from within Cloundinary, as well as upload any custom fonts you want to use for your template. 
+</info-box>
 
 <div class="mt-16 flex"></div>
 
@@ -94,7 +96,11 @@ Feel free to check out Jason Lengstorf's Figma template available [here](https:/
 
 ### Setting meta tags
 
-Great, we are generating our image via dynamic Nuxt Content article attributes! **Now how do we inject these variables into our blog pages `head` so that social media users will see our image and metadata?**
+Great, we are generating our image via dynamic Nuxt Content article attributes! 
+
+<info-box :variant="'question'">
+Now how do we inject these variables into our blog pages `head` so that social media users will see our image and metadata?
+</info-box>
 
 To do this, we'll leverage Nuxt.js' built in [head](https://nuxtjs.org/api/pages-head/) method that allows us to set Open Graph and Twitter meta tags. We'll also include some useful information like the time the article was published, and the last time it was modified using the `createdAt` and `updatedAt` properties that Nuxt Content automatically injects for us.
 
