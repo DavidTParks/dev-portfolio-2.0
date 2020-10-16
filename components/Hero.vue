@@ -29,7 +29,7 @@
       <Crates class="crates"/>
       <Station class="station"/>
       <Dock class="dock"/>
-      <header class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 z-20">
+      <header class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-32 xl:mt-28 relative">
         <div class="text-center">
           <h1 class="dark:text-retroteal dark:light-blue-glow text-gray-900 dark:pink-glow text-4xl tracking-tight leading-10 font-h1 sm:text-5xl sm:leading-none md:text-6xl ">David Parks</h1>
           <p class="mt-3 max-w-md mx-auto text-base dark:text-lightblue text-black sm:text-lg md:mt-5 md:text-xl md:max-w-2xl">
