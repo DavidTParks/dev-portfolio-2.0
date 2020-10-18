@@ -10,6 +10,7 @@
     "generate-quiet": "nuxt generate --quiet"
   },
   "dependencies": {
+    "@headlessui/vue": "^0.2.0",
     "@jlengstorf/get-share-image": "^0.7.1",
     "@nuxt/content": "^1.8.1",
     "@nuxtjs/axios": "^5.12.2",

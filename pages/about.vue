@@ -6,7 +6,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-4">
       <div>
         <figure>
-          <img class="w-full h-64 lg:w-56 lg:h-56 overflow-hidden rounded-lg object-cover border-2 border-retropink" src="http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&=400&fm=webp"/>
+          <img class="w-full h-64 lg:w-56 lg:h-56 overflow-hidden rounded-lg object-cover border-2 border-retropink" src="http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&=400"/>
           <figcaption class="text-white text-sm mt-2 text-center lg:text-left">Robot David</figcaption>
         </figure>
       </div>
