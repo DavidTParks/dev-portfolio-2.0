@@ -3,6 +3,7 @@
     <section ref="blogContent" class="block col-span-1 lg:col-span-2 mt-0 md:mt-16">
       <article class="prose lg:prose-xl">
         <nuxt-content :document="article" />
+        <twitter-cta :share-link="twitterShareLink"></twitter-cta>
         <div class="flex justify-between">
           <div class="flex flex-col dark:text-gray-300 text-gray-900">
             <p class="text-lg mb-0 uppercase">Last updated</p>
@@ -26,6 +27,11 @@ export default {
       return new Date(date).toLocaleDateString('en', options)
     },
   },
+  computed: {
+    twitterShareLink() {
+      return `https://twitter.com/intent/tweet?text=${this.article.title}&url=https://davidparks.dev/blog/${this.article.slug}/&via=dparksdev`
+    }
+  }
 }
 </script>
 
