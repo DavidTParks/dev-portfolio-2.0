@@ -1,6 +1,6 @@
 ## What's good!
 
-My name is David Parks. I'm a 25 year old Full-stack developer from Milwaukee, Wisconsin. Yes, people have computers here. 
+My name is David Parks. I'm a 25 year old Frontend Developer from Milwaukee, Wisconsin. Yes, people have computers here. 
 
 The first website I ever created was a music blog called Eargrub back in 2012 (***I lost the domain, and have absolutely no clue what the [current site has become](http://eargrub.com/) haha***). I was confused why my page was so slow to load. I mean, I was only trying to embed over **10MB** of ultra HD images, videos and Wordpress plugins. That's good right? 
 

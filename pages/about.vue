@@ -3,18 +3,18 @@
   <AboutMeHero :article="article"/>
   <PageBreak/>
   <BlogSection>
-    <div class="grid grid-cols-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4">
       <div>
         <figure>
-          <img class="w-24 h-24 lg:w-56 lg:h-56 overflow-hidden rounded-lg object-cover border-2 border-retropink" src="http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&=400&fm=webp"/>
-          <figcaption class="text-white text-sm mt-2">Robot David</figcaption>
+          <img class="w-full h-64 lg:w-56 lg:h-56 overflow-hidden rounded-lg object-cover border-2 border-retropink" src="http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&=400&fm=webp"/>
+          <figcaption class="text-white text-sm mt-2 text-center lg:text-left">Robot David</figcaption>
         </figure>
       </div>
-      <article class="prose prose-lg lg:prose-xl col-span-3">
+      <article class="mt-12 lg:mt-0 prose prose-lg lg:prose-xl col-span-3">
         <nuxt-content :document="about" />
       </article>
     </div>
-    <div class="mt-12 flex flex-col justify-center">
+    <div class="mt-12 lg:mt-0 flex flex-col justify-center">
       <h2 class="text-retroteal text-4xl font-h2">Work History</h2>
       <div class="mt-4">
         <div class="flex">
