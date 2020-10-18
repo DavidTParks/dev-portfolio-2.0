@@ -52,7 +52,7 @@ export default {
           date: 'January 2019 - July 2020',
           title: 'Web Developer',
           company: 'gateB, Inc'
-        }
+        },
       ]
     }
   },
