@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden lg:col-span-1 lg:flex lg:flex-col">
+  <aside class="lg:col-span-1 lg:flex lg:flex-col">
     <div class="sticky top-16">
       <h2 class="dark:text-white uppercase text-black font-h2 text-lg mt-16 tracking-wider">Table of contents</h2>
       <nav class="mt-4">
@@ -9,7 +9,7 @@
           </li>
         </ul>
       </nav>
-      <VoltBatteryCounter/>
+      <VoltBatteryCounter class="hidden lg:flex"/>
     </div>
   </aside>
 </template>

@@ -5,7 +5,10 @@
   <BlogSection>
     <div class="grid grid-cols-4">
       <div>
-        <img class="w-24 h-24 lg:w-56 lg:h-56 overflow-hidden rounded-lg object-cover border-2 border-retropink" src="http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&=400&fm=webp"/>
+        <figure>
+          <img class="w-24 h-24 lg:w-56 lg:h-56 overflow-hidden rounded-lg object-cover border-2 border-retropink" src="http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&=400&fm=webp"/>
+          <figcaption class="text-white text-sm mt-2">Robot David</figcaption>
+        </figure>
       </div>
       <article class="prose prose-lg lg:prose-xl col-span-3">
         <nuxt-content :document="about" />
