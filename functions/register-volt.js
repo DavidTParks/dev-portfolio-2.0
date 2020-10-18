@@ -24,7 +24,6 @@ exports.handler = async (event) => {
       })
     );
   }
-  console.log(doesDocExist);
   // Fetch the document for-real
   const document = await client.query(
     q.Get(q.Match(q.Index('volts_by_slug'), slug))

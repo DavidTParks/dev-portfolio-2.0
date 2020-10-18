@@ -1,5 +1,6 @@
 <template>
 <div>
+  <AboutMeHero :article="article"/>
   <PageBreak/>
   <BlogSection>
     <RecentBlogs :blogs="blogs"></RecentBlogs>
