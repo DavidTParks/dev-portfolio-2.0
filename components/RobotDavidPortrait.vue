@@ -1,8 +1,8 @@
 <template>
 <div>
-  <img :alt="imageAlt" loading="lazy" class="w-full h-64 lg:h-64 lg:-64 overflow-hidden rounded-t-lg object-cover border-2 border-retropink flex" :src="imageToShow"/>
+  <img :alt="imageAlt" loading="lazy" class="w-full lg:h-64 lg:-64 overflow-hidden rounded-t-lg object-cover border-2 border-retropink flex" :src="imageToShow"/>
   <!-- <figcaption class="text-white text-sm mt-2 text-center lg:text-left">Robot David</figcaption> -->
-  <div class="bg-darkteal rounded-b-lg border-2 border-t-0 border-retropink p-2 flex justify-between">
+  <div class="bg-darkteal rounded-b-lg border border-t-0 border-retropink p-2 flex justify-between">
     <div>
       <span class="text-white font-h2 uppercase tracking-wider text-retroyellow yellow-glow">Robot</span>
     </div>
@@ -13,7 +13,7 @@
       </span>
     </span>
     <div>
-      <span class="text-white whitespace-no-wrap font-h2 uppercase tracking-wider text-retropink pink-glow">Human</span>
+      <span class="text-white whitespace-no-wrap font-h2 uppercase tracking-wider text-retrogreen green-glow">Human</span>
     </div>
   </div>
 </div>
