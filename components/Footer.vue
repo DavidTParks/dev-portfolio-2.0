@@ -1,5 +1,5 @@
 <template>
-<footer class="relative footer cvis">
+<footer class="relative footer cvis opacity-75 dark:">
   <!--
   Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
   Read the documentation to get started: https://tailwindui.com/documentation

@@ -14,6 +14,7 @@
           <div class="flex">
             <div class="relative flex ml-4">
               <nuxt-link to="/blogs" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
+              <nuxt-link to="/about" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>
             </div>
           </div>
         </div>
