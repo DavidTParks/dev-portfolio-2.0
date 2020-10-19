@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import getSiteMeta from "~/utils/getSiteMeta.js";
 export default {
   layout: 'blog',
   data() {
@@ -30,5 +31,31 @@ export default {
       blogs
     }
   },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: 'Blog - David Parks',
+        description: this.article.description,
+        url: `https://davidparks.dev/blogs`,
+      };
+      return getSiteMeta(metaData);
+    }
+  },
+  head() {
+    return {
+      title: 'Blog - David Parks',
+      meta: [
+        ...this.meta,
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://davidparks.dev/blogs}`,
+        },
+      ],
+    };
+  }
 }
 </script>

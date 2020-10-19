@@ -57,6 +57,7 @@
 
 
 <script>
+import getSiteMeta from "~/utils/getSiteMeta.js";
 export default {
   layout: 'blog',
   data() {
@@ -99,6 +100,32 @@ export default {
     return {
       about
     }
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: 'Blog - David Parks',
+        description: this.article.description,
+        url: `https://davidparks.dev/about`,
+      };
+      return getSiteMeta(metaData);
+    }
+  },
+  head() {
+    return {
+      title: 'About - David Parks',
+      meta: [
+        ...this.meta,
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://davidparks.dev/about}`,
+        },
+      ],
+    };
   }
 }
 </script>
