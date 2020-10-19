@@ -26,6 +26,11 @@
   padding-top: 60px; margin-top: -60px;
 }
 
+.dark .nuxt-content h4 {
+  @apply text-gray-600 font-h2;
+  padding-top: 60px; margin-top: -60px;
+}
+
 .light .nuxt-content {
   @apply text-black;
 }

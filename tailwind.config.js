@@ -116,7 +116,7 @@ module.exports = {
           textShadow: '0px 0px 8px rgba(108,227,212,0.6)',
         },
         '.pink-glow': {
-          textShadow: '0px 0px 8px rgba(186,45,126,0.4);',
+          textShadow: '0px 0px 8px rgba(186,45,126,0.6);',
         },
         '.yellow-glow': {
           textShadow: '0px 0px 8px rgba(254,211,24,0.6)',
