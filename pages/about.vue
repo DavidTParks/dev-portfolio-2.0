@@ -105,7 +105,7 @@ export default {
     meta() {
       const metaData = {
         type: "article",
-        title: 'Blog - David Parks',
+        title: 'About - David Parks',
         description: this.article.description,
         url: `https://davidparks.dev/about`,
       };
