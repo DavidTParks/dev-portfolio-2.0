@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 lg:mt-32 dark:text-retroteal text-infoblue teal-glow flex justify-center flex-col battery" :class="{'dark:text-retrored text-retrored red-glow dark:red-glow' : voltsMaxed}">
+  <div class="dark:text-retroteal text-infoblue teal-glow flex justify-center flex-col battery" :class="{'dark:text-retrored text-retrored red-glow dark:red-glow' : voltsMaxed}">
     <div class="flex items-center mt-4 justify-center">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       <p class="uppercase ml-1" v-if="$fetchState.pending">Retrieving power levels...</p>
@@ -71,23 +71,25 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 1024px) {
   .battery {
-  transform:
-    perspective(800px)
-    rotateY(25deg) scale(0.9)
-    rotateX(10deg);
-  opacity: 0.5;
-  transition: 0.6s ease all;
-}
-
-.battery:hover {
-  transform:
+    transform:
       perspective(800px)
-      rotateY(-15deg)
-      translateY(-50px)
-      rotateX(10deg)
-      scale(1);
-    filter: blur(0);
-    opacity: 1;
+      rotateY(25deg) scale(0.9)
+      rotateX(10deg);
+    opacity: 0.5;
+    transition: 0.6s ease all;
+  }
+
+  .battery:hover {
+    transform:
+        perspective(800px)
+        rotateY(-15deg)
+        translateY(-50px)
+        rotateX(10deg)
+        scale(1);
+      filter: blur(0);
+      opacity: 1;
+  }
 }
 </style>

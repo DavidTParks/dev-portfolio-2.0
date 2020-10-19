@@ -1,7 +1,7 @@
 <template>
   <aside class="lg:col-span-1 lg:flex lg:flex-col">
     <div class="sticky top-16">
-      <h2 class="dark:text-white uppercase text-black font-h2 text-lg mt-16 tracking-wider">Table of contents</h2>
+      <h2 class="dark:text-white uppercase text-black font-h2 text-lg lg:mt-16 tracking-wider">Table of contents</h2>
       <nav class="mt-4">
         <ul>
           <li @click="tableOfContentsHeadingClick(link)" :class="{ 'toc2': link.depth === 2, 'pl-4': link.depth === 3, 'active': link.id === currentlyActiveToc }" class="toc-list" v-for="link of articleToc" :key="link.id">
@@ -9,7 +9,7 @@
           </li>
         </ul>
       </nav>
-      <VoltBatteryCounter class="hidden lg:flex"/>
+      <VoltBatteryCounter class="mt-24 lg:mt-32"/>
     </div>
   </aside>
 </template>
