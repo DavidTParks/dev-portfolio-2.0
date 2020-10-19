@@ -9,7 +9,7 @@
           </li>
         </ul>
       </nav>
-      <VoltBatteryCounter class="mt-24 lg:mt-32"/>
+      <VoltBatteryCounter class="hidden lg:flex mt-24 lg:mt-32"/>
     </div>
   </aside>
 </template>
