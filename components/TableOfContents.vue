@@ -47,7 +47,7 @@ export default {
         this.observer.observe(section);
     });
   },
-  destroyed() {
+  beforeDestroy() {
     this.observer.disconnect();
   },
   methods: {

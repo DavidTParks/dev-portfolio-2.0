@@ -279,3 +279,4 @@ The next time your site deploys, you should now see an awesome looking share ima
 What's great about this approach is that if you decide at some point in the future to update or change your template for your blogs, it will update the preview image for all of them. It also saves you the time and headaches of creating unique preview images for each individual blog in Figma or a design tool of your choosing. Just set it, and forget it!
 
 If you've made it this far, good job. I look forward to seeing some awesome Nuxt Content blogs with beautiful sharing cards on my feeds in the near future. Thanks for reading!
+

@@ -24,7 +24,7 @@ export default {
     root.style.setProperty('--scroll-behavior', 'initial');
   },
   async asyncData({ $content, params , $config: { faunaSecretKey }}) {
-    const article = await $content('blogs', params.slug).fetch()
+    const article = await $content('blogs', params.slug).fetch();
 
     const [prev, next] = await $content('blogs')
       .only(['title', 'slug'])

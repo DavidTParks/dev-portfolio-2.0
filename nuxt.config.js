@@ -76,6 +76,7 @@ export default {
   },
   sitemap: {
     hostname: process.env.BASE_URL || 'https://davidparks.dev/',
+    gzip: true,
     routes: async () => {
       const { $content } = require("@nuxt/content");
       const blogs = await $content({ deep: true })

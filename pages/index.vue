@@ -15,7 +15,7 @@ export default {
     this.$store.commit('initializeSound');
   },
   async asyncData({ $content, params }) {
-      const blogs = await $content('blogs')
+      const blogs = await $content('blogs', { deep: true })
         .limit(5)
         .only(['title', 'slug', 'subtitle', 'description', 'category', 'createdAt'])
         .where({ published: { $eq: true } })
