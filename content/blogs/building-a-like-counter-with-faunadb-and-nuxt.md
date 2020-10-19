@@ -36,7 +36,7 @@ Once you've created a Fauna account, you'll want to login and create a new datab
 After setting up our database, we'll also need to create a collection for our likes. Go ahead and create one named "likes".
 
 <figure>
-  <img src="http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-collection.png"/>
+  <img class="border-4 rounded-lg border-retroyellow" src="http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-collection.png"/>
 </figure>
 
 In order to successfully query our database, we'll also need to setup an **Index**. Indexes allow us to query documents on document attributes rather than document references, which will be important when we fetch our likes using the blogs `slug`. 

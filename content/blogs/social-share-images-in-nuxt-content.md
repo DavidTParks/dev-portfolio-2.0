@@ -3,7 +3,7 @@ title: Social Share Images in Nuxt Content
 subtitle: Beautiful social sharing cards for your Nuxt Content blogs
 description: Have you ever wondered how tech bloggers on social media make those beautiful social media cards for their blog posts? This post will teach you how, with Nuxt Content!
 category: Nuxt
-published: true
+published: false
 ---
 
 ## Intro
