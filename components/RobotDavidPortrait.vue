@@ -26,10 +26,10 @@ export default {
   data() {
     return {
       checked: false,
-      robotImage: 'http://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&h=400',
+      robotImage: 'https://davidparksdev.imgix.net/davidthomaspark_2.png?q=70&w=400&h=400',
       robotAlt: 'Robot version of David with a glowing green eye and pink lightning surrounding him',
       normalAlt: 'Human version of David smiling wearing a striped blue pullover',
-      normalImage: 'http://davidparksdev.imgix.net/david-cropped.png?q=70&w=400&h=400&fit=crop'
+      normalImage: 'https://davidparksdev.imgix.net/david-cropped.png?q=70&w=400&h=400&fit=crop'
     }
   },
   computed: {
