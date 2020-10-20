@@ -3,7 +3,7 @@ title: Build a Like Counter With Fauna, Netlify and Nuxt
 subtitle: Utilize serverless functions for a dynamic like counter on your blog
 description: Learn how to leverage Netlify functions, FaunaDB and Nuxt.js to create a dynamic like counter for your blog posts
 category: Serverless
-published: true
+published: false
 createdAt: '2020-10-19T23:22:29.628Z'
 ---
 
