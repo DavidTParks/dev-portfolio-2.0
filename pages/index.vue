@@ -4,9 +4,9 @@
         <MainBlogSection>
           <!-- <BlogNewsletter :blogs="blogs"/> -->
           <RecentBlogs :blogs="blogs"/>
-          <div slot="categories">
+          <!-- <div slot="categories">
             <h2 class="text-white font-3xl">Heyooo</h2>
-          </div>
+          </div> -->
         </MainBlogSection>
     </BlogSection>
   </div>
