@@ -4,6 +4,9 @@
         <MainBlogSection>
           <!-- <BlogNewsletter :blogs="blogs"/> -->
           <RecentBlogs :blogs="blogs"/>
+          <div slot="categories">
+            <h2 class="text-white font-3xl">Heyooo</h2>
+          </div>
         </MainBlogSection>
     </BlogSection>
   </div>
@@ -15,10 +18,10 @@ export default {
     this.$store.commit('initializeSound');
   },
   async asyncData({ $content, params }) {
-      const blogs = await $content('blogs', { deep: true })
+      const blogs = await $content('blogs')
         .limit(5)
         .only(['title', 'slug', 'subtitle', 'description', 'category', 'createdAt'])
-        .where({ published: { $eq: true  }})
+        .where({ published: { $eq: true }})
         .sortBy('createdAt', 'desc')
         .fetch()
 
