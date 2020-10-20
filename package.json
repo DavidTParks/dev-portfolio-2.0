@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.0",
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/tailwindcss": "^3.0.2"
   }
 }
