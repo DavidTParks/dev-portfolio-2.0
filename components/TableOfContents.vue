@@ -1,5 +1,5 @@
 <template>
-  <aside class="lg:col-span-1 lg:flex lg:flex-col">
+  <aside ref="toc" class="lg:col-span-1 lg:flex lg:flex-col">
     <div class="sticky top-16">
       <h2 class="dark:text-white uppercase text-black font-h2 text-lg lg:mt-16 tracking-wider">Table of contents</h2>
       <nav class="mt-4">
@@ -40,10 +40,10 @@ export default {
     }, this.observerOptions);
 
     // Track all sections that have an `id` applied
-    document.querySelectorAll('h2[id]').forEach((section) => {
+    document.querySelectorAll('.nuxt-content h2[id]').forEach((section) => {
         this.observer.observe(section);
     });
-    document.querySelectorAll('h3[id]').forEach((section) => {
+    document.querySelectorAll('.nuxt-content h3[id]').forEach((section) => {
         this.observer.observe(section);
     });
   },

@@ -80,7 +80,7 @@ export default {
     routes: async () => {
       const { $content } = require("@nuxt/content");
       const blogs = await $content({ deep: true })
-      .only(["path"])
+      .only(["slug", "updatedAt"])
       .where({ published: { $eq: true } })
       .fetch();
 
@@ -88,7 +88,7 @@ export default {
 
       blogs.forEach((blog) => {
         routes.push({
-          url: blog.path,
+          url: `/blog/${blog.slug}`,
           lastmod: blog.updatedAt
         })
       });

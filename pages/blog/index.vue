@@ -37,7 +37,7 @@ export default {
         type: "article",
         title: 'Blog - David Parks',
         description: this.article.description,
-        url: `https://davidparks.dev/blogs`,
+        url: `https://davidparks.dev/blog`,
       };
       return getSiteMeta(metaData);
     }
@@ -52,7 +52,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://davidparks.dev/blogs}`,
+          href: `https://davidparks.dev/blog`,
         },
       ],
     };

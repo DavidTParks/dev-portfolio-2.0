@@ -15,7 +15,7 @@
       <div class="flex items-center">
           <nuxt-link to="/" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out">Home</nuxt-link>
           <Chevron class="dark:text-gray-500 text-gray-600  h-4 w-4 md:h-6 md:w-6 mx-2"/>
-          <nuxt-link to="/blogs" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out ml-2">Blog</nuxt-link>
+          <nuxt-link to="/blog" class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 dark:hover:text-white focus:outline-none focus:text-white transition-all duration-150 ease-in-out ml-2">Blog</nuxt-link>
           <Chevron class="dark:text-gray-500 text-gray-600  h-4 w-4 md:h-6 md:w-6 mx-2"/>
           <span class="rounded-md text-sm  md:text-lg leading-5 font-medium dark:text-lightblue text-gray-700 focus:outline-none transition-all duration-150 ease-in-out ml-2">{{article.category}}</span>
       </div>

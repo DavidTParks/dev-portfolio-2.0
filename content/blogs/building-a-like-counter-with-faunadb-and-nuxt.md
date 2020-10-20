@@ -1,7 +1,7 @@
 ---
 title: Build a Like Counter With Fauna, Netlify and Nuxt
-subtitle: Utilize serverless functions for a dynamic like counter on your blog
-description: Learn how to leverage Netlify functions, FaunaDB and Nuxt.js to create a dynamic like counter for your blog posts
+subtitle: Netlify functions and FaunaDB for a dynamic like counter on your blog
+description: Learn how to leverage Netlify functions, FaunaDB and Nuxt.js to create a dynamic like counter for your blog posts!
 category: Serverless
 published: false
 createdAt: '2020-10-19T23:22:29.628Z'
@@ -32,7 +32,7 @@ Also, you'll need to pick a headless CMS that you like to manage your blog conte
 
 Once you've created a Fauna account, you'll want to login and create a new database for your project. 
 
-<imgix-image :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-faunadb-db.png'"></imgix-image>
+<imgix-image :alt="'Screenshot showing how to create a new FaunaDB database'" :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-faunadb-db.png'"></imgix-image>
 
 After setting up our database, we'll also need to create a collection for our likes. Go ahead and create one named "likes".
 
