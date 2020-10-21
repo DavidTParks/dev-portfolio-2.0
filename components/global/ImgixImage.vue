@@ -3,14 +3,14 @@
     <source
       media="(min-width: 1280px)"
       :srcset="
-        `${src}?auto=format&fit=crop&q=80&w=1280&fm=webp`
+        `${src}?auto=format&fit=crop&q=80&w=800&fm=webp`
       "
       type="image/webp"
     />
     <source
       media="(min-width: 1024px)"
       :srcset="
-        `${src}?auto=format&fit=crop&q=80&w=1024&fm=webp`
+        `${src}?auto=format&fit=crop&q=80&w=700&fm=webp`
       "
       type="image/webp"
     />
@@ -31,14 +31,14 @@
     <source
       media="(min-width: 1280px)"
       :srcset="
-        `${src}?auto=format&fit=crop&q=80&w=1280&fm=png`
+        `${src}?auto=format&fit=crop&q=80&w=800&fm=png`
       "
       type="image/png"
     />
     <source
       media="(min-width: 1024px)"
       :srcset="
-        `${src}?auto=format&fit=crop&q=80&w=1024&fm=png`
+        `${src}?auto=format&fit=crop&q=80&w=700&fm=png`
       "
       type="image/png"
     />

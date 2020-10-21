@@ -11,9 +11,8 @@
       <Moon v-if="$colorMode.value === 'dark'" class="moon h-12 w-12  lg:w-16 lg:h-16 relative"/>
       <Sun v-if="$colorMode.value === 'light'" class="moon h-12 w-12  lg:w-16 lg:h-16 relative"/>
     </div>
-    <div class="relative md:pb-4 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+    <div class="relative md:pb-4 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center flex-col">
       <h1 class="leading-10 text-4xl font-extrabold  sm:text-4xl sm:leading-none md:text-6xl font-h1 dark:text-lightblue text-darkpurple mt-4 text-center">{{article.title}}</h1>
-      <h2 class="text-lg font-extrabold  sm:leading-none md:text-xl font-h2 dark:text-gray-600 text-gray-700 mt-4 ">{{article.subtitle}}</h2>
     </div>
   </header>
 </template>

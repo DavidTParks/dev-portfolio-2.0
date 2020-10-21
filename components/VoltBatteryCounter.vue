@@ -22,7 +22,7 @@ export default {
     }
   },
   async fetch() {
-    const { data } = await this.$axios.get(`.netlify/functions/fetch_volts_for_blog?slug=${this.$route.params.slug}`);
+    const { data } = await this.$axios.get(`/.netlify/functions/fetch_volts_for_blog?slug=${this.$route.params.slug}`);
     this.initialVolts = data.volts;
   },
   mounted() {

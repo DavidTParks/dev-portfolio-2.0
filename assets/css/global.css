@@ -35,6 +35,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   scroll-behavior: var(--scroll-behavior);
+  scroll-padding-top: 70px;
 }
 
 body {

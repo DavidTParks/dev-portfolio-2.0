@@ -1,6 +1,6 @@
 <template>
   <div class="grid gap-24 grid-cols-1 lg:grid-cols-3 article-toc">
-    <section ref="blogContent" class="block col-span-1 lg:col-span-2 mt-0 md:mt-16">
+    <section ref="blogContent" class="block col-span-1 lg:col-span-2 mt-0">
       <article class="prose lg:prose-xl">
         <nuxt-content :document="article" />
         <twitter-cta :share-link="twitterShareLink"></twitter-cta>

@@ -4,9 +4,9 @@
         <MainBlogSection>
           <!-- <BlogNewsletter :blogs="blogs"/> -->
           <RecentBlogs :blogs="blogs"/>
-          <!-- <div slot="categories">
-            <h2 class="text-white font-3xl">Heyooo</h2>
-          </div> -->
+          <div class="mt-4" slot="categories">
+            <nuxt-link to="/nuxt" class="px-3 py-1 rounded-lg bg-darkteal text-retrogreen border border-retrogreen green-glow font-h2 hover:filter-brightness">Nuxt</nuxt-link>
+          </div>
         </MainBlogSection>
     </BlogSection>
   </div>
@@ -26,7 +26,7 @@ export default {
         .fetch()
 
       return {
-        blogs
+        blogs,
       }
   },
   computed: {
