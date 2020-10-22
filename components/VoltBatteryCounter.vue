@@ -7,7 +7,7 @@
       <p class="uppercase ml-1" v-else>{{initialVolts}} {{initialVolts > 1 ? 'volts' : 'volt'}} <span v-if="voltsMaxed">MAX CAPACITY</span></p>
     </div>
     <button aria-label="Increase battery voltage" @click="addVolt" :class="{'dark:border-retrored border-retrored' : voltsMaxed}" class="dark:border-retroteal border-infoblue green-glow bg-transparent dark:bg-tokyosky border-4 text-white p-4 shadow-sm rounded-lg grid grid-cols-12 gap-2 mt-4 focus:outline-none relative">
-      <span v-for="index in volts" :class="{'dark:bg-retrored bg-retrored' : voltsMaxed}" :key="index" class="rotate-45 h-8 w-3 dark:bg-retroteal bg-infoblue"></span>
+      <span v-for="index in storedUserVoltage" :class="{'dark:bg-retrored bg-retrored' : voltsMaxed}" :key="index" class="rotate-45 h-8 w-3 dark:bg-retroteal bg-infoblue"></span>
       <span :class="{'dark:bg-retrored bg-retrored' : voltsMaxed}" class="absolute bottom-0 right-0 m-auto p-1 dark:bg-retroteal bg-infoblue"></span>
     </button>
   </div>
@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       initialVolts: null,
-      volts: 1,
     }
   },
   async fetch() {
@@ -27,13 +26,14 @@ export default {
   },
   mounted() {
     this.audio = new Audio(require('@/assets/sounds/zap.mp3'));
+    this.$store.commit('initializeVoltage', this.$route.params.slug);
   },
   fetchOnServer: false,
   methods: {
     addVolt() {
-      if(this.volts < 12) {
-        this.volts++;
+      if(this.storedUserVoltage < 12) {
         this.initialVolts++;
+        this.$store.commit('incrementVoltage', this.$route.params.slug);
         if(this.isSoundEnabled) { 
           this.audio.play();
         }
@@ -50,8 +50,8 @@ export default {
     }
   },
   watch: {
-    volts(val) {
-      if(val === 12) {
+    storedUserVoltage(val) {
+      if(val >= 12) {
         if(this.isSoundEnabled) { 
           this.audio = new Audio(require('@/assets/sounds/capacity.mp3'));
           this.audio.play();
@@ -61,10 +61,13 @@ export default {
   },
   computed: {
     voltsMaxed() {
-      return this.volts === 12;
+      return this.storedUserVoltage >= 12;
     },
     isSoundEnabled() {
       return this.$store.state.isSoundEnabled;
+    },
+    storedUserVoltage() {
+      return this.$store.state.storedUserVoltage;
     }
   }
 }

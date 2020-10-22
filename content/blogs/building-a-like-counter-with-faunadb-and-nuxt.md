@@ -109,7 +109,7 @@ export default {
 
 ### Netlify
 
-If you aren't familiar with [Netlify functions](https://www.netlify.com/products/functions/), they're essentially Netlify's wrapper on top of AWS Lambda. To keep it simple, they're fully managed and auto-scaling serverless functions that ***just work*** with your Netlify projects. 
+If you aren't familiar with [Netlify functions](https://www.netlify.com/products/functions/), they're essentially Netlify's wrapper on top of AWS Lambda (with a very generous free-tier). To keep it simple, they're fully managed and auto-scaling serverless functions that ***just work*** with your Netlify projects. 
 
 Before we start writing our serverless functions that will handle retrieving and updating our `like` counts for our blog posts, we'll need to install the [Netlify CLI](https://docs.netlify.com/cli/get-started/) in order to test our functions locally before deploying to Netlify. Go ahead and install it globally.
 
@@ -124,7 +124,7 @@ And then go ahead and authenticate with Netlify by running the following command
 netlify login
 ```
 
-Netlify will ask you to login in your browser, and grant access to the Netlify CLI. 
+You'll be asked to login in your browser, and grant access to the Netlify CLI. 
 
 Assuming you already have a project setup on Netlify, we need to now link our local repository with our Site on Netlify. Run the following command and follow the instructions to properly link your site:
 
@@ -134,8 +134,21 @@ netlify link
 
 Excellent! We are now completely done with setting up the pieces we need.
 
-We have **Fauna** to handle our data storage, **Netlify Functions** to handle updating and retrieving that data via **Axios**, a Headless CMS of our choice, and of course, **Nuxt**! 
+We have **Fauna** to handle our "likes" storage, **Netlify Functions** to handle updating and retrieving that data via **Axios**, a Headless CMS of our choice, and of course, **Nuxt**! 
 
 Time to dive into some code!
 
 ## Writing our functions
+
+Our needs for these functions can be broken down into two pieces.
+
+- We need to fetch the current likes of a blog on page load
+- We need to be able to increment these likes when a user clicks on our "like" counter
+
+As you can see, we'll need to create two functions. **One of which is called on the page load**, and **one that is called each time a user clicks on our like button**.
+
+### Fetching likes function
+
+We'll start with the one that will fetch our blogs `like` count on page load (or component mount). 
+
+Go ahead and create a folder in the root of your Nuxt project called `functions`. Netlify will automatically look here for any serverless functions each time you deploy. 
