@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div class="relative">
-    <img :alt="imageAlt" loading="lazy" class="w-full max-h-64 lg:h-64 lg:w-64 overflow-hidden rounded-t-lg object-cover border-2 border-dotted border-retropink flex" :src="imageToShow"/>
+  <div class="relative lg:mt-12">
+    <img :alt="imageAlt" loading="lazy" class="w-full lg:h-64 lg:w-64 overflow-hidden rounded-t-lg object-cover border-2 border-dotted border-retropink flex" :src="imageToShow"/>
   </div>
   <div class="bg-darkteal rounded-b-lg border border-t-0 border-retroyellow p-4 flex justify-between portrait">
     <div>

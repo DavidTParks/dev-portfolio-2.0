@@ -25,12 +25,12 @@ export default {
     this.initialVolts = data.volts;
   },
   mounted() {
-    this.audio = new Audio(require('@/assets/sounds/zap.mp3'));
     this.$store.commit('initializeVoltage', this.$route.params.slug);
+    this.audio = new Audio(require('@/assets/sounds/zap.mp3'));
   },
   fetchOnServer: false,
   methods: {
-    addVolt() {
+    async addVolt() {
       if(this.storedUserVoltage < 12) {
         this.initialVolts++;
         this.$store.commit('incrementVoltage', this.$route.params.slug);
@@ -46,7 +46,7 @@ export default {
       }
     },
     async sendVoltageToMainframe() {
-      const { data } = await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
+      await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
     }
   },
   watch: {

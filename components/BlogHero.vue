@@ -36,7 +36,7 @@ export default {
     Train,
     Moon,
     Chevron,
-    Sun
+    Sun,
   },
   data() {
     return {

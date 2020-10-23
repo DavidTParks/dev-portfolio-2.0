@@ -23,7 +23,7 @@ export const mutations = {
   },
   initializeVoltage(state, slug) {
     const storedVolts = localStorage.getItem(slug);
-    console.log(storedVolts);
+
     if(storedVolts) {
       state.storedUserVoltage = Number(storedVolts);
     } else {
