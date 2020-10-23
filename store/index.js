@@ -22,10 +22,10 @@ export const mutations = {
     }
   },
   initializeVoltage(state, slug) {
-    const storedVolts = localStorage.getItem(slug);
+    const storedVolts = Math.abs(Number(localStorage.getItem(slug)));
 
     if(storedVolts) {
-      state.storedUserVoltage = Number(storedVolts);
+      storedVolts >= 12 ? state.storedUserVoltage = 12 : state.storedUserVoltage = storedVolts;
     } else {
       localStorage.setItem(slug, 1);
       state.storedUserVoltage = 1;

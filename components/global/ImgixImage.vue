@@ -57,8 +57,9 @@
       type="image/png"
     />
     <img
+      loading="lazy"
       :alt="alt"
-      class="solutions-w-full solutions-h-full solutions-object-cover solutions-object-top"
+      class="h-full w-full"
       :src="`${src}?auto=format&fit=crop&q=80&w=1000`"
     />
   </picture>

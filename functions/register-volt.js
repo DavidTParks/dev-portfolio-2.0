@@ -13,7 +13,7 @@ exports.handler = async (event) => {
       }),
     };
   }
-  // Check and see if the doc exists.
+
   const doesDocExist = await client.query(
     q.Exists(q.Match(q.Index('volts_by_slug'), slug))
   );
@@ -24,12 +24,12 @@ exports.handler = async (event) => {
       })
     );
   }
-  // Fetch the document for-real
+
   const document = await client.query(
     q.Get(q.Match(q.Index('volts_by_slug'), slug))
   );
 
-  console.log(document);
+
   await client.query(
     q.Update(document.ref, {
       data: {
