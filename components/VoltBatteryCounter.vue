@@ -46,7 +46,7 @@ export default {
       }
     },
     async sendVoltageToMainframe() {
-      await this.$axios.get(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
+      await this.$axios.post(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
     }
   },
   watch: {

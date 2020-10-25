@@ -6,6 +6,7 @@
           <RecentBlogs :blogs="blogs"/>
           <div class="mt-4" slot="categories">
             <nuxt-link to="/nuxt" class="px-3 py-1 rounded-lg bg-darkteal text-retrogreen border border-retrogreen green-glow font-h2 hover:filter-brightness">Nuxt</nuxt-link>
+            <nuxt-link to="/serverless" class="ml-2 px-3 py-1 rounded-lg bg-darkteal text-retroyellow border border-retroyellow yellow-glow font-h2 hover:filter-brightness">Serverless</nuxt-link>
           </div>
         </MainBlogSection>
     </BlogSection>
@@ -16,6 +17,11 @@
 export default {
   mounted() {
     this.$store.commit('initializeSound');
+  },
+  data() {
+    return {
+
+    }
   },
   async asyncData({ $content, params }) {
       const blogs = await $content('blogs')
