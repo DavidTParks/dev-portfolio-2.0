@@ -31,6 +31,31 @@ export default {
       article
     }
   },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: 'Serverless Articles - David Parks',
+        url: `https://davidparks.dev/nuxt`,
+      };
+      return getSiteMeta(metaData);
+    }
+  },
+  head() {
+    return {
+      title: 'Nuxt Articles - David Parks',
+      meta: [
+        ...this.meta,
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://davidparks.dev/nuxt`,
+        },
+      ],
+    };
+  }
 }
 </script>
 

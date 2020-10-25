@@ -31,6 +31,32 @@ export default {
       article
     }
   },
+  computed: {
+    meta() {
+      const metaData = {
+        type: "article",
+        title: 'Serverless Articles - David Parks',
+        description: this.article.description,
+        url: `https://davidparks.dev/serverless`,
+      };
+      return getSiteMeta(metaData);
+    }
+  },
+  head() {
+    return {
+      title: 'Serverless Articles - David Parks',
+      meta: [
+        ...this.meta,
+      ],
+      link: [
+        {
+          hid: "canonical",
+          rel: "canonical",
+          href: `https://davidparks.dev/serverless`,
+        },
+      ],
+    };
+  }
 }
 </script>
 
