@@ -85,37 +85,26 @@ export default {
 }
 ```
 
-In order to use these environment variables, we'll need to utilize Nuxt's [Runtime Config](https://nuxtjs.org/guide/runtime-config/) and include our baseURL as an option for Axios. 
-
 Also, create a `.env` file in your project's root and pull in your Fauna API Key that you generated earlier
 
 ```env
-BASE_URL=YOUR_SERVER_URL
+BASE_URL=YOUR_PROD_URL
 FAUNA_SECRET_KEY=YOUR_KEY
-BROWSER_BASE_URL=YOUR_CLIENT_URL
 ```
 
-Add these lines to your `nuxt.config.js` file following the [recommended options for the Nuxt Axios Module](https://axios.nuxtjs.org/options)
+Great! Lastly, we can now use our `BASE_URL` environment variable to get Axios setup for both local development and our production deployment.
+
+When I run my Netlify project locally using [Netlify Dev](https://www.netlify.com/products/dev/), I run it on port `8888`. In order to not have issues when we try to test our serverless functions, we need to tell Axios to call via port `8888`, or whatever port you'd like when in local development.
+
+Add this line to your `nuxt.config.js` file:
 
 ```javascript
 export default {
   axios: {
-    baseURL: 'http://localhost:8888/',
-  },
-  publicRuntimeConfig: {
-    axios: {
-      browserBaseURL: process.env.NODE_ENV === 'production' ? process.env.BROWSER_BASE_URL || 'http://localhost:8888/' : 'http://localhost:8888/',
-    }
-  },
-  privateRuntimeConfig: {
-    axios: {
-      baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL || 'http://localhost:8888/' : 'http://localhost:8888/',
-    }
+    baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL : 'http://localhost:8888/',
   },
 }
 ```
-
-When I run my Netlify project locally using [Netlify Dev](https://www.netlify.com/products/dev/), I run it on port `8888`. In order to not have issues when we try to test our serverless functions, we need to tell Axios to call via port `8888`, or whatever port you'd like when in local development.
 
 ### Netlify
 

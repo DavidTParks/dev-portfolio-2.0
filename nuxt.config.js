@@ -150,16 +150,18 @@ export default {
     fallback: true,
   },
   axios: {
-    baseURL: 'http://localhost:8888/',
+    baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL || 'http://localhost:3000/' : 'http://localhost:3000/',
   },
   publicRuntimeConfig: {
+    faunaSecretKey: process.env.FAUNA_SECRET_KEY,
     axios: {
-      browserBaseURL: process.env.NODE_ENV === 'production' ? process.env.BROWSER_BASE_URL || 'http://localhost:8888/' : 'http://localhost:8888/',
+      browserBaseURL: process.env.BROWSER_BASE_URL
     }
   },
   privateRuntimeConfig: {
+    faunaSecretKey: process.env.FAUNA_SECRET_KEY,
     axios: {
-      baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL || 'http://localhost:8888/' : 'http://localhost:8888/',
+      baseURL: process.env.BASE_URL
     }
   },
   hooks: {
