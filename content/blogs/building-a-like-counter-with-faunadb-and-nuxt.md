@@ -94,17 +94,19 @@ FAUNA_SECRET_KEY=YOUR_KEY
 
 Great! Lastly, we can now use our `BASE_URL` environment variable to get Axios setup for both local development and our production deployment.
 
-When I run my Netlify project locally using [Netlify Dev](https://www.netlify.com/products/dev/), I run it on port `8888`. In order to not have issues when we try to test our serverless functions, we need to tell Axios to call via port `8888`, or whatever port you'd like when in local development.
-
-Add this line to your `nuxt.config.js` file:
+We'll be using Nuxt's [Runtime Config](https://nuxtjs.org/guide/runtime-config/) to handle setting our [Axios Options](https://axios.nuxtjs.org/options). Add this line to your `nuxt.config.js` file:
 
 ```javascript
 export default {
-  axios: {
-    baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL : 'http://localhost:8888/',
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL || 'http://localhost:8888/' : 'http://localhost:8888/',
+    }
   },
 }
 ```
+
+When I run my Netlify project locally using [Netlify Dev](https://www.netlify.com/products/dev/), I run it on port `8888`. In order to not have issues when we try to test our serverless functions, we need to tell Axios to call via port `8888`, or whatever port you'd like when in local development.
 
 ### Netlify
 
@@ -429,6 +431,7 @@ export default {
 We start by calling our Vuex mutation `initializeLikes` in the `mounted()` hook since localStorage becomes available to us then, then we use a computed property `storedUserLikes` to retrieve the likes from our store for that blog (if any exist).
 
 Awesome! We now have a like counter that is persistent across multiple sessions and page visits. It's up to you how you want to render the like count so use your imagination! If you'd want to do something similar to my battery, feel free to check out my [source code](https://github.com/DavidTParks/dev-portfolio-2.0/blob/master/components/VoltBatteryCounter.vue) on Github, as I've decided to open source my site.
+
 
 If you'd prefer a more traditional "like button" look, here is a simple one with Tailwind to get you started!
 
