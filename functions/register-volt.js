@@ -17,6 +17,7 @@ exports.handler = async (event) => {
   const doesDocExist = await client.query(
     q.Exists(q.Match(q.Index('volts_by_slug'), slug))
   );
+  
   if (!doesDocExist) {
     await client.query(
       q.Create(q.Collection('volts'), {
@@ -29,7 +30,6 @@ exports.handler = async (event) => {
     q.Get(q.Match(q.Index('volts_by_slug'), slug))
   );
 
-
   await client.query(
     q.Update(document.ref, {
       data: {
@@ -37,6 +37,7 @@ exports.handler = async (event) => {
       },
     })
   );
+
   return {
     statusCode: 200,
     body: JSON.stringify({

@@ -32,12 +32,12 @@ export default {
   methods: {
     async addVolt() {
       if(this.storedUserVoltage < 12) {
+        this.sendVoltageToMainframe();
         this.initialVolts++;
         this.$store.commit('incrementVoltage', this.$route.params.slug);
         if(this.isSoundEnabled) { 
           this.audio.play();
         }
-        this.sendVoltageToMainframe();
       } else {
         if(this.isSoundEnabled) { 
           this.capacityAudio = new Audio(require('@/assets/sounds/capacity.mp3'));
