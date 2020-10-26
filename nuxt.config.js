@@ -138,6 +138,12 @@ export default {
           name: '[path][name].[ext]'
         }
       })
+    },
+    html: {
+      minify: {
+        minifyCSS: false,
+        minifyJS: false,
+      }
     }
   },
   generate: {
