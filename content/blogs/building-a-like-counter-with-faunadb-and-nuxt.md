@@ -31,11 +31,11 @@ Also, you'll need to pick a headless CMS that you prefer to manage your blog con
 
 Once you've created a Fauna account, you'll want to login and create a new database for your project.
 
-<imgix-image :alt="'Screenshot showing how to create a new FaunaDB database'" :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-faunadb-db.png'"></imgix-image>
+<imgix-image :alt="'Screenshot showing how to create a new FaunaDB database'" :src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-faunadb-db.png'"></imgix-image>
 
 After setting up our database, we'll also need to create a collection which will store the likes for each of our blog posts. Go ahead and create one named "likes".
 
-<imgix-image :alt="'Screenshot showing how to create a new FaunaDB collection'" :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-collection.png'"></imgix-image>
+<imgix-image :alt="'Screenshot showing how to create a new FaunaDB collection'" :src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-collection.png'"></imgix-image>
 
 In order to successfully query our database, we'll also need to setup an **Index**. Indexes allow us to query documents on document attributes rather than document references, which will be important when we fetch and update our corresponding likes using the blogs `slug`.
 
@@ -45,11 +45,11 @@ Feel free to read up on <strong>Indexes</strong> over at <a target="_blank" rel=
 
 Go ahead and create an index named `likes_by_slug` using our `likes` collection as the source collection, and `data.slug` being one of our terms which can be searched.
 
-<imgix-image :alt="'Screenshot showing how to create a new FaunaDB index'" :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-index.png'"></imgix-image>
+<imgix-image :alt="'Screenshot showing how to create a new FaunaDB index'" :src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-index.png'"></imgix-image>
 
 Amazing! We are almost there. Now we need to generate an API key that we can use in our Nuxt project to securely query our Fauna database. Navigate to the **Security** section in your Fauna dashboard and generate a new admin key.
 
-<imgix-image :alt="'Screenshot showing how to generate a FaunaDB database API key'" :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/api-key-fauna.png'"></imgix-image>
+<imgix-image :alt="'Screenshot showing how to generate a FaunaDB database API key'" :src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/api-key-fauna.png'"></imgix-image>
 
 We'll be referencing this key using the `FAUNA_SECRET_KEY` environment variable.
 
@@ -112,7 +112,7 @@ If you aren't familiar with [Netlify functions](https://www.netlify.com/products
 
 In order to make sure that our deployed site can successfully query our Fauna database, we'll need to navigate to Netlify and add the [environment variables](https://docs.netlify.com/configure-builds/environment-variables/) that we defined earlier, so they will be available to our application when we deploy it!
 
-<imgix-image :alt="'Screenshot showing how to generate a FaunaDB database API key'" :src="'http://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/environment-variables.png'"></imgix-image>
+<imgix-image :alt="'Screenshot showing how to generate a FaunaDB database API key'" :src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/environment-variables.png'"></imgix-image>
 
 You should also check out [Netlify Dev](https://www.netlify.com/products/dev/) which will allow you to test your functions locally before deployment. This can save you lots of time when debugging your functions and UI. It's a bit of a process so I won't cover it, but definitely recommend getting the Netlify CLI setup and linking your site to your project!
 

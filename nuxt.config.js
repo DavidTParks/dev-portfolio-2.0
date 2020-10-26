@@ -20,7 +20,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Articles focused on Frontend development. Focused in Vue.js, Nuxt.js, CSS and Animation!",
+          "Articles focused on Frontend, Jamstack, Serverless and anything else that interests me!",
       },
       { charset: 'utf-8' },
     ],
