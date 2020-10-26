@@ -256,7 +256,7 @@ When we end up deploying our application, they will be available to us at the pa
 
 In my case, I created a [VoltBatteryCounter](https://github.com/DavidTParks/dev-portfolio-2.0/blob/master/components/VoltBatteryCounter.vue) component that I plug into the sides of my dynamic blog pages in `pages/blog/_slug.vue`. In this component, I am passing the slug to the function by utilizing `this.$route.params.slug`. 
 
-Since I am using Nuxt's `static` mode, I am leveraging the [fetch](https://nuxtjs.org/api/pages-fetch/) hook with `fetchOnServer: false` set in order to ensure that the hook is called each time the page is requested on the client and not only once during build.
+Since I am using Nuxt's `static` mode, I am leveraging the [fetch](https://nuxtjs.org/api/pages-fetch/) hook with `fetchOnServer: false` set in order to ensure that the hook is called each time the component is mounted and not only once during build.
 
 ```vue
 <script>
