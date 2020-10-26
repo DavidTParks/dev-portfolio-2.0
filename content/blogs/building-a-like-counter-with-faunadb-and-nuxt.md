@@ -4,7 +4,7 @@ subtitle: Netlify functions and FaunaDB for a dynamic like counter on your blog
 description: Learn how to leverage Netlify functions, FaunaDB and Nuxt.js to create a dynamic like counter for your blog posts!
 category: Serverless
 published: true
-createdAt: '2020-10-25T23:22:29.628Z'
+createdAt: '2020-10-26T23:22:29.628Z'
 ---
 
 ## Intro
@@ -94,7 +94,7 @@ FAUNA_SECRET_KEY=YOUR_KEY
 
 Great! Lastly, we can now use our `BASE_URL` environment variable to get Axios setup for both local development and our production deployment.
 
-When I run my Netlify project locally using [Netlify Dev](https://www.netlify.com/products/dev/), I run it on port `8888`. In order to not have CORS issues when we try to test our serverless functions, we need to tell Axios to call via port `8888`, or whatever port you'd like when in local development.
+When I run my Netlify project locally using [Netlify Dev](https://www.netlify.com/products/dev/), I run it on port `8888`. In order to not have issues when we try to test our serverless functions, we need to tell Axios to call via port `8888`, or whatever port you'd like when in local development.
 
 Add this line to your `nuxt.config.js` file:
 
@@ -135,7 +135,7 @@ We'll start with the one that will fetch our blogs `like` count on page load (or
 
 Go ahead and create a folder in the root of your Nuxt project called `functions`. Netlify will automatically look here for any serverless functions each time you deploy.
 
-Create a file called `fetch_likes_for_blog.js` inside of the `functions` folder. 
+Create a file called `fetch_likes_for_blog.js` inside of the `functions` folder.
 
 ```javascript
 // Credit to Josh Comeau 
@@ -145,6 +145,7 @@ exports.handler = async (event) => {
   const client = new faunadb.Client({
     secret: process.env.FAUNA_SECRET_KEY,
   });
+
   const { slug } = event.queryStringParameters;
   if (!slug) {
     return {
@@ -158,6 +159,7 @@ exports.handler = async (event) => {
   const doesDocExist = await client.query(
     q.Exists(q.Match(q.Index('likes_by_slug'), slug))
   );
+
   if (!doesDocExist) {
     await client.query(
       q.Create(q.Collection('likes'), {
@@ -179,7 +181,7 @@ exports.handler = async (event) => {
 };
 ```
 
-Let's run through it. 
+Let's run through it.
 
 1. First, we are initializing our Fauna client with the secret key we generated earlier
 2. We are checking if the blog slug is provided as a query parameter, if not we return **400**
@@ -190,10 +192,10 @@ Let's run through it.
 
 ### Incrementing likes function
 
-This function is extremely similar to the fetch function, except for the fact that we need to increment the existing like count before we return it to the client. 
+This function is extremely similar to the fetch function, except for the fact that we need to increment the existing like count before we return it to the client.
 
 <info-box :variant="'info'">
-This is the function that we'll be calling when a user interacts with whatever icon/button we want to use to handle <strong>liking</strong> the blog post. 
+This is the function that we'll be calling when a user interacts with whatever icon/button we want to use to handle <strong>liking</strong> the blog post.
 </info-box>
 
 Create a new file in your `functions` directory called `register-like.js`
@@ -206,6 +208,7 @@ exports.handler = async (event) => {
   const client = new faunadb.Client({
     secret: process.env.FAUNA_SECRET_KEY,
   });
+
   const { slug } = event.queryStringParameters;
   if (!slug) {
     return {
@@ -219,6 +222,7 @@ exports.handler = async (event) => {
   const doesDocExist = await client.query(
     q.Exists(q.Match(q.Index('likes_by_slug'), slug))
   );
+  
   if (!doesDocExist) {
     await client.query(
       q.Create(q.Collection('likes'), {
@@ -231,7 +235,6 @@ exports.handler = async (event) => {
     q.Get(q.Match(q.Index('likes_by_slug'), slug))
   );
 
-
   await client.query(
     q.Update(document.ref, {
       data: {
@@ -239,6 +242,7 @@ exports.handler = async (event) => {
       },
     })
   );
+
   return {
     statusCode: 200,
     body: JSON.stringify({
@@ -252,9 +256,9 @@ As you can see, the code is essentially the same except for the fact that after 
 
 ## Using our functions in Nuxt
 
-When we end up deploying our application, they will be available to us at the path: `/.netlify/functions/NAME_OF_FUNCTION`. 
+When we end up deploying our application, they will be available to us at the path: `/.netlify/functions/NAME_OF_FUNCTION`.
 
-In my case, I created a [VoltBatteryCounter](https://github.com/DavidTParks/dev-portfolio-2.0/blob/master/components/VoltBatteryCounter.vue) component that I plug into the sides of my dynamic blog pages in `pages/blog/_slug.vue`. In this component, I am passing the slug to the function by utilizing `this.$route.params.slug`. 
+In my case, I created a [VoltBatteryCounter](https://github.com/DavidTParks/dev-portfolio-2.0/blob/master/components/VoltBatteryCounter.vue) component that I plug into the sides of my dynamic blog pages in `pages/blog/_slug.vue`. In this component, I am passing the slug to the function by utilizing `this.$route.params.slug`.
 
 Since I am using Nuxt's `static` mode, I am leveraging the [fetch](https://nuxtjs.org/api/pages-fetch/) hook with `fetchOnServer: false` set in order to ensure that the hook is called each time the component is mounted and not only once during build.
 
@@ -275,7 +279,7 @@ export default {
 </script>
 ```
 
-And then, whenever a user **clicks** on the Battery I have positioned to the right of my blog post, I will use **Axios** that we setup earlier to call our servleress function to increment the like count. 
+And then, whenever a user clicks on the Battery I have positioned to the right of my blog post, I will use **Axios** that we setup earlier to call our servleress function to increment the like count.
 
 ```vue
 <script>
@@ -305,7 +309,7 @@ export default {
 
 You might be wondering though, ***what if somebody decides to just spam my like button thousands of times and completely eat up my free-tier of functions?***
 
-There are a few routes you could go with this. One of which, would be to introduce some local state like `userLikeCount` along with a computed property called `likesMaxed`, which only allows a user to increment the counter up to 12 times or so. Ex:
+There are a few routes you could go with this. One of which would be to introduce some local state like `userLikeCount` along with a computed property called `likesMaxed` which only allows a user to increment the counter up to 12 times or so. Ex:
 
 ```vue
 <script>
@@ -342,9 +346,9 @@ export default {
 </script>
 ```
 
-However, the user could simply reload the page and increment the counter another 12 times. 
+However, the user could simply reload the page and increment the counter another 12 times.
 
-In my case, I decided to use `localStorage` to ensure that users could only increment the like count a maximum of 12 times per blog post, which would persist on subsequent page visits (Credit to [Lucie](https://twitter.com/li_hbr) for the idea!)
+In my case, I decided to use `localStorage` to ensure that users could only increment the like count a maximum of 12 times per blog post which would persist on subsequent page visits (Credit to [Lucie](https://twitter.com/li_hbr) for the idea!)
 
 ### Storing Likes in Local Storage
 
@@ -376,7 +380,7 @@ export const mutations = {
 First I am initializing the likes on the page by reading from the local storage the associated count.
 
 <info-box :variant="'callToAction'">
-I'm also adding in some checks to get the absolute value in case a user edits it to be a negative number, allowing them to click infinitely, as well as determine if the number is greater than 12 to only set the storedLikes to 12. 
+I'm also adding in some checks to get the absolute value in case a user edits it to be a negative number, allowing them to click infinitely, as well as determine if the number is greater than 12 to only set the storedLikes to 12.
 </info-box>
 
 Now, we can extend our previous code to utilize this new piece of global state.
@@ -422,20 +426,18 @@ export default {
 </script>
 ```
 
+We start by calling our Vuex mutation `initializeLikes` in the `mounted()` hook since localStorage becomes available to us then, then we use a computed property `storedUserLikes` to retrieve the likes from our store for that blog (if any exist).
+
 Awesome! We now have a like counter that is persistent across multiple sessions and page visits. It's up to you how you want to render the like count so use your imagination! If you'd want to do something similar to my battery, feel free to check out my [source code](https://github.com/DavidTParks/dev-portfolio-2.0/blob/master/components/VoltBatteryCounter.vue) on Github, as I've decided to open source my site.
 
 If you'd prefer a more traditional "like button" look, here is a simple one with Tailwind to get you started!
 
 ```vue
 <template>
-  <div>
-    <div class="flex items-baseline">
-      <button @click="addLike" class="focus:outline-none" :class="{'text-red-600' : likesMaxed}">
-        {{initialLikes}}
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-      </button>
-    </div>
-  </div>
+  <button @click="addLike" class="focus:outline-none" :class="{'text-red-600' : likesMaxed}">
+    {{initialLikes}}
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+  </button>
 </template>
 ```
 
