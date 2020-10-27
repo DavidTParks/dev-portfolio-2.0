@@ -57,6 +57,8 @@
       type="image/png"
     />
     <img
+      width="1000"
+      height="400"
       loading="lazy"
       :alt="alt"
       class="h-full w-full"

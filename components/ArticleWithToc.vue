@@ -31,7 +31,7 @@ export default {
     twitterShareLink() {
       return `https://twitter.com/intent/tweet?text=${this.article.title}&url=https://davidparks.dev/blog/${this.article.slug}/&via=dparksdev`
     }
-  }
+  },
 }
 </script>
 
