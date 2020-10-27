@@ -54,6 +54,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
+    '@nuxtjs/pwa',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -63,7 +64,7 @@ export default {
     'nuxt-svg-loader',
     '@nuxtjs/sitemap',
     '@nuxtjs/axios',
-    '@nuxtjs/feed'
+    '@nuxtjs/feed',
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
