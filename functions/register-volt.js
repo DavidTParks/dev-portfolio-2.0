@@ -4,7 +4,9 @@ exports.handler = async (event) => {
   const client = new faunadb.Client({
     secret: process.env.FAUNA_SECRET_KEY,
   });
-  const { slug } = event.queryStringParameters;
+
+  const { slug, voltsToSend } = event.queryStringParameters;
+
   if (!slug) {
     return {
       statusCode: 400,
@@ -33,15 +35,19 @@ exports.handler = async (event) => {
   await client.query(
     q.Update(document.ref, {
       data: {
-        volts: document.data.volts + 1,
+        volts: document.data.volts + Number(voltsToSend),
       },
     })
+  );
+
+  const updatedDocument = await client.query(
+    q.Get(q.Match(q.Index('volts_by_slug'), slug))
   );
 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      volts: document.data.volts,
+      volts: updatedDocument.data.volts,
     }),
   };
 };

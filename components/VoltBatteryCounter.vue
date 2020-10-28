@@ -6,7 +6,7 @@
       <p class="uppercase ml-1" v-else-if="$fetchState.error">Battery malfunction</p>
       <p class="uppercase ml-1" v-else>{{initialVolts}} {{initialVolts > 1 ? 'volts' : 'volt'}} <span v-if="voltsMaxed">MAX CAPACITY</span></p>
     </div>
-    <button aria-label="Increase battery voltage" @click="addVolt" :class="{'dark:border-retrored border-retrored' : voltsMaxed}" class="dark:border-retroteal border-infoblue green-glow bg-transparent dark:bg-tokyosky border-4 text-white p-4 shadow-sm rounded-lg grid grid-cols-12 gap-2 mt-4 focus:outline-none relative">
+    <button aria-label="Increase battery voltage" @click="addVoltageOnInterval" :class="{'dark:border-retrored border-retrored' : voltsMaxed}" class="dark:border-retroteal border-infoblue green-glow bg-transparent dark:bg-tokyosky border-4 text-white p-4 shadow-sm rounded-lg grid grid-cols-12 gap-2 mt-4 focus:outline-none relative">
       <span v-for="index in storedUserVoltage" :class="{'dark:bg-retrored bg-retrored' : voltsMaxed}" :key="index" class="rotate-45 h-8 w-3 dark:bg-retroteal bg-infoblue"></span>
       <span :class="{'dark:bg-retrored bg-retrored' : voltsMaxed}" class="absolute bottom-0 right-0 m-auto p-1 dark:bg-retroteal bg-infoblue"></span>
     </button>
@@ -18,6 +18,8 @@ export default {
   data() {
     return {
       initialVolts: null,
+      timeoutInterval: null,
+      voltageClicks: 0,
     }
   },
   async fetch() {
@@ -30,14 +32,19 @@ export default {
   },
   fetchOnServer: false,
   methods: {
-    async addVolt() {
+    addVoltageOnInterval() {
       if(this.storedUserVoltage < 12) {
-        this.sendVoltageToMainframe();
-        this.initialVolts++;
-        this.$store.commit('incrementVoltage', this.$route.params.slug);
-        if(this.isSoundEnabled) { 
-          this.audio.play();
+        if(this.timeoutInterval) {
+          clearTimeout(this.timeoutInterval);
         }
+        this.$store.commit('incrementVoltage', this.$route.params.slug);
+        this.voltageClicks++;
+        this.initialVolts++;
+
+        this.timeoutInterval = setTimeout(() => {
+          this.sendVoltageToMainframe(this.voltageClicks);
+          this.voltageClicks = 0;
+        }, 1000)
       } else {
         if(this.isSoundEnabled) { 
           this.capacityAudio = new Audio(require('@/assets/sounds/capacity.mp3'));
@@ -45,8 +52,8 @@ export default {
         }
       }
     },
-    async sendVoltageToMainframe() {
-      await this.$axios.post(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}`);
+    async sendVoltageToMainframe(voltsToSend) {
+      const { data } = await this.$axios.post(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}&voltsToSend=${voltsToSend}`);
     }
   },
   watch: {

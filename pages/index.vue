@@ -18,11 +18,6 @@ export default {
   mounted() {
     this.$store.commit('initializeSound');
   },
-  data() {
-    return {
-
-    }
-  },
   async asyncData({ $content, params }) {
       const blogs = await $content('blogs')
         .limit(5)
