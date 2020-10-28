@@ -37,6 +37,10 @@ export default {
         if(this.timeoutInterval) {
           clearTimeout(this.timeoutInterval);
         }
+        
+        if(this.isSoundEnabled) { 
+          this.audio.play();
+        }
         this.$store.commit('incrementVoltage', this.$route.params.slug);
         this.voltageClicks++;
         this.initialVolts++;
