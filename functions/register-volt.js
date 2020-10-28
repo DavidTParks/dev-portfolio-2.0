@@ -35,7 +35,7 @@ exports.handler = async (event) => {
   await client.query(
     q.Update(document.ref, {
       data: {
-        volts: document.data.volts + Number(voltsToSend),
+        volts: document.data.volts + Number(voltsToSend >= 12 ? 12 : voltsToSend),
       },
     })
   );

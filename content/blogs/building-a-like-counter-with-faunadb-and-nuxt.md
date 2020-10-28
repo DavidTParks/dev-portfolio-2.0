@@ -245,10 +245,14 @@ exports.handler = async (event) => {
     })
   );
 
+  const updatedDocument = await client.query(
+    q.Get(q.Match(q.Index('likes_by_slug'), slug))
+  );
+
   return {
     statusCode: 200,
     body: JSON.stringify({
-      likes: document.data.likes,
+      likes: updatedDocument.data.likes,
     }),
   };
 };
