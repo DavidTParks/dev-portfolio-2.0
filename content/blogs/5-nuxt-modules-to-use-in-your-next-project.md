@@ -1,5 +1,5 @@
 ---
-title: 5 Nuxt Modules to Use in Your Nuxt Project
+title: 5 Nuxt Modules to Use in Your Next Project
 subtitle: Powerful Nuxt modules you can use to enhance your site
 description: One of the best parts of Nuxt is its robust Module library. Modules allow you to extend Nuxt's core functionality and handle some powerful integrations. Here are five that I use in almost every project! 
 category: Nuxt
