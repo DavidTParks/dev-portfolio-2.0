@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`border-${color}`]" class="bg-darkblue border-l-8 text-white p-4 my-8 infobox overflow-hidden shadow-sm">
+  <div :class="[`border-${color}`]" class="dark:bg-darkblue bg-white border-l-8 text-gray-900 dark:text-white p-4 my-8 infobox overflow-hidden shadow-sm">
     <div class="flex items-start">
       <div class="mr-4 flex-shrink-0">
         <svg v-if="variant === 'info'" :class="[`text-${color}`]" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
