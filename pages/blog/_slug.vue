@@ -94,7 +94,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://davidparks.dev/blog/${this.$route.params.slug}`,
+          href: `https://davidparks.dev/blog/${this.$route.params.slug}/`,
         },
       ],
     };

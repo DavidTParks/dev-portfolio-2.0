@@ -13,8 +13,8 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex">
             <div class="relative flex ml-0">
-              <nuxt-link to="/blog" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
-              <nuxt-link to="/about" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>
+              <nuxt-link to="/blog/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">Blog</nuxt-link>
+              <nuxt-link to="/about/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-gray-800 dark:text-gray-300 focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>
             </div>
           </div>
         </div>
@@ -53,8 +53,8 @@
       <nav class="">
         <div class="ml-12">
           <nuxt-link @click.native="showMobileMenu = false" to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
-          <nuxt-link @click.native="showMobileMenu = false" to="/blog" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
-          <nuxt-link @click.native="showMobileMenu = false" to="/about" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">About</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/blog/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Blog</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/about/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">About</nuxt-link>
         </div>
         <div class="ml-12">
           <button v-if="$colorMode.value === 'dark'" class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none transition duration-150 ease-in-out" @click="toggle"><Sun class="w-10 h-10 text-white hover:text-retroyellow fill-current" aria-label="Activate light mode"/></button>

@@ -107,7 +107,7 @@ export default {
         type: "article",
         title: 'About - David Parks',
         description: this.article.description,
-        url: `https://davidparks.dev/about`,
+        url: `https://davidparks.dev/about/`,
       };
       return getSiteMeta(metaData);
     }

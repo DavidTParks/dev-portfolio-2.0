@@ -1,7 +1,7 @@
 <template>
   <div class="block">
     <article class="block mt-12 recent-blog" v-for="blog in blogs" :key="blog.title">
-      <nuxt-link class="blog-link" :to="`/blog/${blog.slug}`">
+      <nuxt-link class="blog-link" :to="`/blog/${blog.slug}/`">
         <small class="dark:text-retroyellow text-darkblue uppercase tracking-widest text-sm font-h2">{{blog.category}}</small>
         <h3 class="dark:text-lightblue text-infoblue text-2xl font-h1 transition-colors duration-75 mt-3">{{blog.title}}</h3>
         <p class="dark:text-gray-600 text-black mb-3 mt-1 text-lg font-h2">{{ formatDate(blog.createdAt) }}</p>
