@@ -9,21 +9,21 @@ createdAt: '2020-10-29T23:22:29.628Z'
 
 ## Intro
 
-The Nuxt team and community has recently released an expansive [Nuxt Module Explorer](https://modules.nuxtjs.org/) which allows you to filer Nuxt modules by popularity, type, and Github stars. 
+The Nuxt team and community has recently released an expansive [Nuxt Module Explorer](https://modules.nuxtjs.org/) which allows you to filer Nuxt modules by popularity, type, and Github stars.
 
-Until I saw this explorer, I had no idea how robust the Nuxt Module ecosystem had become. I was able to find some really useful modules that I've used on this project and others. 
+Until I saw this explorer, I had no idea how robust the Nuxt Module ecosystem had become. I was able to find some really useful modules that I've used on this project and others.
 
 The list can be pretty daunting (in an awesome way), so I figured I would boil it down to five that have helped me immensely. By no means are these the ***only*** ones I'd recommend, just five that I think are great!
 
 <info-box :variant="'info'">
-<span><strong>TL:DR: </strong>Just show me the modules!</span>
-<ol>
-  <li><external-link :link="'https://content.nuxtjs.org/'">nuxt/content</external-link></li>
-  <li><external-link :link="'https://tailwindcss.nuxtjs.org/'">nuxt/tailwind</external-link></li>
+  <span><strong>TL:DR: </strong>Just show me the modules!</span>
+  <ol>
+    <li><external-link :link="'https://content.nuxtjs.org/'">nuxt/content</external-link></li>
+    <li><external-link :link="'https://tailwindcss.nuxtjs.org/'">nuxt/tailwind</external-link></li>
     <li><external-link :link="'https://color-mode.nuxtjs.org/'">nuxt/color-mode</external-link></li>
-  <li><external-link :link="'https://cloudinary.nuxtjs.org/'">nuxt/cloudinary</external-link></li>
-  <li><external-link :link="'https://www.npmjs.com/package/@nuxtjs/feed/'">nuxt/feed</external-link></li>
-</ol>
+    <li><external-link :link="'https://cloudinary.nuxtjs.org/'">nuxt/cloudinary</external-link></li>
+    <li><external-link :link="'https://www.npmjs.com/package/@nuxtjs/feed/'">nuxt/feed</external-link></li>
+  </ol>
 </info-box>
 
 ## [1. Nuxt/Content](https://content.nuxtjs.org/)
@@ -31,6 +31,8 @@ The list can be pretty daunting (in an awesome way), so I figured I would boil i
 When building this site, I knew I needed to find a headless CMS to manage my content. I wanted to author my content in Markdown, interpolate Vue components, and be able to commit it to version control. Nuxt content has ***all of this***, and more!
 
 Some of the nicest features I've found are:
+
+- The ability to inject any variables into the article using a YAML front matter
 - The automatic injection `createdAt`, `updatedAt`, and `toc` (table of contents) variables to use
 - "Double click" to edit directly on the page, and see changes reflected immediately
 - Ability to interpolate Vue components directly into your markdown
@@ -90,7 +92,6 @@ const url = this.$cloudinary.image
 
 The module also provides some [ready-made Vue components](https://cloudinary.nuxtjs.org/usage/vue-components) that you can use anywhere in your templates. It's truly magic!
 
-
 ## [5. Nuxt/feed](https://www.npmjs.com/package/@nuxtjs/feed)
 
 This module helps you generate an RSS, Atom or JSON feed from your website's content!
@@ -105,6 +106,6 @@ Like I said before, there are ***tons*** of modules that are amazing, these are 
 
 As of this blog's writing, there are currently 146 Nuxt Modules available for use on [modules.nuxtjs.org](https://modules.nuxtjs.org/) (and more that simply need to be merged into the site). Go ahead and take a look and find something that sounds interesting or helpful.
 
-Have fun exploring the awesome world of Nuxt modules! 
+Have fun exploring the awesome world of Nuxt modules!
 
 Thanks for reading.
