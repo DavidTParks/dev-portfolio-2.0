@@ -96,7 +96,11 @@ The module also provides some [ready-made Vue components](https://cloudinary.nux
 
 This module helps you generate an RSS, Atom or JSON feed from your website's content!
 
-The main reason why this is so awesome, is that if you decide to crosspost to a platform like [Dev.to](https://dev.to/), you can actually provide your RSS feed URL and have all of your content become drafts which you can immediately publish. It's a well known fact that cross-posting content that is originally published on your site can do wonders for your SEO rankings (provided you define a proper canonical URL for your content).
+You may be thinking, do people still use RSS feeds? Well [Chris Coyier](https://twitter.com/chriscoyier) (founder of CSS Tricks & CodePen) does!
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Who’s gonna read your personal blog because it has an RSS feed? I’m gonna read your personal blog because it has an RSS feed. <a href="https://t.co/mtcyKhEVet">pic.twitter.com/mtcyKhEVet</a></p>&mdash; Chris Coyier (@chriscoyier) <a href="https://twitter.com/chriscoyier/status/1214606808125341696?ref_src=twsrc%5Etfw">January 7, 2020</a></blockquote>
+
+The main reason why this is so awesome for me, is that if you decide to crosspost to a platform like [Dev.to](https://dev.to/), you can actually provide your RSS feed URL and have all of your content become drafts which you can immediately publish. It's a well known fact that cross-posting content that is originally published on your site can do wonders for your SEO rankings (provided you define a proper canonical URL for your content).
 
 Also, if you are using Nuxt Content, you can [generate a feed](https://content.nuxtjs.org/integrations) using a few methods described in the official documentation!
 
