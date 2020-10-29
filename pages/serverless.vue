@@ -37,7 +37,7 @@ export default {
         type: "article",
         title: 'Serverless Articles - David Parks',
         description: this.article.description,
-        url: `https://davidparks.dev/serverless`,
+        url: `https://davidparks.dev/serverless/`,
       };
       return getSiteMeta(metaData);
     }
@@ -52,7 +52,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://davidparks.dev/serverless`,
+          href: `https://davidparks.dev/serverless/`,
         },
       ],
     };

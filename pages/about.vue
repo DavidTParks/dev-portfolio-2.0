@@ -122,7 +122,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://davidparks.dev/about`,
+          href: `https://davidparks.dev/about/`,
         },
       ],
     };

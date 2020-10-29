@@ -36,7 +36,7 @@ export default {
       const metaData = {
         type: "article",
         title: 'Serverless Articles - David Parks',
-        url: `https://davidparks.dev/nuxt`,
+        url: `https://davidparks.dev/nuxt/`,
       };
       return getSiteMeta(metaData);
     }
@@ -51,7 +51,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://davidparks.dev/nuxt`,
+          href: `https://davidparks.dev/nuxt/`,
         },
       ],
     };

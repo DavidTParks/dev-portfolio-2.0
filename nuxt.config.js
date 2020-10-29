@@ -89,7 +89,7 @@ export default {
 
       blogs.forEach((blog) => {
         routes.push({
-          url: `/blog/${blog.slug}`,
+          url: `/blog/${blog.slug}/`,
           lastmod: blog.updatedAt
         })
       });
@@ -115,7 +115,7 @@ export default {
         .fetch();
 
         blogs.forEach((post) => {
-          const url = `https://www.davidparks.dev/blog/${post.slug}`;
+          const url = `https://www.davidparks.dev/blog/${post.slug}/`;
           feed.addItem({
             title: post.title,
             id: url,

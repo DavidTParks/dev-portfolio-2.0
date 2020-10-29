@@ -59,7 +59,7 @@ export default {
         type: "article",
         title: this.article.title,
         description: this.article.description,
-        url: `https://davidparks.dev/blog/${this.$route.params.slug}`,
+        url: `https://davidparks.dev/blog/${this.$route.params.slug}/`,
         mainImage: this.socialImage,
       };
       return getSiteMeta(metaData);
@@ -94,7 +94,7 @@ export default {
         {
           hid: "canonical",
           rel: "canonical",
-          href: `https://davidparks.dev/blog/${this.$route.params.slug}`,
+          href: `https://davidparks.dev/blog/${this.$route.params.slug}/`,
         },
       ],
     };
