@@ -9,7 +9,7 @@ createdAt: '2020-10-29T23:22:29.628Z'
 
 ## Intro
 
-The Nuxt team and community has recently released an expansive [Nuxt Module Explorer](https://modules.nuxtjs.org/) which allows you to filer Nuxt modules by popularity, type, and Github stars.
+The Nuxt team and community have recently released an expansive [Nuxt Module Explorer](https://modules.nuxtjs.org/) which allows you to filer Nuxt modules by popularity, type, and Github stars.
 
 Until I saw this explorer, I had no idea how robust the Nuxt Module ecosystem had become. I was able to find some really useful modules that I've used on this project and others.
 
