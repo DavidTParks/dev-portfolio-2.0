@@ -91,8 +91,7 @@ export default {
 
       blogs.forEach((blog) => {
         routes.push({
-          url: `/blog/${blog.slug}`,
-          lastmod: blog.updatedAt
+          url: `/blog/${blog.slug}`
         })
       });
       
