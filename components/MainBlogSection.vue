@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <div class="grid gap-24 grid-cols-1 md:grid-cols-3">
       <section class="col-span-2">
         <h2 class="text-3xl leading-9 font-h1 text-black dark:text-lightblue dark:pink-glow sm:text-4xl sm:leading-10 light-blue-glow">
@@ -12,5 +12,5 @@
         <slot name="categories"/>
       </section>
     </div>
-  </main>
+  </div>
 </template>

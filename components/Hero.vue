@@ -4,7 +4,7 @@
       
     </div>
     <div class="hero">
-      <button aria-label="Play train sound" @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
+      <button type="button" aria-label="Play train sound" @click="playTrainSound" :class="[isRightTrain ? 'right-light' : 'left-light' ]" class="train-wrapper focus:outline-none">
         <Train class="train w-3/12 h-auto"/>
       </button>
       <BuildingOne class="building1"/>
