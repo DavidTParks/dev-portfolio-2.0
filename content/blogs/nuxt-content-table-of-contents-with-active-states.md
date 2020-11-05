@@ -3,7 +3,7 @@ title: Nuxt Content Table of Contents With Active States
 subtitle: Active states based on scroll position using Intersection Observer
 description: An awesome way to show the reader where they are in an article is via active states in a table of contents. This article will show you how to create one using the Intersection Observer API, and Nuxt Content!
 category: Nuxt
-published: true
+published: false
 createdAt: '2020-11-02T23:22:29.628Z'
 ---
 
