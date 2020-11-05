@@ -14,15 +14,6 @@ import getSiteMeta from "~/utils/getSiteMeta.js";
 
 export default {
   layout: 'blog',
-  mounted() {
-    let root = document.documentElement;
-    root.style.setProperty('--scroll-behavior', 'smooth');
-    this.$store.commit('initializeSound');
-  },
-  destroyed() {
-    let root = document.documentElement;
-    root.style.setProperty('--scroll-behavior', 'initial');
-  },
   async asyncData({ $content, params }) {
     const article = await $content('blogs', params.slug).fetch();
 
