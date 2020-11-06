@@ -55,7 +55,6 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/pwa',
-    '@nuxtjs/html-validator'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
