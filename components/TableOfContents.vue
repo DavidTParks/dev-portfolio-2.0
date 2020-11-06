@@ -40,10 +40,7 @@ export default {
     }, this.observerOptions);
 
     // Track all sections that have an `id` applied
-    document.querySelectorAll('.nuxt-content h2[id]').forEach((section) => {
-        this.observer.observe(section);
-    });
-    document.querySelectorAll('.nuxt-content h3[id]').forEach((section) => {
+    document.querySelectorAll('.nuxt-content h2[id], .nuxt-content h3[id]').forEach((section) => {
         this.observer.observe(section);
     });
   },
