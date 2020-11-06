@@ -43,11 +43,11 @@ export default {
 
 Since [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is [supported by almost every browser](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Browser_compatibility) (sorry IE users 😭) we can leverage this extremely powerful API to handle detecting when an element scrolls into our viewport! No installation needed!
 
-You will need to ensure that you have a `content` directory in the root of your project that contains some Markdown files you wish to use. Feel free to use my sample [file in Codesandbox](https://codesandbox.io/s/crazy-leftpad-7z5mu?file=/content/main.md) as a reference for tweaking the content to your liking.
-
 <info-box>
 The <strong>Intersection Observer API</strong> can also be used to do some really powerful stuff like <a rel="noopener noreferrer" target="_blank" href="https://www.telerik.com/blogs/intersection-observer-api-makes-lazy-loading-a-snap">lazy-loading images</a>, as well as implementing some infinite scroll techniques. It's worth digging into and seeing if it can be a solution to a use-case you need!
 </info-box>
+
+You will need to ensure that you have a `content` directory in the root of your project that contains some Markdown files you wish to use. Feel free to use my sample [file in Codesandbox](https://codesandbox.io/s/crazy-leftpad-7z5mu?file=/content/main.md) as a reference for tweaking the content to your liking.
 
 Let's go ahead and fetch our blog from our `index.vue` page. Assuming our markdown file is called `main.md` inside of the `/content` directory.
 
