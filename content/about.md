@@ -6,4 +6,4 @@ The first website I ever created was a music blog called Eargrub back in 2012 (I
 
 It's safe to say I've come a long way, but I still have lots to learn. This website will  document my learning process and maybe help some others out in the meantime. 
 
-When I'm not coding stuff, I'm usually somewhere in the North Woods of Wisconsin. I'm open to any freelance work, feel free to <a target="_blank" rel="noopener" href = "mailto: davidthomasparks@gmail.com">shoot me an email</a> with your vision! 
+When I'm not coding stuff, I'm usually somewhere in the North Woods of Wisconsin. I'm open to any freelance work, feel free to <a target="_blank" rel="noopener" href="mailto: davidthomasparks@gmail.com">shoot me an email</a> with your vision! 
