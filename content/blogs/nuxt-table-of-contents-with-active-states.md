@@ -28,8 +28,6 @@ If you'd prefer to jump right into the code, check out the Code Sandbox I've pre
 
 ## Setup
 
-<dino-article></dino-article>
-
 Thankfully, this implementation requires very little setup. We just need to initialize a **Nuxt** project, install **Nuxt Content** & **Nuxt Tailwind** (optional), and we're set!
 
 Go ahead and install [Nuxt Content](https://content.nuxtjs.org/) and [Nuxt Tailwind](https://tailwindcss.nuxtjs.org/) in your Nuxt project and add the modules to your `nuxt.config.js` file:
@@ -163,8 +161,6 @@ export default {
 };
 </script>
 ```
-
-<dino-article-two></dino-article-two>
 
 There's lots happening here so let's break it down.
 

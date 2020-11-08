@@ -87,8 +87,6 @@ Since I've created my own template, and included my own font, my settings may be
 
 Feel free to check out Jason Lengstorf's Figma template available [here](https://res.cloudinary.com/jlengstorf/raw/upload/v1578342420/social-sharing-cards/learnwithjason-social-card-template.fig) and customize it your liking. 
 
-<dino-article></dino-article>
-
 ### Setting meta tags
 
 Great, we are generating our image via dynamic Nuxt Content article attributes! 
@@ -176,8 +174,6 @@ export default {
 }
 </script>
 ```
-
-<dino-article-two></dino-article-two>
 
 You have noticed above that I am importing `getSiteMeta` from `"~/utils/getSiteMeta.js"`. This is a utility function that I use to overwrite default meta tags. We will use a computed property to override some default metadata values I've setup in this file if they are explicitly provided. This ensures we are injecting the proper variables from our Nuxt Content Markdown file into our head. That file looks like this:
 
