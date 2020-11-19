@@ -12,6 +12,7 @@
           <HitCounter/>
         </div>
         <PrevNext :prev="prev" :next="next" />
+        <CommentSection/>
       </article>
     </section>
     <TableOfContents :article-toc="article.toc"/>

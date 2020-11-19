@@ -65,7 +65,15 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/axios',
     '@nuxtjs/feed',
+    '@nuxt/image'
   ],
+  image: {
+    providers: {
+      imgix: {
+        baseURL: 'davidparksdev.imgix.net'
+      }
+    }
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {

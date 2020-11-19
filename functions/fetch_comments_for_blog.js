@@ -15,34 +15,26 @@ exports.handler = async (event) => {
   }
   // Check and see if the doc exists.
   const doesDocExist = await client.query(
-    q.Exists(q.Match(q.Index('hits_by_slug'), slug))
+    q.Exists(q.Match(q.Index('comments_by_slug'), slug))
   );
+
   if (!doesDocExist) {
     await client.query(
-      q.Create(q.Collection('hits'), {
-        data: { slug: slug, hits: 0 },
+      q.Create(q.Collection('comments'), {
+        data: { slug: slug, comments: [] },
       })
     );
   }
+
   // Fetch the document for-real
   const document = await client.query(
-    q.Get(q.Match(q.Index('hits_by_slug'), slug))
+    q.Get(q.Match(q.Index('comments_by_slug'), slug))
   );
 
-  const newHitCount = document.data.hits + 1;
-
-  await client.query(
-    q.Update(document.ref, {
-      data: {
-        hits: newHitCount
-      },
-    })
-  );
-  
   return {
     statusCode: 200,
     body: JSON.stringify({
-      hits: newHitCount
+      comments: document.data.comments,
     }),
   };
 };
