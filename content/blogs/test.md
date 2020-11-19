@@ -33,6 +33,7 @@ Once you've created a Fauna account, you'll want to login and create a new datab
 
 <nuxt-image alt="'Screenshot showing how to create a new FaunaDB database'" src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-faunadb-db.png'"></nuxt-image>
 
+
 After setting up our database, we'll also need to create a collection which will store the likes for each of our blog posts. Go ahead and create one named "likes".
 
 <nuxt-image alt="'Screenshot showing how to create a new FaunaDB collection'" src="'https://davidparksdev.imgix.net/building-a-like-counter-with-faunadb-and-nuxt/new-collection.png'"></nuxt-image>
