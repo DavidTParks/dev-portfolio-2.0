@@ -95,7 +95,7 @@ export default {
   },
   computed: {
     isSoundEnabled() {
-      this.$store.isSoundEnabled;
+      return this.$store.state.isSoundEnabled;
     }
   }
 }
