@@ -53,7 +53,7 @@ Great! Let's also go ahead and create a `sounds` folder inside of our `assets` d
 
 That's all of our setup! Let's write some code 🤓.
 
-## Initializing the user's preference
+## Initializing the user's sound preference
 
 The first time a user visits our site, we can assume that their preference is they want sound to be played. This is entirely up to you if you'd prefer it to be **opt-in** or **opt-out**!
 
