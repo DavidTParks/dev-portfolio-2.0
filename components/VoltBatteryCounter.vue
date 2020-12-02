@@ -60,16 +60,6 @@ export default {
       const { data } = await this.$axios.post(`/.netlify/functions/register-volt?slug=${this.$route.params.slug}&voltsToSend=${voltsToSend}`);
     }
   },
-  watch: {
-    storedUserVoltage(val) {
-      if(val >= 12) {
-        if(this.isSoundEnabled) { 
-          this.audio = new Audio(require('@/assets/sounds/capacity.mp3'));
-          this.audio.play();
-        }
-      }
-    }
-  },
   computed: {
     voltsMaxed() {
       return this.storedUserVoltage >= 12;
