@@ -175,6 +175,11 @@ This is awesome! Now, any time a user interacts with a page element we wish to p
 
 <script>
 export default {
+  data() {
+    return {
+      audio: null
+    }
+  },
   mounted() {
     this.$store.commit('initializeSound');
   },
