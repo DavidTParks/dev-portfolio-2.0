@@ -104,7 +104,7 @@ export default {
 
 ## Toggling the user's sound preference
 
-Great! ***But***, what if we want the user to change the users sound preference? We'll need to implement another **mutation** that can allow us to edit this variable in our **Vuex store** as well as save the new preference to **localStorage**.
+Great! ***But***, what if we want the user to change their sound preference? We'll need to implement another **mutation** that can allow us to edit this variable in our **Vuex store** as well as save the new preference to **localStorage**.
 
 Go ahead and add to our `index.js` file in our `store` directory by adding the following method `toggleSound`:
 
