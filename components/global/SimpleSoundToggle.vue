@@ -12,6 +12,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      audio: null
+    }
+  },
   mounted() {
     this.$store.commit('initializeSound');
   },
