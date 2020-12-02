@@ -1,5 +1,5 @@
 export const state = () => ({
-  isSoundEnabled: null,
+  isSoundEnabled: true,
   storedUserVoltage: 1
 })
 
@@ -9,16 +9,16 @@ export const mutations = {
     localStorage.setItem('isSoundEnabled', state.isSoundEnabled);
   },
   initializeSound(state) {
-    const isSoundEnabled = localStorage.getItem('isSoundEnabled')
-    if(isSoundEnabled === "false") {
+    const isSoundEnabled = JSON.parse(localStorage.getItem('isSoundEnabled'));
+    if(!isSoundEnabled) {
       state.isSoundEnabled = false;
-      localStorage.setItem("isSoundEnabled", "false");
-    } else if(isSoundEnabled === "true") {
+      localStorage.setItem("isSoundEnabled", false);
+    } else if(isSoundEnabled) {
       state.isSoundEnabled = true;
-      localStorage.setItem("isSoundEnabled", "true");
+      localStorage.setItem("isSoundEnabled", true);
     } else {
       state.isSoundEnabled = true;
-      localStorage.setItem("isSoundEnabled", "true");
+      localStorage.setItem("isSoundEnabled", true);
     }
   },
   initializeVoltage(state, slug) {

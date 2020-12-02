@@ -28,7 +28,6 @@ export default {
   },
   mounted() {
     this.$store.commit('initializeVoltage', this.$route.params.slug);
-    this.audio = new Audio(require('@/assets/sounds/zap.mp3'));
   },
   fetchOnServer: false,
   methods: {
@@ -39,6 +38,7 @@ export default {
         }
         
         if(this.isSoundEnabled) { 
+          this.audio = new Audio(require('@/assets/sounds/zap.mp3'));
           this.audio.play();
         }
         this.$store.commit('incrementVoltage', this.$route.params.slug);
