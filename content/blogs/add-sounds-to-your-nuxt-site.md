@@ -102,7 +102,7 @@ export default {
 </script>
 ```
 
-## Toggling the users sound preference
+## Toggling the user's sound preference
 
 Great! ***But***, what if we want the user to change the users sound preference? We'll need to implement another **mutation** that can allow us to edit this variable in our **Vuex store** as well as save the new preference to **localStorage**.
 
