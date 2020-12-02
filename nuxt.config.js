@@ -55,6 +55,9 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-180939346-1'
+    }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
