@@ -158,7 +158,7 @@ export default function () {
 
 Make sure to replace the `baseUrl` variable with the URL for your deployed Nuxt API.
 
-For our [options](https://k6.io/docs/using-k6/options), we are specifying that we will run **40 concurrent virtual users** with a **test duration of 15 seconds**. It's up to you to increase/decrease as you'd like to test expected concurrent load. As you'll see, our API can handle 40 concurrent users in parallel no problem.
+For our [k6 options](https://k6.io/docs/using-k6/options), we are specifying that we will run **40 concurrent virtual users** with a **test duration of 15 seconds**. It's up to you to increase/decrease as you'd like to test expected concurrent load. As you'll see, our API can handle 40 concurrent users in parallel no problem.
 
 Now, we can run this file from our command line using the command
 
@@ -178,6 +178,6 @@ Well, when deploying to a serverless environment there is a well known problem k
 
 ## Wrapping up
 
-Excellent! We have successfully created a **Nuxt API endpoint** using **Express** and **serverMiddleware**, as well as deployed our application and API to the cloud and tested the API under a heavy load using **k6**. It's up to you to extend the API and load testing script to meet the expected needs for your project, but I hope this gets you started on the right foot!
+Excellent! We have successfully created a **Nuxt API** using **Express** and **serverMiddleware**, as well as deployed our application and API to the cloud and tested the API under a heavy load using **k6**. It's up to you to extend the API and load testing script to meet the expected needs for your project, but I hope this gets you started on the right foot!
 
 Thanks for reading.
