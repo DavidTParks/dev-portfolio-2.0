@@ -160,6 +160,8 @@ Make sure to replace the `baseUrl` variable with the URL for your deployed Nuxt 
 
 For our [k6 options](https://k6.io/docs/using-k6/options), we are specifying that we will run **40 concurrent virtual users** with a **test duration of 15 seconds**. It's up to you to increase/decrease as you'd like to test expected concurrent load. As you'll see, our API can handle 40 concurrent users in parallel no problem.
 
+In k6, a [trend](https://k6.io/docs/javascript-api/k6-metrics/trend) is a custom metric on their platform that calculates different values for your invocation like the minimum, maximum, median and average percentiles of the execution time. In our script we are creating a new trend to track our **ping** performance. Additionally, we are adding a [check](https://k6.io/docs/javascript-api/k6/check-val-sets-tags) that the endpoint was successful with a **200** status code result.
+
 Now, we can run this file from our command line using the command
 
 ```
