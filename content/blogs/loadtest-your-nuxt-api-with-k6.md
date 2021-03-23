@@ -127,7 +127,7 @@ Once you have a publicly accessible URL for your project, navigate to `your-proj
 
 ## Load testing our endpoint
 
-Now that our SSR Nuxt application with an API endpoint deployed to Vercel, it's time to load test it. Create a file in the root of your project called `loadtest.js` and add the following:
+Now that our SSR Nuxt application with a basic API is deployed to Vercel, it's time to load test our **ping** endpoint. Create a file in the root of your project called `loadtest.js` and add the following:
 
 ```javascript
 import http from 'k6/http'
