@@ -4,7 +4,7 @@ subtitle: Production-proof your Nuxt API by simulating heavy server load
 description: One thing that you must take into account when building out an API is server load and performance across multiple user connections. Learn how to leverage k6 to test your Nuxt API deployed on Vercel!
 category: Nuxt
 published: true
-createdAt: '2021-03-22T23:22:29.628Z'
+createdAt: '2021-03-23T23:22:29.628Z'
 ---
 
 ## Intro
@@ -174,7 +174,7 @@ The main metric we are interested in is the first one, our **Get ping** line. As
 
 ### Making sense of the results
 
-You might be saying, wow, the maximum time to execution is a ***whopping*** 4.69s and a minimum of only 88.69ms! Why is the gap that large!
+You might be saying, wow, the maximum time to execution is a ***whopping*** **4.69s** and a minimum of only **88.69ms**! Why is the gap that large!
 
 Well, when deploying to a serverless environment there is a well known problem known as a **cold start**. Since **Nuxt Vercel Builder** deploys our app as a serverless function, we must first ***spin up*** our serverless function after it has not been used for some period of time. This is one of the current drawbacks serverless computing faces. There are some workarounds known as "keeping functions warm" by invoking them on regular intervals (potentially resulting in a larger usage bill depending on your deployment platform), however this blog won't delve into that. Feel free to [read more on the topic](https://www.serverless.com/blog/keep-your-lambdas-warm).
 
