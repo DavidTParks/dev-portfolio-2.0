@@ -1,17 +1,17 @@
 ---
-title: Load Test Your Nuxt API With k6
-subtitle: Production-proof your Nuxt API by simulating heavy server load with k6
-description: One thing that you must take into account when building out an API is server load. Learn how to leverage k6 to test your Nuxt API!
+title: Load Test Your Nuxt API on Vercel With k6
+subtitle: Production-proof your Nuxt API by simulating heavy server load
+description: One thing that you must take into account when building out an API is server load and performance across multiple user connections. Learn how to leverage k6 to test your Nuxt API deployed on Vercel!
 category: Nuxt
-published: false
+published: true
 createdAt: '2021-03-22T23:22:29.628Z'
 ---
 
 ## Intro
 
-Recently, I have been delving into the full-stack side of Nuxt.js and seeing what it can offer in terms of building out a full-fledged API. By leveraging the [serverMiddleware](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware) property, you can create REST endpoints using **Express** all without leaving your project directory. That's awesome!
+Recently, I have been delving into the full-stack side of Nuxt.js and seeing what it can offer in terms of building out a full-fledged API. By leveraging the [serverMiddleware](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware) property, you can create REST endpoints using **Express**, all without leaving your project directory. That's powerful!
 
-However, once your application begins to scale and your server/database is put under a more strenuous load, you need to ensure that your API will remain **performant** for your users. You don't want to be losing potential visitors/revenue if your app goes down! It's important to catch these performance regressions ***before*** it's too late! 
+However, once your application begins to scale and your server and database are put under a more strenuous load, you need to ensure that your API will remain **performant** for your users. You don't want to be losing potential visitors/revenue if your app goes down! It's important to catch these performance regressions ***before*** it's too late! 
 
 Thankfully, there is a tool out there that lets you simulate heavy workloads and multiple concurrent user connections. Enter [k6](https://k6.io/)!
 
@@ -20,7 +20,7 @@ Thankfully, there is a tool out there that lets you simulate heavy workloads and
 k6 is a "load testing tool and SaaS for engineering teams". It's an incredibly useful tool that lets you run load tests <strong>straight from your command line</strong>, using ES6 Javascript syntax! It comes with a CLI tool that's full of a ton of useful features, and actionable metrics that give you a 360° view of your APIs performance. To learn more about all the useful metrics k6 captures, feel free to <a target="_blank" href="https://k6.io/docs/using-k6/metrics" rel="noopener noreferrer">check out their section dedicated to it</a>
 </info-box>
 
-This article will walk you through the process of setting up a basic API endpoint in Nuxt using the [serverMiddleware](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware/) property and [Express](https://expressjs.com/), and then deploy that Nuxt application to [Vercel](https://vercel.com/) using [Nuxt Vercel Builder](https://github.com/nuxt/vercel-builder), and finally load testing our production endpoint with [k6](https://k6.io/). 
+This article will walk you through the process of setting up a basic API endpoint in Nuxt using the [serverMiddleware](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware/) property and [Express](https://expressjs.com/), deploying that Nuxt application to [Vercel](https://vercel.com/) using [Nuxt Vercel Builder](https://github.com/nuxt/vercel-builder), and finally load testing our production endpoint with [k6](https://k6.io/). 
 
 <info-box>
 If you want to jump right into the code, <a target="_blank" rel="noopener noreferrer" href="https://github.com/DavidTParks/nuxt-loadtest-example">check out my repository on Github</a> which mirrors what we will be implementing.
@@ -28,10 +28,10 @@ If you want to jump right into the code, <a target="_blank" rel="noopener norefe
 
 ## Setup
 
-It goes without saying we'll need a fresh **Nuxt** to get rolling! Go ahead and create a new Nuxt project using the command line tool of your choosing (I prefer npx).
+It goes without saying we'll need a fresh **Nuxt** application to get rolling! Go ahead and create a new Nuxt project using the command line tool of your choosing (I prefer npx).
 
 ```
-npx create nuxt-app nuxt-loadtest-example
+npx create-nuxt-app <project-name>
 ```
 
 Next, we need to make sure that we are setting our Nuxt [deployment target](https://nuxtjs.org/docs/2.x/features/deployment-targets/) to `server` since we will be making use of **serverMiddleware**. We'll also need to edit our `nuxt.config.js` to specify the directory we wish to use for API routes. Go ahead and add the following lines to your `nuxt.config.js` file.
@@ -56,7 +56,7 @@ npm install express
 
 Excellent! Next, make sure **k6** is installed to your machine. For your platform specific installation view their section [here](https://k6.io/docs/getting-started/installation). For Mac OSX users, simply use Homebrew. 
 
-Finally, since we will be deploying our application to **Vercel**, we need to make use of [Nuxt Vercel Builder](https://github.com/nuxt/vercel-builder) in order to tell Vercel how to deploy our server side rendered Nuxt application to their platform.
+Finally, since we will be deploying our application to **Vercel**, we need to make use of [Nuxt Vercel Builder](https://github.com/nuxt/vercel-builder) in order to tell Vercel how to deploy our server side rendered Nuxt application and Express API to their platform.
 
 Create a file called `vercel.json` in the root of your project.
 
@@ -170,14 +170,16 @@ When your load test is finished, you should see something like this
 
 <imgix-image :alt="'Terminal results showing the results of a k6 loadtest'" :src="'https://davidparksdev.imgix.net/loadtest-nuxt-app/k6-results.png'"></imgix-image>
 
-The main metric we are interested in is the first one, our **Get ping** line. As you can see there are average, minimum, median and maximum values for the API request execution time from request to response. 
+The main metric we are interested in is the first one, our **Get ping** line. As you can see there are average, minimum, median and maximum values for the API request execution time from request to response.
 
-You might be saying, wow, the maximum time to execution is a ***whopping*** 4.69s and a minimum of only 88.69ms! How can that be!
+### Making sense of the results
 
-Well, when deploying to a serverless environment there is a well known problem known as a **cold start**. Simply put, since we are not using a typical long-running Node server to handle our API requests, we must first ***spin up*** our serverless lamba function after they have not been used for some period of time. There are some workarounds known as "keeping functions warm" by invoking them regularly, however this blog won't delve into that. Feel free to [read more on the topic](https://www.serverless.com/blog/keep-your-lambdas-warm)
+You might be saying, wow, the maximum time to execution is a ***whopping*** 4.69s and a minimum of only 88.69ms! Why is the gap that large!
+
+Well, when deploying to a serverless environment there is a well known problem known as a **cold start**. Since **Nuxt Vercel Builder** deploys our app as a serverless function, we must first ***spin up*** our serverless function after it has not been used for some period of time. This is one of the current drawbacks serverless computing faces. There are some workarounds known as "keeping functions warm" by invoking them on regular intervals (potentially resulting in a larger usage bill depending on your deployment platform), however this blog won't delve into that. Feel free to [read more on the topic](https://www.serverless.com/blog/keep-your-lambdas-warm).
 
 ## Wrapping up
 
-Excellent! We have successfully created a **Nuxt API** using **Express** and **serverMiddleware**, as well as deployed our application and API to the cloud and tested the API under a heavy load using **k6**. It's up to you to extend the API and load testing script to meet the expected needs for your project, but I hope this gets you started on the right foot!
+Excellent! We have successfully created a **Nuxt API** using **Express** and **serverMiddleware**, as well as deployed our application and API to Vercel using **Nuxt Vercel Builder** and tested the API under a heavy load using **k6**. It's up to you to extend the API and tailor the load testing script to your projects functionality and expected load, but I hope this gets you started on the right foot!
 
-Thanks for reading.
+Thanks for reading, and if you found the article helpful feel free to share on Twitter below!
