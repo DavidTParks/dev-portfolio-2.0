@@ -3,7 +3,7 @@ title: Load Test Your Nuxt API With k6
 subtitle: Production-proof your Nuxt API by simulating heavy server load with k6
 description: One thing that you must take into account when building out an API is server load. Learn how to leverage k6 to test your Nuxt API!
 category: Nuxt
-published: true
+published: false
 createdAt: '2021-03-22T23:22:29.628Z'
 ---
 
