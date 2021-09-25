@@ -93,19 +93,23 @@ DATABASE_URL="mysql://root@127.0.0.1:3309/tutorial-db"
 SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/tutorial-db"
 ```
 
-We will also need to make some PlanetScale-specific adjustments to our `schema.prisma` file located in our generated `prisma` folder in order to ensure platform compatibility. Edit our datasource and generate to enable **planetScaleMode**, include our **shadowDatabaseUrl**, and add **planetScaleMode** to our previewFeatures array.
+We will also need to make some PlanetScale-specific adjustments to our `schema.prisma` file located in our generated `prisma` folder in order to ensure platform compatibility. Edit our datasource and generate to enable **referentialIntegrity** equal to prisma, include our **shadowDatabaseUrl**, and add **referentialIntegrity** to our previewFeatures array.
+
+<info-box>
+Recently, there have <a href="https://github.com/prisma/prisma/issues/7292#issuecomment-925618707" target="_blank" rel="noopener noreferrer">been updates made to Planetscale compatability with Prisma</a>. As a result, the <strong>referentialIntegrity</strong> configuration is now required.
+</info-box>
 
 ```graphql
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
-  planetScaleMode = true
+  referentialIntegrity = "prisma"
 }
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["planetScaleMode"]
+  previewFeatures = ["referentialIntegrity"]
 }
 ```
 
@@ -116,12 +120,12 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
-  planetScaleMode = true
+  referentialIntegrity = "prisma"
 }
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["planetScaleMode"]
+  previewFeatures = ["referentialIntegrity"]
 }
 
 model Post {
