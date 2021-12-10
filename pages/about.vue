@@ -68,7 +68,13 @@ export default {
       },
       jobs: [
         {
-          date: 'July 2020 - Present',
+          date: 'February 2021 - Present',
+          title: 'Full Stack Developer',
+          company: 'Datacor',
+          link: 'https://www.datacor.com/'
+        },
+        {
+          date: 'July 2020 - February 2021',
           title: 'Frontend Developer',
           company: 'AddEvent, Inc',
           link: 'https://www.addevent.com/'
