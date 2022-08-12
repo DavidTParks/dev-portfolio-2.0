@@ -52,12 +52,10 @@ Go ahead and login to the PlanetScale CLI by issuing the following command in yo
 pscale auth login
 ```
 
-Now that we are authenticated, let's create our two additional **development branches**:
+Now that we are authenticated, let's create our **development branch**:
 
 ```
 pscale branch create tutorial-db initial-setup
-
-pscale branch create tutorial-db shadow
 ```
 
 In two separate terminals, connect to each of these database branches using the following commands:
@@ -66,13 +64,9 @@ In two separate terminals, connect to each of these database branches using the 
 pscale connect tutorial-db initial-setup --port 3309
 ```
 
-```
-pscale connect tutorial-db shadow --port 3310
-```
-
 ### Next.js & Prisma
 
-Now that we have our database and database branches setup and running, it's time to initialize our **Next.js** and **Prisma** application.
+Now that we have our database and development database branch setup and running, it's time to initialize our **Next.js** and **Prisma** application.
 
 Spin up a new Next.js project using the following command:
 
@@ -90,10 +84,9 @@ Modify the `.env` file in the root of your project like so:
 
 ```env
 DATABASE_URL="mysql://root@127.0.0.1:3309/tutorial-db"
-SHADOW_DATABASE_URL="mysql://root@127.0.0.1:3310/tutorial-db"
 ```
 
-We will also need to make some PlanetScale-specific adjustments to our `schema.prisma` file located in our generated `prisma` folder in order to ensure platform compatibility. Edit our datasource and generate to enable **referentialIntegrity** equal to prisma, include our **shadowDatabaseUrl**, and add **referentialIntegrity** to our previewFeatures array.
+We will also need to make some PlanetScale-specific adjustments to our `schema.prisma` file located in our generated `prisma` folder in order to ensure platform compatibility. Edit our datasource and generate to enable **referentialIntegrity** equal to prisma, and add **referentialIntegrity** to our previewFeatures array.
 
 <info-box>
 Recently, there have <a href="https://github.com/prisma/prisma/issues/7292#issuecomment-925618707" target="_blank" rel="noopener noreferrer">been updates made to Planetscale compatability with Prisma</a>. As a result, the <strong>referentialIntegrity</strong> configuration is now required.
@@ -103,7 +96,6 @@ Recently, there have <a href="https://github.com/prisma/prisma/issues/7292#issue
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
@@ -119,7 +111,6 @@ For the sake of this tutorial, we will just be creating a simple Prisma model fo
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
@@ -137,13 +128,13 @@ model Post {
 }
 ```
 
-Now that we have our schema setup, let's generate our first Prisma migration!
+Now that we have our schema setup, let's push our changes to our development branch!
 
 ```
-npx prisma migrate dev --name init
+npx prisma db push
 ```
 
-If all goes well, we should see a success message in our terminal, as well as a new `migrations` folder in our project. Now, it's time to open a deploy-request to bring these changes over to our **main** database branch. 
+If all goes well, we should see a success message in our terminal. Now, it's time to open a deploy-request to bring these changes over to our **main** database branch. 
 
 ```
 pscale deploy-request create tutorial-db initial-setup
@@ -155,7 +146,7 @@ Woohoo! We've just created our first **PlanetScale deploy request**. If we head 
 
 Click on the **Add changes to deploy queue** button and if all goes well, our changes will be deployed to the main database branch!
 
-Now that we have our main branch updated, go ahead and shut down both terminals that have been connected to PlanetScale, and let's rerun a command to open a connection to our **main** branch on port 3309, so we can add a **Post** record to our database.  
+Now that we have our main branch updated, go ahead and shut down your dev branch connection terminal that have been connected to PlanetScale, and let's rerun a command to open a connection to our **main** branch on port 3309, so we can add a **Post** record to our database.  
 
 ```
 pscale connect tutorial-db main --port 3309  
