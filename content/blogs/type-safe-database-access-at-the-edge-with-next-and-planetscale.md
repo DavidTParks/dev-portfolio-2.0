@@ -4,7 +4,7 @@ subtitle: Read and render typesafe data at the Edge in Next 13
 description: One of the most exciting new developments in computing is the Edge. This blog will walk you through leveraging geo location edge headers to connect to a PlanetScale database as close as possible to the requesting user. 
 category: Nuxt
 published: true
-createdAt: '2022-10-29T23:22:29.628Z'
+createdAt: '2022-10-30T23:22:29.628Z'
 ---
 
 ## Intro
@@ -391,7 +391,7 @@ export default async function handler() {
 }
 ```
 
-Once you deploy this to Vercel, we'll be using [KeyCDN's tool](https://tools.keycdn.com/performance) to test our endpoint. If you paste in the deployed Vercel URL with `/api/default` you can test the endpoint globally. Here's about the perf I am getting without swapping our connection at the edge. 
+Once you deploy this to Vercel (don't forget to set your Environment variables!), we'll be using [KeyCDN's tool](https://tools.keycdn.com/performance) to test our endpoint. If you paste in the deployed Vercel URL with `/api/default` you can test the endpoint globally. Here's about the perf I am getting without swapping our connection at the edge. 
 
 <imgix-image :alt="'Default edge perf'" :src="'https://davidparksdev.s3.us-east-2.amazonaws.com/type-safe-edge/edge-perf-defualt.png'"></imgix-image>
 
