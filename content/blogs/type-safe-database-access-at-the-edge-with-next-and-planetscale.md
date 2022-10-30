@@ -84,34 +84,24 @@ npx prisma db push
 Taking those connection details for each of your PlanetScale portal regions earlier, make sure to include the environment variables in your project in your `.env.local` file. I've used the following naming structure for this demo:
 
 ```
-US_EAST_1_HOST=""
 US_EAST_1_USERNAME=""
 US_EAST_1_PASSWORD=""
-US_WEST_2_HOST=""
 US_WEST_2_USERNAME=""
 US_WEST_2_PASSWORD=""
-EU_CENTRAL_1_HOST=""
 EU_CENTRAL_1_USERNAME=""
 EU_CENTRAL_1_PASSWORD=""
-EU_WEST_1_HOST=""
 EU_WEST_1_PASSWORD=""
 EU_WEST_1_USERNAME=""
-EU_WEST_2_HOST=""
 EU_WEST_2_USERNAME=""
 EU_WEST_2_PASSWORD=""
-AP_NORTHEAST_1_HOST=""
 AP_NORTHEAST_1_PASSWORD=""
 AP_NORTHEAST_1_USERNAME=""
-AP_SOUTHEAST_2_HOST=""
 AP_SOUTHEAST_2_PASSWORD=""
 AP_SOUTHEAST_2_USERNAME=""
-AP_SOUTHEAST_1_HOST=""
 AP_SOUTHEAST_1_PASSWORD=""
 AP_SOUTHEAST_1_USERNAME=""
-AP_SOUTH_1_HOST=""
 AP_SOUTH_1_USERNAME=""
 AP_SOUTH_1_PASSWORD=""
-SA_EAST_1_HOST=""
 SA_EAST_1_USERNAME=""
 SA_EAST_1_PASSWORD=""
 ...
@@ -140,10 +130,10 @@ interface ConfigWithGeoLocation {
     geoLocation: DbGeoLocation;
 }
 
-const connect = (host: string, username: string, password: string): Kysely<DB> => {
+const connect = (username: string, password: string): Kysely<DB> => {
     return new Kysely<DB>({
         dialect: new PlanetScaleDialect({
-            host,
+            host: 'aws.connect.psdb.cloud',
             username,
             password,
         }),
@@ -151,61 +141,51 @@ const connect = (host: string, username: string, password: string): Kysely<DB> =
 };
 
 export const usWest2 = connect(
-    process.env.US_WEST_2_HOST as string,
     process.env.US_WEST_2_USERNAME as string,
     process.env.US_WEST_2_PASSWORD as string,
 );
 
 export const usEast1 = connect(
-    process.env.US_EAST_1_HOST as string,
     process.env.US_EAST_1_USERNAME as string,
     process.env.US_EAST_1_PASSWORD as string,
 );
 
-const euCentral1 = connect(
-    process.env.EU_CENTRAL_1_HOST as string,
+export const euCentral1 = connect(
     process.env.EU_CENTRAL_1_USERNAME as string,
     process.env.EU_CENTRAL_1_PASSWORD as string,
 );
 
 const euWest1 = connect(
-    process.env.EU_WEST_1_HOST as string,
     process.env.EU_WEST_1_USERNAME as string,
     process.env.EU_WEST_1_PASSWORD as string,
 );
 
 const euWest2 = connect(
-    process.env.EU_WEST_2_HOST as string,
     process.env.EU_WEST_2_USERNAME as string,
     process.env.EU_WEST_2_PASSWORD as string,
 );
 
 const apNorthEast1 = connect(
-    process.env.AP_NORTHEAST_1_HOST as string,
     process.env.AP_NORTHEAST_1_USERNAME as string,
     process.env.AP_NORTHEAST_1_PASSWORD as string,
 );
 
 const apSouthEast1 = connect(
-    process.env.AP_SOUTHEAST_1_HOST as string,
     process.env.AP_SOUTHEAST_1_USERNAME as string,
     process.env.AP_SOUTHEAST_1_PASSWORD as string,
 );
 
 const apSouthEast2 = connect(
-    process.env.AP_SOUTHEAST_2_HOST as string,
     process.env.AP_SOUTHEAST_2_USERNAME as string,
     process.env.AP_SOUTHEAST_2_PASSWORD as string,
 );
 
 const apSouth1 = connect(
-    process.env.AP_SOUTH_1_HOST as string,
     process.env.AP_SOUTH_1_USERNAME as string,
     process.env.AP_SOUTH_1_PASSWORD as string,
 );
 
 const saEast1 = connect(
-    process.env.SA_EAST_1_HOST as string,
     process.env.SA_EAST_1_USERNAME as string,
     process.env.SA_EAST_1_PASSWORD as string,
 );
