@@ -68,7 +68,13 @@ export default {
       },
       jobs: [
         {
-          date: 'February 2021 - Present',
+          date: 'January 2022 - Present',
+          title: 'Frontend Developer',
+          company: 'Prysm',
+          link: 'https://www.prysm.xyz/'
+        },
+        {
+          date: 'February 2021 - January 2022',
           title: 'Full Stack Developer',
           company: 'Datacor',
           link: 'https://www.datacor.com/'
