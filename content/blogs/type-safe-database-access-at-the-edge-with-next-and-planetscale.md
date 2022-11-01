@@ -114,7 +114,7 @@ Now that we've got our config setup out of the way. Let's write some code!
 Create a new file in `lib/db.ts` and start by importing **Kysely**, **Kysely PlanetScale Dialect**, and our `Game` table type from our Prisma client. Kysely PlanetScale Dialect will provide us with a type safe query builder around our serverless PlanetScale database. Let's also set up our types for our DB Read replicas, the Geolocations of our database regions, and our DB Kysely interface. We'll be storing the `longitude` and `latitude` of each of our database cities as well for comparison later.
 
 ```js
-import { Game } from '@prisma/client';
+import { Game } from '@prisma/client/edge';
 import { Kysely } from 'kysely';
 import { PlanetScaleDialect } from 'kysely-planetscale';
 
