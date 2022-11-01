@@ -457,7 +457,7 @@ export default async function Page() {
     return (
         <div>
             {games.map((game) => (
-                <>{game.score}</>
+                <div key={game.id}>{JSON.stringify(game)}</div>
             ))}
         </div>
     );
